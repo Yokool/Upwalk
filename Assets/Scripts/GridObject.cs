@@ -8,7 +8,10 @@ public class GridObject : MonoBehaviour
     private int x;
     [SerializeField]
     private int y;
-    
+
+    [SerializeField]
+    private TileType m_tileType;
+
     public int X
     {
         get
@@ -35,6 +38,19 @@ public class GridObject : MonoBehaviour
         }
     }
 
+    public TileType m_TileType
+    {
+        get
+        {
+            return m_tileType;
+        }
+
+        set
+        {
+            m_tileType = value;
+        }
+    }
+
 
     private void UpdatePositionToGrid()
     {
@@ -49,8 +65,8 @@ public class GridObject : MonoBehaviour
     {
         GameGrid instance = GameGrid.INSTANCE;
         // Through the power of a uniunified initialization
-        // order. We have to check if the singleton has not
-        // been yet initialized.
+        // order. We have to be aware of the scenario
+        // where the singleton was not yet awoken.
         GameGridUtilities.INSTANCE.AddGridObjectOnStartup(this);
     }
 
@@ -73,10 +89,4 @@ public class GridObject : MonoBehaviour
         UpdatePositionToGrid();
     }
 
-
-
-    void Update()
-    {
-        
-    }
 }

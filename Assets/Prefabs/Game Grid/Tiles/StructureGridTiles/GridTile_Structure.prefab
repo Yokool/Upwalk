@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea72cffb68a1da488fcc2604d6cac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridStructure: {fileID: 11400000, guid: 263e4db888d51ac49b7236e288dd6628, type: 2}
-  destroyOnBuild: 1
-  buildOnCreate: 1
+  gridStructure: {fileID: 0}
+  destroyOnBuild: 0
+  buildOnCreate: 0
 --- !u!1001 &1757186403173311879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 3747475881072189737, guid: 6c13d9e56f7071f43b79112e91ef700d,
         type: 3}
       propertyPath: y
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3747475881072189742, guid: 6c13d9e56f7071f43b79112e91ef700d,
         type: 3}

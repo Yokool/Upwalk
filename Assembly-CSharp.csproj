@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GridStructure.cs" />
     <Compile Include="Assets\Scripts\GridStructureBehaviour.cs" />
     <Compile Include="Assets\Scripts\GridTileBuildData.cs" />
+    <Compile Include="Assets\TileType.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

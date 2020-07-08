@@ -8,16 +8,17 @@ public class GridStructureBehaviour : MonoBehaviour
     private GridStructure gridStructure = null;
 
     [SerializeField]
-    private bool destroyOnBuild = false;
+    [Tooltip("Determines if BuildItself() should be called in the Start method of this mono behaviour.")]
+    private bool buildOnCreate = false;
 
     [SerializeField]
-    private bool buildOnCreate = false;
+    [Tooltip("Determines if the gameObject that this script is attached to should destroy itself once BuildItself finishes.")]
+    private bool destroyOnCompletion = false;
 
     private void Awake()
     {
         gridStructure.Init();
     }
-
 
     private void Start()
     {
@@ -30,13 +31,11 @@ public class GridStructureBehaviour : MonoBehaviour
 
     public void BuildItself()
     {
-
         GridObject structureGridObject = GetComponent<GridObject>();
-
+        
 
         int structureGridX = structureGridObject.X;
         int structureGridY = structureGridObject.Y;
-
 
         foreach (GridTileBuildData structData in gridStructure.StructureList)
         {
@@ -54,14 +53,12 @@ public class GridStructureBehaviour : MonoBehaviour
             objectToBuildGridObj.X = structureGridX + structData.RelativeX;
             objectToBuildGridObj.Y = structureGridY + structData.RelativeY;
 
-
         }
 
-        if (destroyOnBuild)
+        if (destroyOnCompletion)
         {
             Destroy(gameObject);
         }
-
 
     }
 }

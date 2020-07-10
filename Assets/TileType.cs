@@ -35,6 +35,9 @@ public static class TileTypeDataDatabase
 
 public struct TileTypeData
 {
+    /// <summary>
+    /// Determines if multiple tiles of the same time can be in the same location.
+    /// </summary>
     public bool canExistMultiple;
     
 

@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Direction.cs" />
+    <Compile Include="Assets\Moveable.cs" />
+    <Compile Include="Assets\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\GameGrid.cs" />
     <Compile Include="Assets\Scripts\GameGridUtilities.cs" />
     <Compile Include="Assets\Scripts\GridObject.cs" />

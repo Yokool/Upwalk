@@ -15,10 +15,6 @@ public class GridStructureBehaviour : MonoBehaviour
     [Tooltip("Determines if the gameObject that this script is attached to should destroy itself once BuildItself finishes.")]
     private bool destroyOnCompletion = false;
 
-    private void Awake()
-    {
-        gridStructure.Init();
-    }
 
     private void Start()
     {

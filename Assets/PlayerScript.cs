@@ -37,7 +37,11 @@ public class PlayerScript : MonoBehaviour
             moveDirection = Direction.EAST;
         }
 
-        moveable.MoveObject(moveDirection);
+        if (!moveDirection.IsEmpty())
+        {
+            moveable.MoveObject(moveDirection);
+        }
+        
     }
 
 

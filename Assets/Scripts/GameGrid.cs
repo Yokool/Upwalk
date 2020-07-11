@@ -100,6 +100,16 @@ public class GameGrid : MonoBehaviour
         return ObjectsAt(gridObject.X, gridObject.Y);
     }
 
+    public Vector2 GridToWorldCoordinates(int X, int Y)
+    {
+        Vector2 returnVector = Vector2.zero;
+        returnVector.x = (X * GridX);
+        returnVector.y = (Y * GridY);
+
+        return returnVector;
+
+    }
+
 
     private void BuildSpawn()
     {

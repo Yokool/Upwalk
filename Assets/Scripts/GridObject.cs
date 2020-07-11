@@ -51,12 +51,27 @@ public class GridObject : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// GridPosition represent as a Vector2.
+    /// ReadOnly.
+    /// Use in situation when you want to mess with Vector2s and the gridPosition without having to construct new Vector2(X, Y).
+    /// </summary>
+    public Vector2 VectorGridPosition
+    {
+        get
+        {
+            return new Vector2(X, Y);
+        }
+    }
 
     private void UpdatePositionToGrid()
     {
         Vector3 position = gameObject.transform.position;
-        position.x = (X * GameGrid.INSTANCE.GridX);
-        position.y = (Y * GameGrid.INSTANCE.GridY);
+
+        Vector2 worldCoordinates = GameGrid.INSTANCE.GridToWorldCoordinates(X, Y);
+
+        position.x = worldCoordinates.x;
+        position.y = worldCoordinates.y;
         gameObject.transform.position = position;
     }
 

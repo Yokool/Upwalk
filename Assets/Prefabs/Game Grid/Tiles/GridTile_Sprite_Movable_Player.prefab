@@ -95,6 +95,11 @@ PrefabInstance:
       propertyPath: step
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7696808834809900256, guid: 52bcc469f2e3f114388831d82fb9bd96,
+        type: 3}
+      propertyPath: shouldLerp
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bcc469f2e3f114388831d82fb9bd96, type: 3}
 --- !u!1 &5738026143076330481 stripped

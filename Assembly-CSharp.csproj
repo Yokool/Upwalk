@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Direction.cs" />
-    <Compile Include="Assets\Moveable.cs" />
-    <Compile Include="Assets\PlayerScript.cs" />
+    <Compile Include="Assets\GridObjectSpawner.cs" />
+    <Compile Include="Assets\GridObjectTrigger.cs" />
     <Compile Include="Assets\Scripts\GameGrid.cs" />
     <Compile Include="Assets\Scripts\GameGridUtilities.cs" />
-    <Compile Include="Assets\Scripts\GridObject.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\GridObject.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Moveable.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\GridStructure.cs" />
     <Compile Include="Assets\Scripts\GridStructureBehaviour.cs" />
     <Compile Include="Assets\Scripts\GridTileBuildData.cs" />

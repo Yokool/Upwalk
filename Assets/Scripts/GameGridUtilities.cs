@@ -8,7 +8,7 @@ using UnityEngine;
 public class GameGridUtilities
 {
 
-    private Queue<GridObject> objectQueue = new Queue<GridObject>();
+    public Queue<GridObject> objectQueue = new Queue<GridObject>();
 
     private static GameGridUtilities instance;
     public static GameGridUtilities INSTANCE
@@ -25,21 +25,6 @@ public class GameGridUtilities
 
         }
     }
-    /// <summary>
-    /// Processes all entries AddEntries routed to the GameGrid.
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator StartProcessingRequests()
-    {
-        GameGrid instance = GameGrid.INSTANCE;
-        yield return new WaitUntil(() => { return instance != null; });
-        foreach (GridObject gridObject in objectQueue)
-        {
-            instance.AddEntry(gridObject);
-        }
-        yield break;
-    }
-
     /// <summary>
     /// Adds a GridObject into the GameGrid when it has
     /// not been yet Awaked. This is called from OnEnable
@@ -61,15 +46,14 @@ public class GameGridUtilities
     /// <param name="gridObject"></param>
     public void AddGridObjectOnStartup(GridObject gridObject)
     {
-        GameGrid grid = GameGrid.INSTANCE;
-        if (grid == null)
+        GameGrid gameGrid = GameGrid.INSTANCE;
+        if (gameGrid == null)
         {
             objectQueue.Enqueue(gridObject);
-            StartProcessingRequests(); // Try to process
             return;
         }
 
-        grid.AddEntry(gridObject);
+        gameGrid.AddEntry(gridObject);
 
 
     }

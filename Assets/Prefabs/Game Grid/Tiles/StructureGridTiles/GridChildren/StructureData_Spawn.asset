@@ -12,28 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf269b8c03345c0418b3c56e39e94d9a, type: 3}
   m_Name: StructureData_Spawn
   m_EditorClassIdentifier: 
-  StructureList:
-  - RelativeX: 0
-    RelativeY: 0
-    m_GameObject: {fileID: 8424643435616274219, guid: 81dbaf39c3290564684dd3866661727a,
-      type: 3}
-  - RelativeX: 1
-    RelativeY: 0
-    m_GameObject: {fileID: 8424643435616274219, guid: 81dbaf39c3290564684dd3866661727a,
-      type: 3}
-  - RelativeX: 2
-    RelativeY: 0
-    m_GameObject: {fileID: 8424643435616274219, guid: 81dbaf39c3290564684dd3866661727a,
-      type: 3}
-  - RelativeX: 1
-    RelativeY: 1
-    m_GameObject: {fileID: 8424643435616274219, guid: 81dbaf39c3290564684dd3866661727a,
-      type: 3}
-  - RelativeX: 2
-    RelativeY: 1
-    m_GameObject: {fileID: 8424643435616274219, guid: 81dbaf39c3290564684dd3866661727a,
-      type: 3}
-  - RelativeX: 3
-    RelativeY: 1
-    m_GameObject: {fileID: 8424643435616274219, guid: 81dbaf39c3290564684dd3866661727a,
-      type: 3}
+  StructureList: []

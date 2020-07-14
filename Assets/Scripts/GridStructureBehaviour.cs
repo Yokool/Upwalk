@@ -46,8 +46,8 @@ public class GridStructureBehaviour : MonoBehaviour
                 return;
             }
 
-            objectToBuildGridObj.X = structureGridX + structData.RelativeX;
-            objectToBuildGridObj.Y = structureGridY + structData.RelativeY;
+            objectToBuildGridObj.SetPosition(structureGridX + structData.RelativeX, structureGridY + structData.RelativeY);
+
 
         }
 

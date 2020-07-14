@@ -48,10 +48,10 @@ public class Moveable : MonoBehaviour
             StartCoroutine(LerpPosition(gridObject, directionVector));
             return;
         }
-        
 
-        gridObject.X += (int)directionVector.x;
-        gridObject.Y += (int)directionVector.y;
+
+        gridObject.SetPosition(gridObject.X + (int)directionVector.x, gridObject.Y + (int)directionVector.y);
+
 
     }
     
@@ -87,8 +87,9 @@ public class Moveable : MonoBehaviour
             {
                 // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
                 // even though we've already arrived.
-                gridObject.X += (int)gridDirectionVector.x;
-                gridObject.Y += (int)gridDirectionVector.y;
+
+                gridObject.SetPosition(gridObject.X + (int)gridDirectionVector.x, gridObject.Y + (int)gridDirectionVector.y);
+
                 break;
             }
 

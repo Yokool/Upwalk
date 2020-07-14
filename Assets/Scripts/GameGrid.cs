@@ -54,7 +54,8 @@ public class GameGrid : MonoBehaviour
 
     public void NotifyTriggers(GridObject gridObject)
     {
-        foreach(GridObject objectAt in ObjectsAtGridObjectFiltered(gridObject))
+        GridObject[] objects = GridObjectsAtObjectFiltered(gridObject);
+        foreach (GridObject objectAt in objects)
         {
 
             GridObjectTrigger trigger;
@@ -80,7 +81,7 @@ public class GameGrid : MonoBehaviour
             return;
         }
 
-        GridObject[] gridObjectsAtPosition = ObjectsAtGridObjectFiltered(gridObject);
+        GridObject[] gridObjectsAtPosition = GridObjectsAtObjectFiltered(gridObject);
 
         foreach(GridObject gridObjectAtPosition in gridObjectsAtPosition)
         {
@@ -124,7 +125,7 @@ public class GameGrid : MonoBehaviour
     /// <summary>
     /// Returns an array of all the objects at the position of the parameter gridObject that are NOT the gridObject in the parameter.
     /// </summary>
-    public GridObject[] ObjectsAtGridObjectFiltered(GridObject gridObject)
+    public GridObject[] GridObjectsAtObjectFiltered(GridObject gridObject)
     {
         GridObject[] objects = ObjectsAtGridObjectNoFilter(gridObject);
 

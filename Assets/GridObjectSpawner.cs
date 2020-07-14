@@ -28,8 +28,8 @@ public class GridObjectSpawner : MonoBehaviour
             return;
         }
 
-        instanceGridObject.X = gridObject.X;
-        instanceGridObject.Y = gridObject.Y;
+        instanceGridObject.SetPosition(gridObject.X, gridObject.Y);
+
 
     }
 

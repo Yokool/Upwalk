@@ -8,12 +8,12 @@ public class GridObjectTrigger : MonoBehaviour
     
     private GridObject gridObject;
 
-    [SerializeField]
     private TriggerCallback triggerCallback;
 
     private void OnEnable()
     {
         gridObject = GetComponent<GridObject>();
+        triggerCallback = GetComponent<TriggerCallback>();
     }
 
     public void NotifyTrigger(GridObject triggered)

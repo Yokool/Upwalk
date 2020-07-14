@@ -18,11 +18,6 @@ public class GridObject : MonoBehaviour
         {
             return x;
         }
-        set
-        {
-            x = value;
-            UpdatePositionToGrid();
-        }
     }
 
     public int Y
@@ -30,11 +25,6 @@ public class GridObject : MonoBehaviour
         get
         {
             return y;
-        }
-        set
-        {
-            y = value;
-            UpdatePositionToGrid();
         }
     }
 
@@ -51,18 +41,14 @@ public class GridObject : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// GridPosition represent as a Vector2.
-    /// ReadOnly.
-    /// Use in situation when you want to mess with Vector2s and the gridPosition without having to construct new Vector2(X, Y).
-    /// </summary>
-    public Vector2 VectorGridPosition
+    public void SetPosition(int X, int Y)
     {
-        get
-        {
-            return new Vector2(X, Y);
-        }
+        this.x = X;
+        this.y = Y;
+        UpdatePositionToGrid();
     }
+
+
 
     private void UpdatePositionToGrid()
     {

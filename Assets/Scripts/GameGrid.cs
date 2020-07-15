@@ -64,9 +64,10 @@ public class GameGrid : MonoBehaviour
             // Check if the object wasn't destroyed after we've gathered the objects.
             if (objectAt == null)
             {
-                Debug.LogError("NotifyTriggers caught an edge case: GridObjectsAtObjectFiltered contained a null reference, it's possible that the object got destroyed in the meantime.");
+                Debug.LogWarning("NotifyTriggers caught an edge case: GridObjectsAtObjectFiltered contained a null reference, it's possible that the object got destroyed in the meantime.");
+                RemoveEntry(objectAt);
                 continue;
-            };
+            }
 
             GridObjectTrigger trigger;
             objectAt.TryGetComponent<GridObjectTrigger>(out trigger);

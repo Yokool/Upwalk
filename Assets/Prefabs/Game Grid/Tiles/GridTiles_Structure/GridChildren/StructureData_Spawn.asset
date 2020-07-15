@@ -15,9 +15,25 @@ MonoBehaviour:
   StructureList:
   - RelativeX: 0
     RelativeY: 0
+    m_GameObject: {fileID: 1566869640364073058, guid: 0599b6de4026a414496969df1aca97dd,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: 0
     m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
       type: 3}
   - RelativeX: 1
+    RelativeY: 0
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 0
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 0
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
     RelativeY: 0
     m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
       type: 3}
@@ -25,7 +41,347 @@ MonoBehaviour:
     RelativeY: 0
     m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
       type: 3}
-  - RelativeX: 0
+  - RelativeX: -3
     RelativeY: 0
-    m_GameObject: {fileID: 1566869640364073058, guid: 0599b6de4026a414496969df1aca97dd,
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: 1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: 1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: 1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: 1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: -1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: -1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: -1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: -1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: -1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: -1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: -1
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: -2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: -2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: -2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: -2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: -2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: -2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: -2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: 2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: 2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: 2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: 2
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: 3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: 3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: 3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: 3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: -3
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: -4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: -4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: -4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: -4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: -4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: -4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: -4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: 4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: 4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: 4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: 4
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: 5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: 5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: 5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: 5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: -5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: -5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: -5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: -5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: -5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: -5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: -5
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: 6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: 6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: 6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: 6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 0
+    RelativeY: -6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: -6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: -6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: -6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: -6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: -6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: -6
+    m_GameObject: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
       type: 3}

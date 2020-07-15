@@ -24,9 +24,9 @@ public static class TileTypeDataDatabase
     {
         tileTypeDatabase = new Dictionary<TileType, TileTypeData>()
         {
-            {TileType.GROUND, new TileTypeData(false) },
-            {TileType.PLAYER, new TileTypeData(false) },
-            {TileType.SPAWN, new TileTypeData(true) }
+            {TileType.GROUND, new TileTypeData(false, 0) },
+            {TileType.PLAYER, new TileTypeData(false, 1) },
+            {TileType.SPAWN, new TileTypeData(true, 0) }
         };
     }
 
@@ -41,12 +41,13 @@ public struct TileTypeData
     /// Determines if multiple tiles of the same time can be in the same location.
     /// </summary>
     public bool canExistMultiple;
-    
 
+    public int spriteOrder;
 
-    public TileTypeData(bool canExistMultiple)
+    public TileTypeData(bool canExistMultiple, int spriteOrder)
     {
         this.canExistMultiple = canExistMultiple;
+        this.spriteOrder = spriteOrder;
     }
 
 }

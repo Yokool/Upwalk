@@ -6,7 +6,8 @@ public enum TileType
 {
     
     GROUND,
-    PLAYER
+    PLAYER,
+    SPAWN
 
 }
 
@@ -24,7 +25,8 @@ public static class TileTypeDataDatabase
         tileTypeDatabase = new Dictionary<TileType, TileTypeData>()
         {
             {TileType.GROUND, new TileTypeData(false) },
-            {TileType.PLAYER, new TileTypeData(false) }
+            {TileType.PLAYER, new TileTypeData(false) },
+            {TileType.SPAWN, new TileTypeData(true) }
         };
     }
 

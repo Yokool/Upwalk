@@ -43,20 +43,30 @@ public class GameGrid : MonoBehaviour
     [SerializeField]
     private GameObject spawnObject = null;
 
-
+    /// <summary>
+    /// Adds a GridObject entry inside the GameGrid system, which enables such object to be acknowledged by the GameGrid methods.
+    /// </summary>
+    /// <param name="gridObject"></param>
     public void AddEntry(GridObject gridObject)
     {
         gridObjects.AddLast(gridObject);
-
-        CheckForAndHandleIllegalOverlaps(gridObject);
-        NotifyTriggers(gridObject);
     }
 
+    /// <summary>
+    /// Triggers all GridObjectTriggers on the position of the gridObject in the parameter that are not the parameter itself.
+    /// </summary>
+    /// <param name="gridObject"></param>
     public void NotifyTriggers(GridObject gridObject)
     {
         GridObject[] objects = GridObjectsAtObjectFiltered(gridObject);
         foreach (GridObject objectAt in objects)
         {
+            // Check if the object wasn't destroyed after we've gathered the objects.
+            if (objectAt == null)
+            {
+                Debug.LogError("NotifyTriggers caught an edge case: GridObjectsAtObjectFiltered contained a null reference, it's possible that the object got destroyed in the meantime.");
+                continue;
+            };
 
             GridObjectTrigger trigger;
             objectAt.TryGetComponent<GridObjectTrigger>(out trigger);
@@ -71,6 +81,11 @@ public class GameGrid : MonoBehaviour
 
     }
     
+    /// <summary>
+    /// Checks for illegal duplicates that are on the same tile and destroys them in the benefit of the parameter object, essentially replacing
+    /// them.
+    /// </summary>
+    /// <param name="gridObject"></param>
     public void CheckForAndHandleIllegalOverlaps(GridObject gridObject)
     {
 
@@ -85,6 +100,13 @@ public class GameGrid : MonoBehaviour
 
         foreach(GridObject gridObjectAtPosition in gridObjectsAtPosition)
         {
+
+            if (gridObjectAtPosition == null)
+            {
+                Debug.LogWarning("CheckForAndHandleIllegalOverlaps caught an edge case: gridObjectsAtPosition contained a null object. Possible that it was destroyed in the meantime.");
+                continue;
+            }
+
             if(gridObjectAtPosition.m_TileType.Equals(gridObject.m_TileType))
             {
                 Destroy(gridObjectAtPosition.gameObject);

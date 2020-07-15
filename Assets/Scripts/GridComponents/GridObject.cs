@@ -12,6 +12,13 @@ public class GridObject : MonoBehaviour
     [SerializeField]
     private TileType m_tileType;
 
+    /// <summary>
+    /// Automatically initialize should be only used inside scene objects during testing as GridObjects should be spawned through code.
+    /// </summary>
+    [SerializeField]
+    [Tooltip("Should the Setup method be automatically called in OnEnable of this object and de-initialization in OnDisable.")]
+    private bool automaticallyEstablishAndDeestablish;
+
     public int X
     {
         get
@@ -41,7 +48,13 @@ public class GridObject : MonoBehaviour
         }
     }
 
-    public void SetPosition(int X, int Y)
+    /// <summary>
+    /// Sets the grid position of this object and automatically changes the world position of this gameObject to
+    /// reflect the change.
+    /// </summary>
+    /// <param name="X"></param>
+    /// <param name="Y"></param>
+    public void SetGridPosition(int X, int Y)
     {
         this.x = X;
         this.y = Y;
@@ -49,13 +62,13 @@ public class GridObject : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Updates the position of this gameObject by converting the grid coordinates of this object into world coordinates
+    /// and applying the to the world position of this object.
+    /// </summary>
     private void UpdatePositionToGrid()
     {
-        // Notify the gamegrid that we've changed our position and check for illegals
-        GameGrid.INSTANCE.CheckForAndHandleIllegalOverlaps(this);
-        GameGrid.INSTANCE.NotifyTriggers(this);
-
+        
         Vector3 position = gameObject.transform.position;
 
         Vector2 worldCoordinates = GameGrid.INSTANCE.GridToWorldCoordinates(X, Y);
@@ -64,10 +77,34 @@ public class GridObject : MonoBehaviour
         position.y = worldCoordinates.y;
         gameObject.transform.position = position;
     }
+    
+    /// <summary>
+    /// Establishes the GridObject in the GameGrid system. You should call this method after you've fully initialize the gameObject
+    /// that you intend to spawn.
+    /// </summary>
+    public void Establish()
+    {
+        GameGrid.INSTANCE.AddEntry(this);
+        ValidateObjectPosition();
+    }
+
+    /// <summary>
+    /// Validates the position of the object. If a conflict would arise, the validation goes in the benefit of the calling
+    /// object, deleting the objects standing in its way.
+    /// </summary>
+    public void ValidateObjectPosition()
+    {
+        GameGrid.INSTANCE.CheckForAndHandleIllegalOverlaps(this);
+        GameGrid.INSTANCE.NotifyTriggers(this);
+    }
 
 
     private void OnEnable()
     {
+        UpdatePositionToGrid();
+
+        if (!automaticallyEstablishAndDeestablish) return;
+
         GameGrid instance = GameGrid.INSTANCE;
         // Through the power of a uniunified initialization
         // order. We have to be aware of the scenario
@@ -77,6 +114,9 @@ public class GridObject : MonoBehaviour
 
     private void OnDisable()
     {
+
+        if (!automaticallyEstablishAndDeestablish) return;
+        
         // Check for recompiling scenarios. So there isn't an exception.
         // Unless there shouldn't be a scenario other than that
         // one that would indicate in this check running true.
@@ -84,15 +124,10 @@ public class GridObject : MonoBehaviour
         {
             return;
         }
+
+
         GameGrid.INSTANCE.RemoveEntry(this);
     }
 
-
-
-
-    void Start()
-    {
-        UpdatePositionToGrid();
-    }
 
 }

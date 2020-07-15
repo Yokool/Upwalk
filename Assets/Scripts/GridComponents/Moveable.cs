@@ -50,8 +50,8 @@ public class Moveable : MonoBehaviour
         }
 
 
-        gridObject.SetPosition(gridObject.X + (int)directionVector.x, gridObject.Y + (int)directionVector.y);
-
+        gridObject.SetGridPosition(gridObject.X + (int)directionVector.x, gridObject.Y + (int)directionVector.y);
+        gridObject.ValidateObjectPosition();
 
     }
     
@@ -88,7 +88,8 @@ public class Moveable : MonoBehaviour
                 // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
                 // even though we've already arrived.
 
-                gridObject.SetPosition(gridObject.X + (int)gridDirectionVector.x, gridObject.Y + (int)gridDirectionVector.y);
+                gridObject.SetGridPosition(gridObject.X + (int)gridDirectionVector.x, gridObject.Y + (int)gridDirectionVector.y);
+                gridObject.ValidateObjectPosition();
 
                 break;
             }

@@ -67,6 +67,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridTile_Structure_Spawn
       objectReference: {fileID: 0}
+    - target: {fileID: 3198526381716423854, guid: a7765f73c5209ef469a4e816582fe4b7,
+        type: 3}
+      propertyPath: x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198526381716423854, guid: a7765f73c5209ef469a4e816582fe4b7,
+        type: 3}
+      propertyPath: m_tileType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6280280545896700298, guid: a7765f73c5209ef469a4e816582fe4b7,
         type: 3}
       propertyPath: gridStructure

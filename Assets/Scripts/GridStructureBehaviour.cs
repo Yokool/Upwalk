@@ -27,34 +27,48 @@ public class GridStructureBehaviour : MonoBehaviour
 
     public void BuildItself()
     {
-        GridObject structureGridObject = GetComponent<GridObject>();
+        GridObject structureGridObject = gameObject.GetComponent<GridObject>();
         
 
         int structureGridX = structureGridObject.X;
         int structureGridY = structureGridObject.Y;
 
-        foreach (GridTileBuildData structData in gridStructure.StructureList)
+        // Save a list of references so we can enable all objects later once we disable them
+        GridObject[] instantiatedPrefabList = new GridObject[gridStructure.StructureList.Length];
+
+        for (int i = 0; i < gridStructure.StructureList.Length; ++i)
         {
+            GridTileBuildData structData = gridStructure.StructureList[i];
 
-            GameObject objectToBuild = Instantiate(structData.m_GameObject);
+            GameObject instantiatedPrefab = Instantiate(structData.m_GameObject);
 
-            GridObject objectToBuildGridObj = objectToBuild.GetComponent<GridObject>();
+            
+            GridObject instantiatedGridObject = instantiatedPrefab.GetComponent<GridObject>();
+            
+            instantiatedPrefabList[i] = instantiatedGridObject;
 
-            if (!objectToBuildGridObj)
+            if (instantiatedGridObject == null)
             {
                 Debug.LogError($"Object contained in {structData} does not have a GridObject mono behaviour attached to it.");
-                return;
+                continue;
             }
-
-            objectToBuildGridObj.SetPosition(structureGridX + structData.RelativeX, structureGridY + structData.RelativeY);
-
-
+            
+            instantiatedGridObject.SetGridPosition(structureGridX + structData.RelativeX, structureGridY + structData.RelativeY);
+            
+            
         }
-
+        
         if (destroyOnCompletion)
         {
             Destroy(gameObject);
         }
 
+        foreach(GridObject gridObject in instantiatedPrefabList)
+        {
+            gridObject.Establish();
+        }
+        
     }
+
+
 }

@@ -7,7 +7,8 @@ public enum TileType
     
     GROUND,
     PLAYER,
-    SPAWN
+    SPAWN,
+    WALL
 
 }
 
@@ -26,7 +27,8 @@ public static class TileTypeDataDatabase
         {
             {TileType.GROUND, new TileTypeData(false, 0) },
             {TileType.PLAYER, new TileTypeData(false, 1) },
-            {TileType.SPAWN, new TileTypeData(true, 0) }
+            {TileType.SPAWN, new TileTypeData(true, 0) },
+            {TileType.WALL, new TileTypeData(true, 1) }
         };
     }
 

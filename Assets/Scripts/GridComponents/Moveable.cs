@@ -37,7 +37,7 @@ public class Moveable : MonoBehaviour
         }
 
         // This represents the end position in GRID coordinates
-        Vector2 directionVector = GetUnitDirection(direction);
+        Vector2 directionVector = direction.GetUnitDirection();
 
         directionVector *= step;
 
@@ -103,36 +103,4 @@ public class Moveable : MonoBehaviour
 
     }
     
-
-    private Vector2 GetUnitDirection(Direction direction)
-    {
-
-        Vector2 unitVector = Vector2.zero;
-
-        if (direction.HasFlag(Direction.NORTH))
-        {
-            unitVector.y += 1f; // Floats are used to prevent implicit casting since unity vectors use floats
-        }
-        else if (direction.HasFlag(Direction.SOUTH))
-        {
-            unitVector.y -= 1f;
-        }
-
-        if (direction.HasFlag(Direction.EAST))
-        {
-            unitVector.x += 1f;
-        }
-        else if (direction.HasFlag(Direction.WEST))
-        {
-            unitVector.x -= 1f;
-        }
-
-
-        return unitVector;
-
-
-
-    }
-
-
 }

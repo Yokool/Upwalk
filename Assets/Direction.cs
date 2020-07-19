@@ -37,4 +37,47 @@ public static class DirectionExtension
         return (direction & (Direction.NORTH | Direction.SOUTH | Direction.EAST | Direction.WEST)) == Direction.NONE;
     }
 
+    public static Vector2 GetUnitDirection(this Direction direction)
+    {
+
+        Vector2 unitVector = Vector2.zero;
+
+        if (direction.HasFlag(Direction.NORTH))
+        {
+            unitVector.y += 1f; // Floats are used to prevent implicit casting since unity vectors use floats
+        }
+        else if (direction.HasFlag(Direction.SOUTH))
+        {
+            unitVector.y -= 1f;
+        }
+
+        if (direction.HasFlag(Direction.EAST))
+        {
+            unitVector.x += 1f;
+        }
+        else if (direction.HasFlag(Direction.WEST))
+        {
+            unitVector.x -= 1f;
+        }
+
+
+        return unitVector;
+
+
+
+    }
+
+    public static IEnumerable<Direction> EnumerateOverFlags(this Direction direction)
+    {
+        foreach(Enum value in Enum.GetValues(typeof(Direction)))
+        {
+
+            if (direction.HasFlag(value))
+            {
+                yield return (Direction)value;
+            }
+
+        }
+    }
+
 }

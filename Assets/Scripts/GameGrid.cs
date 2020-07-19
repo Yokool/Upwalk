@@ -39,6 +39,10 @@ public class GameGrid : MonoBehaviour
     /// </summary>
     private LinkedList<GridObject> gridObjects = new LinkedList<GridObject>();
 
+    /// <summary>
+    /// DEBUG!
+    /// </summary>
+    public LinkedList<GridObject> GridObjects => gridObjects;
 
     [SerializeField]
     private GameObject spawnObject = null;
@@ -50,6 +54,7 @@ public class GameGrid : MonoBehaviour
     public void AddEntry(GridObject gridObject)
     {
         gridObjects.AddLast(gridObject);
+        NotifyObservers(gridObject);
     }
 
     /// <summary>
@@ -79,6 +84,31 @@ public class GameGrid : MonoBehaviour
 
 
         }
+
+    }
+
+    public void NotifyObservers(GridObject gridObject)
+    {
+        GridObject[] surroundingObjects = GridObjectsAtRelativeSquare(gridObject);
+
+        foreach(GridObject surroundingObject in surroundingObjects)
+        {
+            if(surroundingObject == null)
+            {
+                Debug.LogWarning("NotifyObservers caught an edge case: gridObjectsAtPosition contained a null object. Possible that it was destroyed in the meantime.");
+                continue;
+            }
+
+
+            SurroundingsObserver observer = surroundingObject.GetComponent<SurroundingsObserver>();
+
+            if(observer != null)
+            {
+                observer.SurroundingsChanged(gridObject);
+            }
+
+        }
+
 
     }
     
@@ -207,6 +237,58 @@ public class GameGrid : MonoBehaviour
         }
         instance = this;
     }
+
+    public GridObject[] ObjectsAtRelative(GridObject gridObject, int X, int Y)
+    {
+        return ObjectsAt(gridObject.X + X, gridObject.Y + Y);
+    }
+
+    public GridObject[] ObjectsAtRelativeDirectional(GridObject gridObject, Direction direction)
+    {
+        if (direction.IsEmpty())
+        {
+            return new GridObject[0];
+        }
+        
+        
+        Vector2 gridVector = Vector2.zero;
+
+        foreach(Direction dir in direction.EnumerateOverFlags())
+        {
+            gridVector += dir.GetUnitDirection();
+        }
+
+        return ObjectsAtRelative(gridObject, (int)gridVector.x, (int)gridVector.y);
+
+    }
+    /// <summary>
+    /// Returns all gridObjects in a square around the parameter gridObject.
+    /// 
+    /// <para>The method does not return objects under the parameter.</para>
+    /// </summary>
+    /// <param name="gridObject"></param>
+    /// <returns></returns>
+    public GridObject[] GridObjectsAtRelativeSquare(GridObject gridObject)
+    {
+        // This is so unbelievably expensive, you're looping over the same list 8 times
+        // you could just gather a list of the coordinates and optimize it
+        GridObject[] N = ObjectsAtRelativeDirectional(gridObject, Direction.NORTH);
+        GridObject[] S = ObjectsAtRelativeDirectional(gridObject, Direction.SOUTH);
+        GridObject[] E = ObjectsAtRelativeDirectional(gridObject, Direction.EAST);
+        GridObject[] W = ObjectsAtRelativeDirectional(gridObject, Direction.WEST);
+
+        GridObject[] NE = ObjectsAtRelativeDirectional(gridObject, Direction.NORTH | Direction.EAST);
+        GridObject[] NW = ObjectsAtRelativeDirectional(gridObject, Direction.NORTH | Direction.WEST);
+
+        GridObject[] SE = ObjectsAtRelativeDirectional(gridObject, Direction.SOUTH | Direction.EAST);
+        GridObject[] SW = ObjectsAtRelativeDirectional(gridObject, Direction.SOUTH | Direction.WEST);
+
+        List<GridObject> result = new List<GridObject>();
+
+        return result.Concat(N).Concat(S).Concat(E).Concat(W).Concat(NE).Concat(NW).Concat(SE).Concat(SW).ToArray();
+
+    }
+
 
     private void ProcessEnqueuedObjects()
     {

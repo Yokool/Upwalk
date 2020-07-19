@@ -31,6 +31,8 @@ public static class GridSprites
     public static Sprite Wall_NEW;
     public static Sprite Wall_NSW;
     public static Sprite Wall_SW;
+    public static Sprite Wall_NW;
+    public static Sprite Wall_ES;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
     public static void LoadSprites()
@@ -41,8 +43,8 @@ public static class GridSprites
 
         Wall = Resources.Load<Sprite>("Wall/Wall");
         Wall_N = Resources.Load<Sprite>("Wall/Wall_N");
-        Wall_S = Resources.Load<Sprite>("Wall/Wall_S");
         Wall_E = Resources.Load<Sprite>("Wall/Wall_E");
+        Wall_S = Resources.Load<Sprite>("Wall/Wall_S");
         Wall_W = Resources.Load<Sprite>("Wall/Wall_W");
         Wall_EW = Resources.Load<Sprite>("Wall/Wall_EW");
         Wall_NS = Resources.Load<Sprite>("Wall/Wall_NS");
@@ -53,6 +55,8 @@ public static class GridSprites
         Wall_NEW = Resources.Load<Sprite>("Wall/Wall_NEW");
         Wall_NSW = Resources.Load<Sprite>("Wall/Wall_NSW");
         Wall_SW = Resources.Load<Sprite>("Wall/Wall_SW");
+        Wall_NW = Resources.Load<Sprite>("Wall/Wall_NW");
+        Wall_ES = Resources.Load<Sprite>("Wall/Wall_ES");
 
         Verify();
     }

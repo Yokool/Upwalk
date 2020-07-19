@@ -15,6 +15,16 @@ public class WallSpriteAdjuster : MonoBehaviour
     {
         gridObject = GetComponent<GridObject>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // This is very unreliable for objects who do not
+        // have their position already set when being enabled
+        // UpdateSprite is mostly managed through the observer callbacks
+        UpdateSprite();
+    }
+
+    [ContextMenu("UpdateSpriteTest")]
+    public void _UpdateSpriteTest()
+    {
         UpdateSprite();
     }
 

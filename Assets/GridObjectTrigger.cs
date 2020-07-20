@@ -8,12 +8,12 @@ public class GridObjectTrigger : MonoBehaviour
     
     private GridObject gridObject;
 
-    private TriggerCallback triggerCallback;
+    private ITriggerCallback triggerCallback;
 
     private void OnEnable()
     {
         gridObject = GetComponent<GridObject>();
-        triggerCallback = GetComponent<TriggerCallback>();
+        triggerCallback = GetComponent<ITriggerCallback>();
     }
 
     public void NotifyTrigger(GridObject triggered)
@@ -29,16 +29,4 @@ public class GridObjectTrigger : MonoBehaviour
 
 
     }
-}
-
-
-public interface TriggerCallback
-{
-    void HandleTrigger(TriggerEvent message);
-}
-
-public struct TriggerEvent
-{
-    public GridObject thisObject;
-    public GridObject trigerringObject;
 }

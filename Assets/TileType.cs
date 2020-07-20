@@ -25,10 +25,10 @@ public static class TileTypeDataDatabase
     {
         tileTypeDatabase = new Dictionary<TileType, TileTypeData>()
         {
-            {TileType.GROUND, new TileTypeData(false, 0) },
-            {TileType.PLAYER, new TileTypeData(false, 1) },
-            {TileType.SPAWN, new TileTypeData(true, 0) },
-            {TileType.WALL, new TileTypeData(true, 1) }
+            {TileType.GROUND, new TileTypeData(false, 0, true) },
+            {TileType.PLAYER, new TileTypeData(false, 1, false) },
+            {TileType.SPAWN, new TileTypeData(true, 0, true) },
+            {TileType.WALL, new TileTypeData(true, 1, false) }
         };
     }
 
@@ -46,10 +46,16 @@ public struct TileTypeData
 
     public int spriteOrder;
 
-    public TileTypeData(bool canExistMultiple, int spriteOrder)
+    /// <summary>
+    /// Determines if you can walk through the tile.
+    /// </summary>
+    public bool walkthrough;
+
+    public TileTypeData(bool canExistMultiple, int spriteOrder, bool walkthrough)
     {
         this.canExistMultiple = canExistMultiple;
         this.spriteOrder = spriteOrder;
+        this.walkthrough = walkthrough;
     }
 
 }

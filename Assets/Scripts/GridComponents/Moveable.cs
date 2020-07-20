@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -49,11 +50,25 @@ public class Moveable : MonoBehaviour
             return;
         }
 
+        int endX = gridObject.X + (int)directionVector.x;
+        int endY = gridObject.Y + (int)directionVector.y;
 
-        gridObject.SetGridPosition(gridObject.X + (int)directionVector.x, gridObject.Y + (int)directionVector.y);
-        gridObject.ValidateObjectPosition();
+        if(CanMoveTo(endX, endY))
+        {
+            gridObject.SetGridPosition(endX, endY);
+            gridObject.ValidateObjectPosition();
+        }
 
     }
+
+    public bool CanMoveTo(int X, int Y)
+    {
+        // Filter to all the ones we can't walk through and if there is one say no
+        return GameGrid.INSTANCE.ObjectsAt(X, Y).Where((gridObj) =>{
+            return !TileTypeDataDatabase.TileTypeDatabase[gridObj.m_TileType].walkthrough;
+        }).ToArray().Length == 0;
+    }
+
     
     /// <summary>
     /// Custom method that lerps a gridObject from its position to the end of a gridDirectionVector.
@@ -64,6 +79,15 @@ public class Moveable : MonoBehaviour
     /// </summary>
     private IEnumerator LerpPosition(GridObject objToLerp, Vector2 gridDirectionVector)
     {
+
+        int endX = gridObject.X + (int)gridDirectionVector.x;
+        int endY = gridObject.Y + (int)gridDirectionVector.y;
+
+        if (!CanMoveTo(endX, endY))
+        {
+            yield break;
+        }
+
         movementBlocked = true;
         Vector3 startPosition = objToLerp.transform.position;
         
@@ -72,6 +96,8 @@ public class Moveable : MonoBehaviour
 
         float lerpIncrement = 0.1f;
         float lerpNow = 0f;
+
+        
 
         // This is basically a FixedUpdate call done through a Coroutine
         while (true)
@@ -88,7 +114,7 @@ public class Moveable : MonoBehaviour
                 // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
                 // even though we've already arrived.
 
-                gridObject.SetGridPosition(gridObject.X + (int)gridDirectionVector.x, gridObject.Y + (int)gridDirectionVector.y);
+                gridObject.SetGridPosition(endX, endY);
                 gridObject.ValidateObjectPosition();
 
                 break;

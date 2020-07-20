@@ -63,13 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CloseGameTrigger.cs" />
     <Compile Include="Assets\Direction.cs" />
+    <Compile Include="Assets\GameLifetimeManager.cs" />
     <Compile Include="Assets\GridObjectSpawner.cs" />
     <Compile Include="Assets\GridObjectTrigger.cs" />
     <Compile Include="Assets\GridSprites.cs" />
     <Compile Include="Assets\GridTileSprite.cs" />
     <Compile Include="Assets\GroundTilesSpriteListProvider.cs" />
     <Compile Include="Assets\ISurroundingsChangedCallback.cs" />
+    <Compile Include="Assets\ITriggerCallback.cs" />
     <Compile Include="Assets\RandomSpriteRendererSprite.cs" />
     <Compile Include="Assets\Scripts\GameGrid.cs" />
     <Compile Include="Assets\Scripts\GameGridUtilities.cs" />
@@ -83,6 +86,7 @@
     <Compile Include="Assets\SpriteListProvider.cs" />
     <Compile Include="Assets\SurroundingsObserver.cs" />
     <Compile Include="Assets\TileType.cs" />
+    <Compile Include="Assets\TriggerEvent.cs" />
     <Compile Include="Assets\UpdateSpriteOnChange.cs" />
     <Compile Include="Assets\WallSpriteAdjuster.cs" />
     <Reference Include="UnityEngine">

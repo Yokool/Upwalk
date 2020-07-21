@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridStructure: {fileID: 0}
-  destroyOnBuild: 0
   buildOnCreate: 0
+  destroyOnCompletion: 0
 --- !u!1001 &1757186403173311879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,10 +87,15 @@ PrefabInstance:
       propertyPath: y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3747475881072189737, guid: 6c13d9e56f7071f43b79112e91ef700d,
+        type: 3}
+      propertyPath: m_tileType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3747475881072189742, guid: 6c13d9e56f7071f43b79112e91ef700d,
         type: 3}
       propertyPath: m_Name
-      value: StructureGridTile
+      value: Structure
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c13d9e56f7071f43b79112e91ef700d, type: 3}

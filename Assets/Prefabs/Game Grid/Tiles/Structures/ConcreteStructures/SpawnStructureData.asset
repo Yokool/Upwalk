@@ -385,3 +385,31 @@ MonoBehaviour:
     RelativeY: -6
     m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
       type: 3}
+  - RelativeX: 0
+    RelativeY: 7
+    m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: 7
+    m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
+      type: 3}
+  - RelativeX: 2
+    RelativeY: 7
+    m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
+      type: 3}
+  - RelativeX: 3
+    RelativeY: 7
+    m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 7
+    m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
+      type: 3}
+  - RelativeX: -2
+    RelativeY: 7
+    m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
+      type: 3}
+  - RelativeX: -3
+    RelativeY: 7
+    m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
+      type: 3}

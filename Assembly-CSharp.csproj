@@ -67,6 +67,7 @@
     <Compile Include="Assets\Direction.cs" />
     <Compile Include="Assets\GameLifetimeManager.cs" />
     <Compile Include="Assets\GridObjectSpawner.cs" />
+    <Compile Include="Assets\GridObjectSpawnerRandomExtension.cs" />
     <Compile Include="Assets\GridObjectTrigger.cs" />
     <Compile Include="Assets\GridSprites.cs" />
     <Compile Include="Assets\GridTileSprite.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\ISurroundingsChangedCallback.cs" />
     <Compile Include="Assets\ITriggerCallback.cs" />
     <Compile Include="Assets\RandomSpriteRendererSprite.cs" />
+    <Compile Include="Assets\RandomWeightUtility.cs" />
     <Compile Include="Assets\Scripts\GameGrid.cs" />
     <Compile Include="Assets\Scripts\GameGridUtilities.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GridObject.cs" />
@@ -82,13 +84,16 @@
     <Compile Include="Assets\Scripts\GridStructure.cs" />
     <Compile Include="Assets\Scripts\GridStructureBehaviour.cs" />
     <Compile Include="Assets\Scripts\GridTileBuildData.cs" />
-    <Compile Include="Assets\SpriteChance.cs" />
     <Compile Include="Assets\SpriteListProvider.cs" />
     <Compile Include="Assets\SurroundingsObserver.cs" />
     <Compile Include="Assets\TileType.cs" />
+    <Compile Include="Assets\TileTypeData.cs" />
+    <Compile Include="Assets\TileTypeDataDatabase.cs" />
     <Compile Include="Assets\TriggerEvent.cs" />
+    <Compile Include="Assets\TurnSystem.cs" />
     <Compile Include="Assets\UpdateSpriteOnChange.cs" />
     <Compile Include="Assets\WallSpriteAdjuster.cs" />
+    <Compile Include="Assets\WeightObjectTie.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

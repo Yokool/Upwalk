@@ -1,4 +1,6 @@
-﻿public interface ISpriteListProvider
+﻿using UnityEngine;
+
+public interface ISpriteListProvider
 {
-    SpriteChance[] GetSprites();
+    WeightObjectTie<Sprite>[] GetSprites();
 }

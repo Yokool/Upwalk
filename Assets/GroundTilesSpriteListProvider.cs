@@ -2,23 +2,23 @@
 
 public class GroundTilesSpriteListProvider : MonoBehaviour, ISpriteListProvider
 {
-    public SpriteChance[] GetSprites()
+    public WeightObjectTie<Sprite>[] GetSprites()
     {
-        return new SpriteChance[]
+        return new WeightObjectTie<Sprite>[]
         {
-            new SpriteChance()
+            new WeightObjectTie<Sprite>()
             {
-                sprite = GridSprites.Ground_Black,
+                weightedObject = GridSprites.Ground_Black,
                 weight = 20
             },
-            new SpriteChance()
+            new WeightObjectTie<Sprite>()
             {
-                sprite = GridSprites.Ground_Flowers,
+                weightedObject = GridSprites.Ground_Flowers,
                 weight = 1
             },
-            new SpriteChance()
+            new WeightObjectTie<Sprite>()
             {
-                sprite = GridSprites.Ground_WhiteStripes,
+                weightedObject = GridSprites.Ground_WhiteStripes,
                 weight = 1
             }
         };

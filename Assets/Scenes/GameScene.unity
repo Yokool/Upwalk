@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: GameCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,6 +254,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2083763413098315702, guid: 1585214959dd2834d9749b4a6231831f,
+        type: 3}
+      propertyPath: canGoThroughSolids
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083763413098315702, guid: 1585214959dd2834d9749b4a6231831f,
+        type: 3}
+      propertyPath: shouldLerp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083763413098315702, guid: 1585214959dd2834d9749b4a6231831f,
+        type: 3}
+      propertyPath: lerpIncrement
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2983141814542756720, guid: 1585214959dd2834d9749b4a6231831f,
         type: 3}
       propertyPath: m_Name

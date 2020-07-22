@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2b3dc7ff48e3a4782fb5e84f19804a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToSpawn: {fileID: 0}
+--- !u!114 &7489770892114652514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182489910621861804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cd3788750b6b74e8ec6ad50f661db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundPrefab: {fileID: 7490252894723015413, guid: 261efb99c68b27243986bd9af5fd1e19,
+    type: 3}
 --- !u!114 &8755293279464126007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +110,12 @@ PrefabInstance:
       propertyPath: destroyOnCompletion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6280280545896700298, guid: a7765f73c5209ef469a4e816582fe4b7,
+        type: 3}
+      propertyPath: gridStructure
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c18098d59173a34ca9d365d591d6416,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7765f73c5209ef469a4e816582fe4b7, type: 3}
 --- !u!1 &2182489910621861804 stripped

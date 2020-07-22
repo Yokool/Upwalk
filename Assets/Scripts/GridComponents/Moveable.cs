@@ -18,6 +18,11 @@ public class Moveable : MonoBehaviour
     /// </summary>
     private bool movementBlocked = false;
 
+    [SerializeField]
+    private bool canGoThroughSolids = false;
+
+    [SerializeField]
+    private float lerpIncrementor;
 
     private GridObject gridObject = null;
 
@@ -63,8 +68,9 @@ public class Moveable : MonoBehaviour
 
     public bool CanMoveTo(int X, int Y)
     {
+        // Can Go through solids or
         // Filter to all the ones we can't walk through and if there is one say no
-        return GameGrid.INSTANCE.ObjectsAt(X, Y).Where((gridObj) =>{
+        return canGoThroughSolids || GameGrid.INSTANCE.ObjectsAt(X, Y).Where((gridObj) =>{
             return !TileTypeDataDatabase.TileTypeDatabase[gridObj.m_TileType].walkthrough;
         }).ToArray().Length == 0;
     }
@@ -94,7 +100,6 @@ public class Moveable : MonoBehaviour
         // We have to walk from our gridPosition to the end of the gridDirectionVector and convert it to WorldPos
         Vector2 worldPositionEnd = GameGrid.INSTANCE.GridToWorldCoordinates((int)gridDirectionVector.x + objToLerp.X, (int)gridDirectionVector.y + objToLerp.Y);
 
-        float lerpIncrement = 0.1f;
         float lerpNow = 0f;
 
         
@@ -104,7 +109,7 @@ public class Moveable : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
 
-            lerpNow += lerpIncrement;
+            lerpNow += lerpIncrementor;
             lerpNow = Mathf.Clamp(lerpNow, 0f, 1f);
             objToLerp.gameObject.transform.position = Vector3.Lerp(startPosition, worldPositionEnd, lerpNow);
             

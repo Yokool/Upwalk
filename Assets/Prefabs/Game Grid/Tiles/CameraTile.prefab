@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1948190969106702934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983141814542756720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b5b5f7f572433469800239a668e98a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBetween: 3
+--- !u!114 &2083763413098315702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983141814542756720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd61fa6cac0e56043b2011773e692e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldLerp: 1
+  canGoThroughSolids: 1
+  lerpIncrementor: 0.05
+  step: 1
 --- !u!1001 &2118814817497746014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,10 +91,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3747475881072189737, guid: 6c13d9e56f7071f43b79112e91ef700d,
+        type: 3}
+      propertyPath: m_tileType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3747475881072189742, guid: 6c13d9e56f7071f43b79112e91ef700d,
         type: 3}
       propertyPath: m_Name
-      value: GridTile
+      value: CameraTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c13d9e56f7071f43b79112e91ef700d, type: 3}
+--- !u!1 &2983141814542756720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3747475881072189742, guid: 6c13d9e56f7071f43b79112e91ef700d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2118814817497746014}
+  m_PrefabAsset: {fileID: 0}

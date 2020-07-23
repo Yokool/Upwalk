@@ -112,6 +112,10 @@ public class GridObject : MonoBehaviour
         GameGridUtilities.INSTANCE.AddGridObjectOnStartup(this);
     }
 
+    private void OnDestroy()
+    {
+        GameGrid.INSTANCE.RemoveEntry(this);
+    }
     private void OnDisable()
     {
 

@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2b3dc7ff48e3a4782fb5e84f19804a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2365496842584993668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182489910621861804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8bd16916f6dbb49817e029280bee83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monk: {fileID: 3740049716114946714, guid: bf0ba553dd9a14e45bed3be9c3015d69, type: 3}
+  diamondGolem: {fileID: 3202803545267729646, guid: 12308ea8e959b3445816ea04ebbc510d,
+    type: 3}
+  eye: {fileID: 4276267863924940528, guid: 57f909f4a33e5aa4db9d4e3a741f7c7b, type: 3}
+  slug: {fileID: 8315101067992246579, guid: 21914ae0c78acf242b6b1d4b5dc73891, type: 3}
+  tower: {fileID: 2897584734998962385, guid: 31e815dec09f5fb44b6c56af4b90d0e3, type: 3}
 --- !u!114 &7489770892114652514
 MonoBehaviour:
   m_ObjectHideFlags: 0

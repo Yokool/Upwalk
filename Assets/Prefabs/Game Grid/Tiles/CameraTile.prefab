@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b5b5f7f572433469800239a668e98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetween: 3
+  secondsBetween: 0.4
 --- !u!114 &2083763413098315702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldLerp: 1
   canGoThroughSolids: 1
-  lerpIncrementor: 0.05
+  lerpIncrementor: 0.025
   step: 1
 --- !u!1001 &2118814817497746014
 PrefabInstance:

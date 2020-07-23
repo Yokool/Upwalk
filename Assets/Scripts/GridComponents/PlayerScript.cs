@@ -10,6 +10,21 @@ public class PlayerScript : MonoBehaviour
     private GridObject gridObject;
     private Moveable moveable;
 
+    [SerializeField]
+    private int health;
+
+    public int Health => health;
+
+    public void DamagePlayer(int amount)
+    {
+        health -= amount;
+    }
+
+    public void HealPlayer(int amount)
+    {
+        health += amount;
+    }
+
     private void Update()
     {
         InputMovePlayer();

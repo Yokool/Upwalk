@@ -14,7 +14,6 @@ public class DamagePlayerTrigger : MonoBehaviour, ITriggerCallback
             PlayerScript script;
             script = message.trigerringObject.gameObject.GetComponent<PlayerScript>();
 
-            Debug.Log($"TRIGGERED {message.trigerringObject}");
             if (script != null)
             {
                 script.DamagePlayer(1);

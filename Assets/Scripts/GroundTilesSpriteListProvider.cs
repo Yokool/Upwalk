@@ -8,17 +8,17 @@ public class GroundTilesSpriteListProvider : MonoBehaviour, ISpriteListProvider
         {
             new WeightObjectTie<Sprite>()
             {
-                weightedObject = GameSpritres.Ground_Black,
+                weightedObject = GameSprites.Ground_Black,
                 weight = 20
             },
             new WeightObjectTie<Sprite>()
             {
-                weightedObject = GameSpritres.Ground_Flowers,
+                weightedObject = GameSprites.Ground_Flowers,
                 weight = 1
             },
             new WeightObjectTie<Sprite>()
             {
-                weightedObject = GameSpritres.Ground_WhiteStripes,
+                weightedObject = GameSprites.Ground_WhiteStripes,
                 weight = 1
             }
         };

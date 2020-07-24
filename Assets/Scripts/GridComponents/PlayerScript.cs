@@ -41,12 +41,12 @@ public class PlayerScript : MonoBehaviour
 
     public void DamagePlayer(int amount)
     {
-        health -= amount;
+        Health -= amount;
     }
 
     public void HealPlayer(int amount)
     {
-        health += amount;
+        Health += amount;
     }
 
     private void Update()

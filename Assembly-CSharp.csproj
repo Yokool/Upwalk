@@ -86,7 +86,7 @@
     <Compile Include="Assets\Scripts\RandomSpriteRendererSprite.cs" />
     <Compile Include="Assets\Scripts\RandomWeightUtility.cs" />
     <Compile Include="Assets\Scripts\SpriteListProvider.cs" />
-    <Compile Include="Assets\Scripts\Static Globals\GameSpritres.cs" />
+    <Compile Include="Assets\Scripts\Static Globals\GameSprites.cs" />
     <Compile Include="Assets\Scripts\SurroundingsObserver.cs" />
     <Compile Include="Assets\Scripts\TileTriggers\CloseGameTrigger.cs" />
     <Compile Include="Assets\Scripts\TileTriggers\DamagePlayerTrigger.cs" />

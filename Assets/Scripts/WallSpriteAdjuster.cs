@@ -83,11 +83,11 @@ public class WallSpriteAdjuster : MonoBehaviour
         if (!assignedASprite)
         {
             // This is the default sprite, but assigning it is more clear
-            spriteRenderer.sprite = GameSpritres.Wall;
+            spriteRenderer.sprite = GameSprites.Wall;
             return;
         }
         
-        Sprite wallSprite = typeof(GameSpritres).GetField($"Wall_{suffix}").GetValue(null) as Sprite;
+        Sprite wallSprite = typeof(GameSprites).GetField($"Wall_{suffix}").GetValue(null) as Sprite;
 
         spriteRenderer.sprite = wallSprite;
 

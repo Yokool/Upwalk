@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class HealthImageUpdater : MonoBehaviour
 {
 
@@ -16,10 +17,17 @@ public class HealthImageUpdater : MonoBehaviour
         instance = this;
     }
 
+    private void OnEnable()
+    {
+        image = GetComponent<Image>();
+    }
+
     public void UpdateImage()
     {
         int health = PlayerScript.INSTANCE.Health;
-        image.sprite = typeof(GameSpritres).GetField($"Heart_{health}").GetValue(null) as Sprite;
+
+        string spriteName = $"Heart_{health}";
+        image.sprite = typeof(GameSprites).GetField(spriteName).GetValue(null) as Sprite;
     }
 
 }

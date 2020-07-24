@@ -13,7 +13,31 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private int health;
 
-    public int Health => health;
+    private static PlayerScript instance;
+    public static PlayerScript INSTANCE => instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public int Health
+    {
+        get
+        {
+            return health;
+        }
+        private set
+        {
+            health = value;
+            OnHealthChanged();
+        }
+    }
+
+    private void OnHealthChanged()
+    {
+        HealthImageUpdater.INSTANCE.UpdateImage();
+    }
 
     public void DamagePlayer(int amount)
     {

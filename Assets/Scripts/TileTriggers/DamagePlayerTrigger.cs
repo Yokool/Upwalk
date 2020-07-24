@@ -12,9 +12,10 @@ public class DamagePlayerTrigger : MonoBehaviour, ITriggerCallback
         {
             // This is the easiest way to check if the triggering object is the player
             PlayerScript script;
-            message.trigerringObject.TryGetComponent<PlayerScript>(out script);
+            script = message.trigerringObject.gameObject.GetComponent<PlayerScript>();
 
-            if(script != null)
+            Debug.Log($"TRIGGERED {message.trigerringObject}");
+            if (script != null)
             {
                 script.DamagePlayer(1);
             }

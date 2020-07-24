@@ -73,7 +73,7 @@ public class GameGrid : MonoBehaviour
             }
 
             GridObjectTrigger trigger;
-            objectAt.TryGetComponent<GridObjectTrigger>(out trigger);
+            trigger = objectAt.GetComponent<GridObjectTrigger>();
 
             if(trigger != null)
             {

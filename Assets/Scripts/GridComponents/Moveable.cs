@@ -42,27 +42,18 @@ public class Moveable : MonoBehaviour
             return;
         }
 
-        // This represents the end position in GRID coordinates
-        Vector2 directionVector = direction.GetUnitDirection();
-
-        directionVector *= step;
-
-        
         if (shouldLerp)
         {
             // Convert the grid coordinates into WORLD position
-            StartCoroutine(LerpPosition(gridObject, directionVector));
+            StartCoroutine(PerformMoveObjectLerp(gridObject, direction));
             return;
         }
-
-        int endX = gridObject.X + (int)directionVector.x;
-        int endY = gridObject.Y + (int)directionVector.y;
-
-        if(CanMoveTo(endX, endY))
+        else
         {
-            gridObject.SetGridPosition(endX, endY);
-            gridObject.ValidateObjectPosition();
+            PerformMoveObject(direction);
         }
+
+        
 
     }
 
@@ -75,7 +66,21 @@ public class Moveable : MonoBehaviour
         }).ToArray().Length == 0;
     }
 
-    
+    private void PerformMoveObject(Direction direction)
+    {
+        // This represents the end position in GRID coordinates
+        Vector2 directionVector = direction.GetUnitDirection();
+
+        int endX = gridObject.X + (int)directionVector.x;
+        int endY = gridObject.Y + (int)directionVector.y;
+
+        directionVector *= step;
+
+        gridObject.SetGridPosition(endX, endY);
+        gridObject.ValidateObjectPosition();
+
+    }
+
     /// <summary>
     /// Custom method that lerps a gridObject from its position to the end of a gridDirectionVector.
     /// 
@@ -83,18 +88,16 @@ public class Moveable : MonoBehaviour
     /// LerpIncrement is fixed at the time of writing this doc.
     /// 
     /// </summary>
-    private IEnumerator LerpPosition(GridObject objToLerp, Vector2 gridDirectionVector)
+    private IEnumerator PerformMoveObjectLerp(GridObject objToLerp, Direction direction)
     {
+        // This represents the end position in GRID coordinates
+        Vector2 gridDirectionVector = direction.GetUnitDirection();
 
         int endX = gridObject.X + (int)gridDirectionVector.x;
         int endY = gridObject.Y + (int)gridDirectionVector.y;
 
-        if (!CanMoveTo(endX, endY))
-        {
-            yield break;
-        }
-
         movementBlocked = true;
+
         Vector3 startPosition = objToLerp.transform.position;
         
         // We have to walk from our gridPosition to the end of the gridDirectionVector and convert it to WorldPos
@@ -102,13 +105,11 @@ public class Moveable : MonoBehaviour
 
         float lerpNow = 0f;
 
-        
 
         // This is basically a FixedUpdate call done through a Coroutine
         while (true)
         {
             yield return new WaitForFixedUpdate();
-
             lerpNow += lerpIncrementor;
             lerpNow = Mathf.Clamp(lerpNow, 0f, 1f);
             objToLerp.gameObject.transform.position = Vector3.Lerp(startPosition, worldPositionEnd, lerpNow);
@@ -118,15 +119,12 @@ public class Moveable : MonoBehaviour
             {
                 // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
                 // even though we've already arrived.
-
                 gridObject.SetGridPosition(endX, endY);
                 gridObject.ValidateObjectPosition();
-
                 break;
             }
 
         }
-
         movementBlocked = false;
         yield break;
 

@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\HealthImageUpdater.cs" />
     <Compile Include="Assets\Scripts\Direction.cs" />
     <Compile Include="Assets\Scripts\GameLifetimeManager.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GameGrid.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="Assets\Scripts\RandomSpriteRendererSprite.cs" />
     <Compile Include="Assets\Scripts\RandomWeightUtility.cs" />
     <Compile Include="Assets\Scripts\SpriteListProvider.cs" />
-    <Compile Include="Assets\Scripts\Static Globals\GridSprites.cs" />
+    <Compile Include="Assets\Scripts\Static Globals\GameSpritres.cs" />
     <Compile Include="Assets\Scripts\SurroundingsObserver.cs" />
     <Compile Include="Assets\Scripts\TileTriggers\CloseGameTrigger.cs" />
     <Compile Include="Assets\Scripts\TileTriggers\DamagePlayerTrigger.cs" />

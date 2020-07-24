@@ -57,17 +57,17 @@ public class GridStructureBehaviour : MonoBehaviour
             
             
         }
-        
+
+        foreach (GridObject gridObject in instantiatedPrefabList)
+        {
+            gridObject.Establish();
+        }
+
         if (destroyOnCompletion)
         {
             Destroy(gameObject);
         }
 
-        foreach(GridObject gridObject in instantiatedPrefabList)
-        {
-            gridObject.Establish();
-        }
-        
     }
 
 

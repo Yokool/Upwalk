@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GridObject))]
 public class GridStructureBehaviour : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +16,13 @@ public class GridStructureBehaviour : MonoBehaviour
     [Tooltip("Determines if the gameObject that this script is attached to should destroy itself once BuildItself finishes.")]
     private bool destroyOnCompletion = false;
 
+
+    private IOnGridObjectInstantiation[] onGridObjectInstatiation;
+
+    private void OnEnable()
+    {
+        onGridObjectInstatiation = GetComponents<IOnGridObjectInstantiation>();
+    }
 
     private void Start()
     {
@@ -58,10 +66,17 @@ public class GridStructureBehaviour : MonoBehaviour
             
         }
 
-        foreach (GridObject gridObject in instantiatedPrefabList)
+        foreach (GridObject instantiatedGridObject in instantiatedPrefabList)
         {
-            gridObject.Establish();
+            instantiatedGridObject.Establish();
+
+            foreach(IOnGridObjectInstantiation onInstantiationCallback in onGridObjectInstatiation)
+            {
+                onInstantiationCallback.OnInstantation(structureGridObject, instantiatedGridObject);
+            }
+
         }
+
 
         if (destroyOnCompletion)
         {
@@ -69,6 +84,5 @@ public class GridStructureBehaviour : MonoBehaviour
         }
 
     }
-
 
 }

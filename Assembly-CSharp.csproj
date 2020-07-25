@@ -74,8 +74,10 @@
     <Compile Include="Assets\Scripts\GridComponents\GridStructureBehaviour.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GridTileSprite.cs" />
     <Compile Include="Assets\Scripts\GridComponents\IObjectArrivalCallback.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\IOnGridObjectInstantiation.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Moveable.cs" />
     <Compile Include="Assets\Scripts\GridComponents\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\TieToParentOnGridObjectInstantiation.cs" />
     <Compile Include="Assets\Scripts\GridObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\GridObjectSpawnerRandomExtension.cs" />
     <Compile Include="Assets\Scripts\GridStructure.cs" />
@@ -99,14 +101,16 @@
     <Compile Include="Assets\Scripts\TileTypeData.cs" />
     <Compile Include="Assets\Scripts\TileTypeDataDatabase.cs" />
     <Compile Include="Assets\Scripts\TriggerEvent.cs" />
-    <Compile Include="Assets\Scripts\Turn.cs" />
-    <Compile Include="Assets\Scripts\TurnSystem.cs" />
+    <Compile Include="Assets\Scripts\Turn System\IOnNextTurn_Callback.cs" />
+    <Compile Include="Assets\Scripts\Turn System\OnNextTurnCallback_Base.cs" />
+    <Compile Include="Assets\Scripts\Turn System\Turn.cs" />
+    <Compile Include="Assets\Scripts\Turn System\TurnSystem.cs" />
     <Compile Include="Assets\Scripts\UpdateSpriteOnChange.cs" />
     <Compile Include="Assets\Scripts\Utilities\GameGridUtilities.cs" />
     <Compile Include="Assets\Scripts\WallSpriteAdjuster.cs" />
-    <Compile Include="Assets\Scripts\WeightObjectTie.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\EnemyWeightedObjectProvider.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\GroundWeightedObjectProvider.cs" />
+    <Compile Include="Assets\Scripts\WeightedObject\WeightObjectTie.cs" />
     <Compile Include="Assets\TurnImageManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

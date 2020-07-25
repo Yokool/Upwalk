@@ -5,15 +5,15 @@ using UnityEngine;
 public class EnemyWeightedObjectProvider : MonoBehaviour, IWeightedObjectProvider<GameObject>
 {
     [SerializeField]
-    private GameObject monk;
+    private GameObject monk = null;
     [SerializeField]
-    private GameObject diamondGolem;
+    private GameObject diamondGolem = null;
     [SerializeField]
-    private GameObject eye;
+    private GameObject eye = null;
     [SerializeField]
-    private GameObject slug;
+    private GameObject slug = null;
     [SerializeField]
-    private GameObject tower;
+    private GameObject tower = null;
 
     public WeightObjectTie<GameObject>[] GetWeightedObjects()
     {

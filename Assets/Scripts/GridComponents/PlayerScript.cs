@@ -30,23 +30,31 @@ public class PlayerScript : MonoBehaviour
         private set
         {
             health = value;
-            OnHealthChanged();
         }
     }
 
     private void OnHealthChanged()
     {
-        HealthImageUpdater.INSTANCE.UpdateImage();
+        if(Health <= 0)
+        {
+            GameLifetimeManager.INSTANCE.OnPlayerDeath();
+        }
+        else
+        {
+            HealthImageUpdater.INSTANCE.UpdateImage();
+        }
     }
 
     public void DamagePlayer(int amount)
     {
         Health -= amount;
+        OnHealthChanged();
     }
 
     public void HealPlayer(int amount)
     {
         Health += amount;
+        OnHealthChanged();
     }
 
     private void Update()

@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\HealthImageUpdater.cs" />
+    <Compile Include="Assets\NextTurnOnArrival.cs" />
     <Compile Include="Assets\Scripts\Direction.cs" />
     <Compile Include="Assets\Scripts\GameLifetimeManager.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GameGrid.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\GridComponents\GridObjectTrigger.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GridStructureBehaviour.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GridTileSprite.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\IObjectArrivalCallback.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Moveable.cs" />
     <Compile Include="Assets\Scripts\GridComponents\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\GridObjectSpawner.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Assets\Scripts\TileTypeData.cs" />
     <Compile Include="Assets\Scripts\TileTypeDataDatabase.cs" />
     <Compile Include="Assets\Scripts\TriggerEvent.cs" />
+    <Compile Include="Assets\Scripts\Turn.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
     <Compile Include="Assets\Scripts\UpdateSpriteOnChange.cs" />
     <Compile Include="Assets\Scripts\Utilities\GameGridUtilities.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="Assets\Scripts\WeightObjectTie.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\EnemyWeightedObjectProvider.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\GroundWeightedObjectProvider.cs" />
+    <Compile Include="Assets\TurnImageManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

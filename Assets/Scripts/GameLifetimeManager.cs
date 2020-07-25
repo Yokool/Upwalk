@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLifetimeManager : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class GameLifetimeManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         instance = this;
+    }
+
+    public void OnPlayerDeath()
+    {
+
     }
 
     public void StartGame()

@@ -39,6 +39,12 @@ public static class GameSprites
     public static Sprite Heart_1;
     public static Sprite Heart_0;
 
+    public static Sprite Turn_Easy;
+    public static Sprite Turn_Medium;
+    public static Sprite Turn_Hard;
+    public static Sprite Turn_Full;
+
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
     public static void LoadSprites()
     {
@@ -67,6 +73,11 @@ public static class GameSprites
         Heart_2 = Resources.Load<Sprite>("Hearts/Heart_2");
         Heart_1 = Resources.Load<Sprite>("Hearts/Heart_1");
         Heart_0 = Resources.Load<Sprite>("Hearts/Heart_0");
+
+        Turn_Easy = Resources.Load<Sprite>("Turns/Turn_Easy");
+        Turn_Medium = Resources.Load<Sprite>("Turns/Turn_Medium");
+        Turn_Hard = Resources.Load<Sprite>("Turns/Turn_Hard");
+        Turn_Full = Resources.Load<Sprite>("Turns/Turn_Full");
 
         Verify();
     }

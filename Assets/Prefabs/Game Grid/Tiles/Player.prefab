@@ -91,6 +91,18 @@ MonoBehaviour:
   canGoThroughSolids: 0
   lerpIncrementor: 0.1
   step: 1
+--- !u!114 &-5182383740069930628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566869640364073058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4dedd03b28d3046a9134bbaa3cc61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2431687438970143052
 PrefabInstance:
   m_ObjectHideFlags: 0

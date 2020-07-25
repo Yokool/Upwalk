@@ -29,10 +29,13 @@ public class Moveable : MonoBehaviour
     [SerializeField]
     private int step = 0;
 
+    private IObjectArrivalCallback[] objectArrivalCallbacks;
+
 
     private void OnEnable()
     {
         gridObject = GetComponent<GridObject>();
+        objectArrivalCallbacks = GetComponents<IObjectArrivalCallback>();
     }
 
     public void MoveObject(Direction direction)
@@ -74,11 +77,26 @@ public class Moveable : MonoBehaviour
         int endX = gridObject.X + (int)directionVector.x;
         int endY = gridObject.Y + (int)directionVector.y;
 
+        if(!CanMoveTo(endX, endY))
+        {
+            return;
+        }
+
         directionVector *= step;
 
         gridObject.SetGridPosition(endX, endY);
-        gridObject.ValidateObjectPosition();
+        OnObjectArrivalCallback();
 
+    }
+
+
+    private void OnObjectArrivalCallback()
+    {
+        gridObject.ValidateObjectPosition();
+        foreach (IObjectArrivalCallback objectArrivalCallback in objectArrivalCallbacks)
+        {
+            objectArrivalCallback.ObjectArrived();
+        }
     }
 
     /// <summary>
@@ -95,6 +113,11 @@ public class Moveable : MonoBehaviour
 
         int endX = gridObject.X + (int)gridDirectionVector.x;
         int endY = gridObject.Y + (int)gridDirectionVector.y;
+
+        if (!CanMoveTo(endX, endY))
+        {
+            yield break;
+        }
 
         movementBlocked = true;
 
@@ -120,7 +143,7 @@ public class Moveable : MonoBehaviour
                 // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
                 // even though we've already arrived.
                 gridObject.SetGridPosition(endX, endY);
-                gridObject.ValidateObjectPosition();
+                OnObjectArrivalCallback();
                 break;
             }
 

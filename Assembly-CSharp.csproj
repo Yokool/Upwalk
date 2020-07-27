@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\HealthImageUpdater.cs" />
+    <Compile Include="Assets\IteratorStruct.cs" />
     <Compile Include="Assets\NextTurnOnArrival.cs" />
     <Compile Include="Assets\Scripts\Direction.cs" />
     <Compile Include="Assets\Scripts\GameLifetimeManager.cs" />
@@ -74,10 +75,11 @@
     <Compile Include="Assets\Scripts\GridComponents\GridStructureBehaviour.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GridTileSprite.cs" />
     <Compile Include="Assets\Scripts\GridComponents\IObjectArrivalCallback.cs" />
-    <Compile Include="Assets\Scripts\GridComponents\IOnGridObjectInstantiation.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\IOnGridObjectStructureInstantation.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Moveable.cs" />
     <Compile Include="Assets\Scripts\GridComponents\PlayerScript.cs" />
-    <Compile Include="Assets\Scripts\GridComponents\TieToParentOnGridObjectInstantiation.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\TieInstantiatedObjectToParentOnGridObjectInstantiation.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\TieInstantiatedTilesToEnemySublistOnGridObjectInstantiation.cs" />
     <Compile Include="Assets\Scripts\GridObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\GridObjectSpawnerRandomExtension.cs" />
     <Compile Include="Assets\Scripts\GridStructure.cs" />
@@ -111,6 +113,8 @@
     <Compile Include="Assets\Scripts\WeightedObject\EnemyWeightedObjectProvider.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\GroundWeightedObjectProvider.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\WeightObjectTie.cs" />
+    <Compile Include="Assets\TileIterator.cs" />
+    <Compile Include="Assets\TileMoverBase.cs" />
     <Compile Include="Assets\TurnImageManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

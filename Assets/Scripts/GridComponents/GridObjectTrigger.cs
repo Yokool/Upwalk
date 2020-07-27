@@ -27,6 +27,5 @@ public class GridObjectTrigger : MonoBehaviour
 
         triggerCallback.HandleTrigger(triggerEvent);
 
-
     }
 }

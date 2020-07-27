@@ -77,6 +77,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0801f3335494d67479336216af7ea17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4211895284188974096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818846995640131143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93c53b155780774a9f9e6f88c2a57d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 0}
 --- !u!114 &4846718201622231317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +106,7 @@ MonoBehaviour:
   canGoThroughSolids: 0
   lerpIncrementor: 0.1
   step: 1
---- !u!114 &-1152769916237357583
+--- !u!114 &8246636089203835431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,9 +115,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7818846995640131143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f00e22e2152924bb046f069ec61657, type: 3}
+  m_Script: {fileID: 11500000, guid: e85816f08db2bc24dabb9e3259ed1f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  associatedTurnType: 0
 --- !u!1001 &6378129100785352553
 PrefabInstance:
   m_ObjectHideFlags: 0

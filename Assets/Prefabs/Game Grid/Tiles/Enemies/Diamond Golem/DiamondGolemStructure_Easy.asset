@@ -15,17 +15,17 @@ MonoBehaviour:
   StructureList:
   - RelativeX: 1
     RelativeY: 0
-    m_GameObject: {fileID: 4746210045077273812, guid: d40a888eb709fa94cb213ca798b9d213,
+    m_GameObject: {fileID: 6698085507799053483, guid: 52057b6e40f5d7042bb1548fe3398ec8,
       type: 3}
   - RelativeX: -1
     RelativeY: 0
-    m_GameObject: {fileID: 4746210045077273812, guid: d40a888eb709fa94cb213ca798b9d213,
+    m_GameObject: {fileID: 6698085507799053483, guid: bad7909a4f9fbe54c86e8bfc5d832f36,
       type: 3}
   - RelativeX: 0
     RelativeY: 1
-    m_GameObject: {fileID: 4746210045077273812, guid: d40a888eb709fa94cb213ca798b9d213,
+    m_GameObject: {fileID: 4413047135796940404, guid: 762338421a92ce248a0cb7ac39771ebf,
       type: 3}
   - RelativeX: 0
     RelativeY: -1
-    m_GameObject: {fileID: 4746210045077273812, guid: d40a888eb709fa94cb213ca798b9d213,
+    m_GameObject: {fileID: 6698085507799053483, guid: 2238c92301028cd4994f5d026f538dd3,
       type: 3}

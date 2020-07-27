@@ -17,12 +17,6 @@ public class GridStructureBehaviour : MonoBehaviour
     private bool destroyOnCompletion = false;
 
 
-    private IOnGridObjectInstantiation[] onGridObjectInstatiation;
-
-    private void OnEnable()
-    {
-        onGridObjectInstatiation = GetComponents<IOnGridObjectInstantiation>();
-    }
 
     private void Start()
     {
@@ -70,7 +64,8 @@ public class GridStructureBehaviour : MonoBehaviour
         {
             instantiatedGridObject.Establish();
 
-            foreach(IOnGridObjectInstantiation onInstantiationCallback in onGridObjectInstatiation)
+            IOnGridObjectStructureInstantation[] onGridObjectStructureInstantations = instantiatedGridObject.GetComponents<IOnGridObjectStructureInstantation>();
+            foreach (IOnGridObjectStructureInstantation onInstantiationCallback in onGridObjectStructureInstantations)
             {
                 onInstantiationCallback.OnInstantation(structureGridObject, instantiatedGridObject);
             }

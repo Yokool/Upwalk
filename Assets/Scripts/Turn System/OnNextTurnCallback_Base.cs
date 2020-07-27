@@ -6,16 +6,11 @@ public class OnNextTurnCallback_Base : MonoBehaviour
     [SerializeField]
     private Turn associatedTurnType;
 
-    private IOnNextTurn_Callback nextTurnCallback;
-
-    public void OnNextTurn()
-    {
-        nextTurnCallback.OnNextTurn();
-    }
+    private IOnNextTurn_Callback[] nextTurnCallbacks;
 
     private void OnEnable()
     {
-        nextTurnCallback = GetComponent<IOnNextTurn_Callback>();
+        nextTurnCallbacks = GetComponents<IOnNextTurn_Callback>();
         RegisterItself();
     }
 
@@ -26,12 +21,18 @@ public class OnNextTurnCallback_Base : MonoBehaviour
 
     private void RegisterItself()
     {
-        TurnSystem.INSTANCE.RegisterNextTurnCallback(associatedTurnType, nextTurnCallback);
+        foreach(IOnNextTurn_Callback nextTurnCallback in nextTurnCallbacks)
+        {
+            TurnSystem.INSTANCE.RegisterNextTurnCallback(associatedTurnType, nextTurnCallback);
+        }
     }
 
     private void UnregisterItself()
     {
-        TurnSystem.INSTANCE.UnregisterNextTurnCallback(associatedTurnType, nextTurnCallback);
+        foreach (IOnNextTurn_Callback nextTurnCallback in nextTurnCallbacks)
+        {
+            TurnSystem.INSTANCE.UnregisterNextTurnCallback(associatedTurnType, nextTurnCallback);
+        }
     }
 
 }

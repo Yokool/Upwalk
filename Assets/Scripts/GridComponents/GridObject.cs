@@ -18,7 +18,7 @@ public class GridObject : MonoBehaviour
     [SerializeField]
     [Tooltip("Should the Setup method be automatically called in OnEnable of this object and de-initialization in OnDisable.")]
     private bool automaticallyEstablishAndDeestablish;
-
+    
     public int X
     {
         get

@@ -63,9 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HealthImageUpdater.cs" />
-    <Compile Include="Assets\IteratorStruct.cs" />
-    <Compile Include="Assets\NextTurnOnArrival.cs" />
     <Compile Include="Assets\Scripts\Direction.cs" />
     <Compile Include="Assets\Scripts\GameLifetimeManager.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GameGrid.cs" />
@@ -85,15 +82,20 @@
     <Compile Include="Assets\Scripts\GridStructure.cs" />
     <Compile Include="Assets\Scripts\GridTileBuildData.cs" />
     <Compile Include="Assets\Scripts\GroundTilesSpriteListProvider.cs" />
+    <Compile Include="Assets\Scripts\HealthImageUpdater.cs" />
     <Compile Include="Assets\Scripts\ISurroundingsChangedCallback.cs" />
     <Compile Include="Assets\Scripts\ITriggerCallback.cs" />
     <Compile Include="Assets\Scripts\IWeightedObjectProvider.cs" />
+    <Compile Include="Assets\Scripts\IteratorStruct.cs" />
+    <Compile Include="Assets\Scripts\NextTurnOnArrival.cs" />
     <Compile Include="Assets\Scripts\RandomSpawnerAcknowledger.cs" />
     <Compile Include="Assets\Scripts\RandomSpriteRendererSprite.cs" />
     <Compile Include="Assets\Scripts\RandomWeightUtility.cs" />
     <Compile Include="Assets\Scripts\SpriteListProvider.cs" />
     <Compile Include="Assets\Scripts\Static Globals\GameSprites.cs" />
     <Compile Include="Assets\Scripts\SurroundingsObserver.cs" />
+    <Compile Include="Assets\Scripts\TileIterator.cs" />
+    <Compile Include="Assets\Scripts\TileMoverBase.cs" />
     <Compile Include="Assets\Scripts\TileTriggers\CloseGameTrigger.cs" />
     <Compile Include="Assets\Scripts\TileTriggers\DamagePlayerTrigger.cs" />
     <Compile Include="Assets\Scripts\TileTriggers\EnemyBehaviour.cs" />
@@ -107,15 +109,13 @@
     <Compile Include="Assets\Scripts\Turn System\OnNextTurnCallback_Base.cs" />
     <Compile Include="Assets\Scripts\Turn System\Turn.cs" />
     <Compile Include="Assets\Scripts\Turn System\TurnSystem.cs" />
+    <Compile Include="Assets\Scripts\TurnImageManager.cs" />
     <Compile Include="Assets\Scripts\UpdateSpriteOnChange.cs" />
     <Compile Include="Assets\Scripts\Utilities\GameGridUtilities.cs" />
     <Compile Include="Assets\Scripts\WallSpriteAdjuster.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\EnemyWeightedObjectProvider.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\GroundWeightedObjectProvider.cs" />
     <Compile Include="Assets\Scripts\WeightedObject\WeightObjectTie.cs" />
-    <Compile Include="Assets\TileIterator.cs" />
-    <Compile Include="Assets\TileMoverBase.cs" />
-    <Compile Include="Assets\TurnImageManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

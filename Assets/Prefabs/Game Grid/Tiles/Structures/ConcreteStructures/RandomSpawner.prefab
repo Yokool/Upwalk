@@ -24,10 +24,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8bd16916f6dbb49817e029280bee83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monk: {fileID: 3740049716114946714, guid: bf0ba553dd9a14e45bed3be9c3015d69, type: 3}
-  diamondGolem: {fileID: 3202803545267729646, guid: 12308ea8e959b3445816ea04ebbc510d,
+  monk_Easy: {fileID: 3740049716114946714, guid: bf0ba553dd9a14e45bed3be9c3015d69,
     type: 3}
-  eye: {fileID: 4276267863924940528, guid: 57f909f4a33e5aa4db9d4e3a741f7c7b, type: 3}
+  monk_Medium: {fileID: 3740049716114946714, guid: 3c177123890859c4a85dabae1ef5aec6,
+    type: 3}
+  monk_Hard: {fileID: 3740049716114946714, guid: 8d137d2944e8c0f4997bef5d2e1ef1d9,
+    type: 3}
+  diamondGolem_Easy: {fileID: 3202803545267729646, guid: 12308ea8e959b3445816ea04ebbc510d,
+    type: 3}
+  diamondGolem_Medium: {fileID: 3202803545267729646, guid: d9502fc39629fa9449905148ab6d89c7,
+    type: 3}
+  diamondGolem_Hard: {fileID: 3202803545267729646, guid: 8e9f6bde28604ee4da038fd158f900fe,
+    type: 3}
+  eye_Easy: {fileID: 4276267863924940528, guid: 57f909f4a33e5aa4db9d4e3a741f7c7b,
+    type: 3}
+  eye_Medium: {fileID: 4276267863924940528, guid: 7d0cc7e2f82e30647b9a2662f77c38c5,
+    type: 3}
+  eye_Hard: {fileID: 4276267863924940528, guid: ed56b4fccb9ffd448bb7f9655d856c4d,
+    type: 3}
   slug: {fileID: 8315101067992246579, guid: 21914ae0c78acf242b6b1d4b5dc73891, type: 3}
   tower: {fileID: 2897584734998962385, guid: 31e815dec09f5fb44b6c56af4b90d0e3, type: 3}
 --- !u!114 &7489770892114652514

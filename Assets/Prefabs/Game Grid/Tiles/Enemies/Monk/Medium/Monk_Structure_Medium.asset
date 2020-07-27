@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf269b8c03345c0418b3c56e39e94d9a, type: 3}
+  m_Name: Monk_Structure_Medium
+  m_EditorClassIdentifier: 
+  StructureList:
+  - RelativeX: 1
+    RelativeY: 1
+    m_GameObject: {fileID: 4538496890708562040, guid: b5316e2ce4aca7645beb02d9bfb165d2,
+      type: 3}
+  - RelativeX: 1
+    RelativeY: -1
+    m_GameObject: {fileID: 4538496890708562040, guid: c7ee8e5c05243974bb17e22fadf78f66,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: 1
+    m_GameObject: {fileID: 4538496890708562040, guid: 2a5c6c287ac524f469fab1c0955e57ae,
+      type: 3}
+  - RelativeX: -1
+    RelativeY: -1
+    m_GameObject: {fileID: 4538496890708562040, guid: b2df7746a029f8c48beea21dd76e5739,
+      type: 3}

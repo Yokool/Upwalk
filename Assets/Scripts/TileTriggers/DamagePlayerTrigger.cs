@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(GridObject))]
 public class DamagePlayerTrigger : MonoBehaviour, ITriggerCallback
 {
+    [SerializeField]
+    private int damageAmount;
+
     public void HandleTrigger(TriggerEvent message)
     {
         
@@ -16,7 +19,7 @@ public class DamagePlayerTrigger : MonoBehaviour, ITriggerCallback
 
             if (script != null)
             {
-                script.DamagePlayer(1);
+                script.DamagePlayer(damageAmount);
             }
 
         }

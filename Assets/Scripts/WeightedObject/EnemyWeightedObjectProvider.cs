@@ -28,9 +28,19 @@ public class EnemyWeightedObjectProvider : MonoBehaviour, IWeightedObjectProvide
     private GameObject eye_Hard = null;
 
     [SerializeField]
-    private GameObject slug = null;
+    private GameObject slug_Easy = null;
     [SerializeField]
-    private GameObject tower = null;
+    private GameObject slug_Medium = null;
+    [SerializeField]
+    private GameObject slug_Hard = null;
+
+
+    [SerializeField]
+    private GameObject tower_Easy = null;
+    [SerializeField]
+    private GameObject tower_Medium = null;
+    [SerializeField]
+    private GameObject tower_Hard = null;
 
     public WeightObjectTie<GameObject>[] GetWeightedObjects()
     {
@@ -40,7 +50,7 @@ public class EnemyWeightedObjectProvider : MonoBehaviour, IWeightedObjectProvide
             new WeightObjectTie<GameObject>()
             {
                 weightedObject = null,
-                weight = 250
+                weight = 500
             },
             new WeightObjectTie<GameObject>()
             {
@@ -75,12 +85,12 @@ public class EnemyWeightedObjectProvider : MonoBehaviour, IWeightedObjectProvide
             new WeightObjectTie<GameObject>()
             {
                 weightedObject = eye_Easy,
-                weight = 1
+                weight = 3
             },
             new WeightObjectTie<GameObject>()
             {
                 weightedObject = eye_Medium,
-                weight = 1
+                weight = 2
             },
             new WeightObjectTie<GameObject>()
             {
@@ -89,12 +99,32 @@ public class EnemyWeightedObjectProvider : MonoBehaviour, IWeightedObjectProvide
             },
             new WeightObjectTie<GameObject>()
             {
-                weightedObject = slug,
+                weightedObject = slug_Easy,
+                weight = 3
+            },
+            new WeightObjectTie<GameObject>()
+            {
+                weightedObject = slug_Medium,
+                weight = 2
+            },
+            new WeightObjectTie<GameObject>()
+            {
+                weightedObject = slug_Hard,
                 weight = 1
             },
             new WeightObjectTie<GameObject>()
             {
-                weightedObject = tower,
+                weightedObject = tower_Easy,
+                weight = 3
+            },
+            new WeightObjectTie<GameObject>()
+            {
+                weightedObject = tower_Medium,
+                weight = 2
+            },
+            new WeightObjectTie<GameObject>()
+            {
+                weightedObject = tower_Hard,
                 weight = 1
             }
         };

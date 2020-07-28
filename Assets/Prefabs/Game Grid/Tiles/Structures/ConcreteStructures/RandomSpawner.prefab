@@ -42,8 +42,18 @@ MonoBehaviour:
     type: 3}
   eye_Hard: {fileID: 4276267863924940528, guid: ed56b4fccb9ffd448bb7f9655d856c4d,
     type: 3}
-  slug: {fileID: 8315101067992246579, guid: 21914ae0c78acf242b6b1d4b5dc73891, type: 3}
-  tower: {fileID: 2897584734998962385, guid: 31e815dec09f5fb44b6c56af4b90d0e3, type: 3}
+  slug_Easy: {fileID: 8315101067992246579, guid: 21914ae0c78acf242b6b1d4b5dc73891,
+    type: 3}
+  slug_Medium: {fileID: 8315101067992246579, guid: 19ab561efaa9df041a6fdb9621ca99d5,
+    type: 3}
+  slug_Hard: {fileID: 8315101067992246579, guid: b4ab58c38ba6e0248b6bc36ca7ff9c96,
+    type: 3}
+  tower_Easy: {fileID: 2897584734998962385, guid: 31e815dec09f5fb44b6c56af4b90d0e3,
+    type: 3}
+  tower_Medium: {fileID: 2897584734998962385, guid: 00f080c9fd0526944b9134c65fcfccf6,
+    type: 3}
+  tower_Hard: {fileID: 2897584734998962385, guid: 67bca9d681116a64b8d800144b2a565b,
+    type: 3}
 --- !u!114 &7489770892114652514
 MonoBehaviour:
   m_ObjectHideFlags: 0

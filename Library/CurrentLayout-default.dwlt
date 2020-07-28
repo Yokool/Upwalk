@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 708, y: 492}
   m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 6203
+  controlID: 357
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 6158
+  controlID: 358
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 401, y: 221}
   m_MaxSize: {x: 8001, y: 4021}
   vertical: 0
-  controlID: 6159
+  controlID: 413
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 893
     height: 595
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -213,8 +213,8 @@ MonoBehaviour:
     y: 0
     width: 446
     height: 595
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 6180
+  controlID: 359
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,8 +317,8 @@ MonoBehaviour:
     y: 0
     width: 581
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: cc390000
+      m_SelectedIDs: a2340000
       m_LastClickedID: 0
       m_ExpandedIDs: 5efbffff
       m_RenameOverlay:
@@ -716,20 +716,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Game Grid/Tiles/Structures/ConcreteStructures
+    - Assets/Scripts/GameGrid
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/Game Grid/Tiles/Structures/ConcreteStructures
+  - Assets/Scripts/GameGrid
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\UnityProjects\Upwalk
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 137}
-    m_SelectedIDs: 0c430000
-    m_LastClickedID: 17164
-    m_ExpandedIDs: 00000000d0400000d2400000d4400000d6400000d8400000da400000dc400000de400000e0400000e24000000041000000ca9a3b
+    scrollPos: {x: 0, y: 621}
+    m_SelectedIDs: 92430000
+    m_LastClickedID: 17298
+    m_ExpandedIDs: 00000000d0400000d2400000d4400000d6400000d8400000da400000dc400000de400000e0400000e2400000004100001641000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -784,22 +784,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000da340000d8340000ca410000f835000034380000000000001a460000ea3e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: GroundTilesSpriteListProvider
+      m_OriginalName: GroundTilesSpriteListProvider
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11408
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
@@ -876,7 +876,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 19619
+  m_LastVerticalScrollValue: 0
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52

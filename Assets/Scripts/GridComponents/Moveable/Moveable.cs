@@ -30,12 +30,13 @@ public class Moveable : MonoBehaviour
     private int step = 0;
 
     private IObjectArrivalCallback[] objectArrivalCallbacks;
-
+    private IFailedToMoveTo failedToMoveTo;
 
     private void OnEnable()
     {
         gridObject = GetComponent<GridObject>();
         objectArrivalCallbacks = GetComponents<IObjectArrivalCallback>();
+        failedToMoveTo = GetComponent<IFailedToMoveTo>();
     }
 
     public void MoveObject(Direction direction)
@@ -62,11 +63,14 @@ public class Moveable : MonoBehaviour
 
     public bool CanMoveTo(int X, int Y)
     {
-        // Can Go through solids or
-        // Filter to all the ones we can't walk through and if there is one say no
-        return canGoThroughSolids || GameGrid.INSTANCE.ObjectsAt(X, Y).Where((gridObj) =>{
+        GridObject[] objectsAt = GameGrid.INSTANCE.ObjectsAt(X, Y);
+        bool canMoveTo = canGoThroughSolids || objectsAt.Where((gridObj) => {
             return !TileTypeDataDatabase.TileTypeDatabase[gridObj.m_TileType].walkthrough;
         }).ToArray().Length == 0;
+
+        // Can Go through solids or
+        // Filter to all the ones we can't walk through and if there is one say no
+        return canMoveTo;
     }
 
     private void PerformMoveObject(Direction direction)
@@ -79,6 +83,7 @@ public class Moveable : MonoBehaviour
 
         if(!CanMoveTo(endX, endY))
         {
+            failedToMoveTo.FailedToMoveTo(endX, endY, gridObject);
             return;
         }
 
@@ -116,6 +121,7 @@ public class Moveable : MonoBehaviour
 
         if (!CanMoveTo(endX, endY))
         {
+            failedToMoveTo.FailedToMoveTo(endX, endY, gridObject);
             yield break;
         }
 
@@ -155,4 +161,9 @@ public class Moveable : MonoBehaviour
 
     }
     
+}
+
+public interface IFailedToMoveTo
+{
+    void FailedToMoveTo(int X, int Y, GridObject thisObject);
 }

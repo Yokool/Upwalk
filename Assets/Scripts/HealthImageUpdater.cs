@@ -24,10 +24,12 @@ public class HealthImageUpdater : MonoBehaviour
 
     public void UpdateImage()
     {
-        int health = PlayerScript.INSTANCE.Health;
+        int health = PlayerScript.INSTANCE.gameObject.GetComponent<HealthComponent>().Health;
 
         string spriteName = $"Heart_{health}";
-        image.sprite = typeof(GameSprites).GetField(spriteName).GetValue(null) as Sprite;
-    }
+        Sprite pickedSprite = typeof(GameSprites).GetField(spriteName).GetValue(null) as Sprite;
 
+        image.sprite = pickedSprite;
+
+    }
 }

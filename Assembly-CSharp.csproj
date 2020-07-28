@@ -63,17 +63,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DestroyObjectOnDeath.cs" />
     <Compile Include="Assets\Scripts\GameGrid\GameGrid.cs" />
     <Compile Include="Assets\Scripts\GameLifetimeManager\GameLifetimeManager.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Camera\GridCamera.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Enemy\EnemyBehaviour.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Enemy\EnemyData.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Enemy\HealthComponent.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Enemy\IOnDamage.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Enemy\IOnDeathCallback.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Enemy\IOnHeal.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\GridAttack.cs" />
     <Compile Include="Assets\Scripts\GridComponents\GridObject.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\IOnSuccessfulHitCallback.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\IncrementTurnOnSuccessfulHit.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Moveable\Direction.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Moveable\ICheckIfCanMoveTo.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Moveable\IObjectArrivalCallback.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Moveable\Moveable.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Moveable\NextTurnOnArrival.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Player\OnPlayerDeath.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Player\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\GridComponents\Player\UpdateHeartSpriteOnHealthChange.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Spawner\GridObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Spawner\GridObjectSpawnerRandomExtension.cs" />
     <Compile Include="Assets\Scripts\GridComponents\Sprites\GridTileSprite.cs" />

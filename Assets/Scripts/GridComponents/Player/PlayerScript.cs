@@ -10,51 +10,12 @@ public class PlayerScript : MonoBehaviour
     private GridObject gridObject;
     private Moveable moveable;
 
-    [SerializeField]
-    private int health;
-
     private static PlayerScript instance;
     public static PlayerScript INSTANCE => instance;
 
     private void Awake()
     {
         instance = this;
-    }
-
-    public int Health
-    {
-        get
-        {
-            return health;
-        }
-        private set
-        {
-            health = value;
-        }
-    }
-
-    private void OnHealthChanged()
-    {
-        if(Health <= 0)
-        {
-            GameLifetimeManager.INSTANCE.OnPlayerDeath();
-        }
-        else
-        {
-            HealthImageUpdater.INSTANCE.UpdateImage();
-        }
-    }
-
-    public void DamagePlayer(int amount)
-    {
-        Health -= amount;
-        OnHealthChanged();
-    }
-
-    public void HealPlayer(int amount)
-    {
-        Health += amount;
-        OnHealthChanged();
     }
 
     private void Update()

@@ -28,15 +28,15 @@ MonoBehaviour:
   iteratorStructs:
   - interationTurn: 1
     X: -1
-    Y: -1
+    Y: 1
   - interationTurn: 2
-    X: -1
+    X: 1
     Y: 1
   - interationTurn: 3
     X: 1
-    Y: 1
+    Y: -1
   - interationTurn: 4
-    X: 1
+    X: -1
     Y: -1
 --- !u!1001 &9162034698348571820
 PrefabInstance:

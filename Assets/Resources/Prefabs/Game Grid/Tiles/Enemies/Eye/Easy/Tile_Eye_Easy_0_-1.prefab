@@ -15,15 +15,15 @@ MonoBehaviour:
   iteratorStructs:
   - interationTurn: 1
     X: -1
-    Y: -1
+    Y: 1
   - interationTurn: 2
-    X: -1
+    X: 1
     Y: 1
   - interationTurn: 3
     X: 1
-    Y: 1
+    Y: -1
   - interationTurn: 4
-    X: 1
+    X: -1
     Y: -1
 --- !u!1001 &1442177820527550203
 PrefabInstance:
@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 4538496890708562040, guid: 867fa976bf817d149be816a84cf9b2b1,
         type: 3}
       propertyPath: m_Name
-      value: Tile_Eye_0_-1
+      value: Tile_Eye_Easy_0_-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 867fa976bf817d149be816a84cf9b2b1, type: 3}

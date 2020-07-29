@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2745256b46ed54ea768e2911e3d918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxIteration: 2
+  maxIteration: 4
 --- !u!114 &7598619687795200447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246636089203835431, guid: e256b3b7ed0eb0e4b92bf19e6c8a0977,
+        type: 3}
+      propertyPath: associatedTurnType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e256b3b7ed0eb0e4b92bf19e6c8a0977, type: 3}

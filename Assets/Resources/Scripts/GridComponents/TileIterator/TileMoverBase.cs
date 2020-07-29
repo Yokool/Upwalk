@@ -7,7 +7,7 @@ public class TileMoverBase : MonoBehaviour, IOnNextTurn_Callback
 {
     private EnemyBehaviour enemyBehaviour;
 
-    private int currentIteration = 1;
+    private int currentIteration = 0;
 
     [SerializeField]
     private int maxIteration;

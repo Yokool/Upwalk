@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Moveable))]
-public class GridAttack : MonoBehaviour, IFailedToMoveTo
+public class GridAttack : MonoBehaviour, IFailedToMoveToCallback
 {
     [SerializeField]
     private int damageAmount;

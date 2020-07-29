@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 4538496890708562040, guid: 867fa976bf817d149be816a84cf9b2b1,
         type: 3}
       propertyPath: m_Name
-      value: Tile_Golem_ -1_0
+      value: DiamondGolem_Tile_Easy_ -1_0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 867fa976bf817d149be816a84cf9b2b1, type: 3}

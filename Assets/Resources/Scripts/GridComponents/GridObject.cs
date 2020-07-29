@@ -85,14 +85,14 @@ public class GridObject : MonoBehaviour
     public void Establish()
     {
         GameGrid.INSTANCE.AddEntry(this);
-        ValidateObjectPosition();
+        ValidateAndAssertObjectPosition();
     }
 
     /// <summary>
     /// Validates the position of the object. If a conflict would arise, the validation goes in the benefit of the calling
     /// object, deleting the objects standing in its way.
     /// </summary>
-    public void ValidateObjectPosition()
+    public void ValidateAndAssertObjectPosition()
     {
         GameGrid.INSTANCE.CheckForAndHandleIllegalOverlaps(this);
         GameGrid.INSTANCE.NotifyTriggers(this);

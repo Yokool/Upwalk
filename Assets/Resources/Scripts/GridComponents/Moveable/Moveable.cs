@@ -30,13 +30,15 @@ public class Moveable : MonoBehaviour
     private int step = 0;
 
     private IObjectArrivalCallback[] objectArrivalCallbacks;
-    private IFailedToMoveTo failedToMoveTo;
+    private IFailedToMoveToCallback failedToMoveToCallback;
+    private IObjectPreArrivalCallback[] objectPreArrivalCallbacks;
 
     private void OnEnable()
     {
         gridObject = GetComponent<GridObject>();
         objectArrivalCallbacks = GetComponents<IObjectArrivalCallback>();
-        failedToMoveTo = GetComponent<IFailedToMoveTo>();
+        failedToMoveToCallback = GetComponent<IFailedToMoveToCallback>();
+        objectPreArrivalCallbacks = GetComponents<IObjectPreArrivalCallback>();
     }
 
     public void MoveObject(Direction direction)
@@ -83,21 +85,35 @@ public class Moveable : MonoBehaviour
 
         if(!CanMoveTo(endX, endY))
         {
-            failedToMoveTo.FailedToMoveTo(endX, endY, gridObject);
+            failedToMoveToCallback.FailedToMoveTo(endX, endY, gridObject);
             return;
         }
 
         directionVector *= step;
 
-        gridObject.SetGridPosition(endX, endY);
-        OnObjectArrivalCallback();
+        FinishMoving(endX, endY);
 
     }
 
+    private void FinishMoving(int endX, int endY)
+    {
+        OnObjectPrearrivalCallback();
+        gridObject.SetGridPosition(endX, endY);
+        gridObject.ValidateAndAssertObjectPosition();
+        OnObjectArrivalCallback();
+    }
+
+    private void OnObjectPrearrivalCallback()
+    {
+        foreach(IObjectPreArrivalCallback objectPreArrivalCallback in objectPreArrivalCallbacks)
+        {
+            objectPreArrivalCallback.ObjectPreArrived();
+        }
+    }
 
     private void OnObjectArrivalCallback()
     {
-        gridObject.ValidateObjectPosition();
+        
         foreach (IObjectArrivalCallback objectArrivalCallback in objectArrivalCallbacks)
         {
             objectArrivalCallback.ObjectArrived();
@@ -121,7 +137,7 @@ public class Moveable : MonoBehaviour
 
         if (!CanMoveTo(endX, endY))
         {
-            failedToMoveTo.FailedToMoveTo(endX, endY, gridObject);
+            failedToMoveToCallback.FailedToMoveTo(endX, endY, gridObject);
             yield break;
         }
 
@@ -148,8 +164,7 @@ public class Moveable : MonoBehaviour
             {
                 // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
                 // even though we've already arrived.
-                gridObject.SetGridPosition(endX, endY);
-                OnObjectArrivalCallback();
+                FinishMoving(endX, endY);
                 break;
             }
 
@@ -161,9 +176,4 @@ public class Moveable : MonoBehaviour
 
     }
     
-}
-
-public interface IFailedToMoveTo
-{
-    void FailedToMoveTo(int X, int Y, GridObject thisObject);
 }

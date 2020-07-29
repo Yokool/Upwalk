@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NextTurnOnArrival : MonoBehaviour, IObjectArrivalCallback
+public class NextTurnOnArrival : MonoBehaviour, IObjectPreArrivalCallback
 {
-    public void ObjectArrived()
+    public void ObjectPreArrived()
     {
         TurnSystem.INSTANCE.NextTurn();
     }

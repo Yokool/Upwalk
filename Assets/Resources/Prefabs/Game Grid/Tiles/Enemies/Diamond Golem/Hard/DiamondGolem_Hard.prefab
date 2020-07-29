@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 0}
+--- !u!114 &-5527838173716718085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202803545267729646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a8f58af9949e44d88a40ba6e7c5381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5320996318037539448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,7 +37,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2745256b46ed54ea768e2911e3d918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxIteration: 0
+  maxIteration: 4
 --- !u!114 &7332613181052518194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,18 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
---- !u!114 &-5527838173716718085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3202803545267729646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8a8f58af9949e44d88a40ba6e7c5381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4679445829034568361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246636089203835431, guid: e256b3b7ed0eb0e4b92bf19e6c8a0977,
+        type: 3}
+      propertyPath: associatedTurnType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e256b3b7ed0eb0e4b92bf19e6c8a0977, type: 3}

@@ -20,15 +20,16 @@ public class GameLifetimeManager : MonoBehaviour
         instance = this;
     }
 
-    public void OnPlayerDeath()
-    {
-
-    }
 
     public void StartGame()
     {
         GridCamera.INSTANCE.StartMovingCamera();
         GameStarted = true;
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("DeathScene");
     }
 
     public void ExitGame()

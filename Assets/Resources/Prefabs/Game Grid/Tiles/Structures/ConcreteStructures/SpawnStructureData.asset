@@ -1033,3 +1033,43 @@ MonoBehaviour:
     RelativeY: 11
     m_GameObject: {fileID: 2182489910621861804, guid: 383d4d79a87d22744ada984fe2c10397,
       type: 3}
+  - RelativeX: 6
+    RelativeY: 11
+    m_GameObject: {fileID: 9133402507412100632, guid: 8d0a645d50abe3f428444e0527aa4a83,
+      type: 3}
+  - RelativeX: -6
+    RelativeY: 11
+    m_GameObject: {fileID: 9133402507412100632, guid: 8d0a645d50abe3f428444e0527aa4a83,
+      type: 3}
+  - RelativeX: 6
+    RelativeY: 10
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}
+  - RelativeX: -6
+    RelativeY: 10
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}
+  - RelativeX: 6
+    RelativeY: 9
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}
+  - RelativeX: -6
+    RelativeY: 9
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}
+  - RelativeX: 6
+    RelativeY: 8
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}
+  - RelativeX: -6
+    RelativeY: 8
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}
+  - RelativeX: 6
+    RelativeY: 7
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}
+  - RelativeX: -6
+    RelativeY: 7
+    m_GameObject: {fileID: 2893281610583866633, guid: 48850b81307f4ec49a8fd82671e7eb74,
+      type: 3}

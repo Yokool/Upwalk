@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeathSceneCanvas.cs" />
     <Compile Include="Assets\Resources\AttackAnimation.cs" />
     <Compile Include="Assets\Resources\DestroyObjectOnDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GameGrid\GameGrid.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Assets\Resources\Scripts\WeightedObject\EnemyWeightedObjectProvider.cs" />
     <Compile Include="Assets\Resources\Scripts\WeightedObject\GroundWeightedObjectProvider.cs" />
     <Compile Include="Assets\Resources\Scripts\WeightedObject\IWeightedObjectProvider.cs" />
+    <Compile Include="Assets\Resources\Scripts\WeightedObject\WallWeightedObjectProvider.cs" />
     <Compile Include="Assets\Resources\Scripts\WeightedObject\WeightObjectTie.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

@@ -4,6 +4,6 @@ public class OnPlayerDeath : MonoBehaviour, IOnDeath
 {
     public void OnDeath()
     {
-        GameLifetimeManager.INSTANCE.OnPlayerDeath();
+        GameLifetimeManager.INSTANCE.EndGame();
     }
 }

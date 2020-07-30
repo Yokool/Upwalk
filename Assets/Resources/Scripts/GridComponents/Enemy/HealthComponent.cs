@@ -6,16 +6,16 @@ public class HealthComponent : MonoBehaviour
     private int health;
     public int Health => health;
 
-    private IOnDeath onDeath;
-    private IOnHeal onHeal;
-    private IOnDamage onDamage;
+    private IOnDeath[] onDeaths;
+    private IOnHeal[] onHeals;
+    private IOnDamage[] onDamages;
 
 
     private void OnEnable()
     {
-        onDeath = GetComponent<IOnDeath>();
-        onHeal = GetComponent<IOnHeal>();
-        onDamage = GetComponent<IOnDamage>();
+        onDeaths = GetComponents<IOnDeath>();
+        onHeals = GetComponents<IOnHeal>();
+        onDamages = GetComponents<IOnDamage>();
     }
 
     public void Damage(int amount)
@@ -42,7 +42,8 @@ public class HealthComponent : MonoBehaviour
 
     public void OnDeath()
     {
-        if(onDeath != null)
+        Debug.Log($"{gameObject} just died.");
+        foreach (IOnDeath onDeath in onDeaths)
         {
             onDeath.OnDeath();
         }
@@ -50,7 +51,7 @@ public class HealthComponent : MonoBehaviour
 
     public void OnHeal()
     {
-        if (onHeal != null)
+        foreach (IOnHeal onHeal in onHeals)
         {
             onHeal.OnHeal();
         }
@@ -58,7 +59,7 @@ public class HealthComponent : MonoBehaviour
 
     public void OnDamage()
     {
-        if (onDamage != null)
+        foreach (IOnDamage onDamage in onDamages)
         {
             onDamage.OnDamage();
         }

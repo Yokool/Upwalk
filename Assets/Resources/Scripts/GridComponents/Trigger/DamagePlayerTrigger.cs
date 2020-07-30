@@ -13,7 +13,14 @@ public class DamagePlayerTrigger : MonoBehaviour, ITriggerCallback
         
         if(message.trigerringObject.m_TileType == TileType.ALIVE)
         {
+
             // This is the easiest way to check if the triggering object is the player
+            if(message.trigerringObject.GetComponent<PlayerScript>() == null)
+            {
+                return;
+            }
+
+
             HealthComponent health;
             health = message.trigerringObject.gameObject.GetComponent<HealthComponent>();
 

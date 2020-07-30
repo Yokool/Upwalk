@@ -45,6 +45,18 @@ public static class GameSprites
     public static Sprite Turn_Full;
 
 
+    // You might as well use an array.
+    public static Sprite NumberFont_0;
+    public static Sprite NumberFont_1;
+    public static Sprite NumberFont_2;
+    public static Sprite NumberFont_3;
+    public static Sprite NumberFont_4;
+    public static Sprite NumberFont_5;
+    public static Sprite NumberFont_6;
+    public static Sprite NumberFont_7;
+    public static Sprite NumberFont_8;
+    public static Sprite NumberFont_9;
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
     public static void LoadSprites()
     {
@@ -78,6 +90,19 @@ public static class GameSprites
         Turn_Medium = Resources.Load<Sprite>("Turns/Turn_Medium");
         Turn_Hard = Resources.Load<Sprite>("Turns/Turn_Hard");
         Turn_Full = Resources.Load<Sprite>("Turns/Turn_Full");
+
+        Sprite[] sprites = Resources.LoadAll<Sprite>("BitmapFonts/NumberFont");
+
+        NumberFont_0 = sprites[0];
+        NumberFont_1 = sprites[1];
+        NumberFont_2 = sprites[2];
+        NumberFont_3 = sprites[3];
+        NumberFont_4 = sprites[4];
+        NumberFont_5 = sprites[5];
+        NumberFont_6 = sprites[6];
+        NumberFont_7 = sprites[7];
+        NumberFont_8 = sprites[8];
+        NumberFont_9 = sprites[9];
 
         Verify();
     }

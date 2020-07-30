@@ -8,6 +8,20 @@ public class GameLifetimeManager : MonoBehaviour
     private static GameLifetimeManager instance;
     public static GameLifetimeManager INSTANCE => instance;
 
+    private GameSessionData sessionData;
+    
+    public int GetCoins()
+    {
+        return sessionData.Coins;
+    }
+
+    public void AddCoins(int amount)
+    {
+        sessionData.Coins += amount;
+
+        CoinCounter.INSTANCE.CoinCounterUpdate();
+    }
+
     public bool GameStarted
     {
         get;
@@ -24,6 +38,9 @@ public class GameLifetimeManager : MonoBehaviour
     public void StartGame()
     {
         GridCamera.INSTANCE.StartMovingCamera();
+
+        sessionData = new GameSessionData();
+
         GameStarted = true;
     }
 

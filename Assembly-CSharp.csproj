@@ -63,11 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CoinCounter.cs" />
     <Compile Include="Assets\DeathSceneCanvas.cs" />
     <Compile Include="Assets\Resources\AttackAnimation.cs" />
     <Compile Include="Assets\Resources\DestroyObjectOnDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GameGrid\GameGrid.cs" />
     <Compile Include="Assets\Resources\Scripts\GameLifetimeManager\GameLifetimeManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\GameLifetimeManager\GameSessionData.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Camera\GridCamera.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\EnemyBehaviour.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\EnemyData.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IObjectPrearrivalCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Moveable.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\NextTurnOnArrival.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Player\AddCoinsOnDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\OnPlayerDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\PlayerScript.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\UpdateHeartSpriteOnHealthChange.cs" />

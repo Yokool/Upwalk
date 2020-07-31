@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
+[RequireComponent(typeof(Moveable))]
 public class TileIterator : MonoBehaviour
 {
     [SerializeField]
     public IteratorStruct[] iteratorStructs;
 
     private GridObject gridObject;
+    private Moveable moveable;
 
     private void OnEnable()
     {
         gridObject = GetComponent<GridObject>();
+        moveable = GetComponent<Moveable>();
     }
 
     public void MoveTilesOnIteration(int currentIteration)
@@ -26,7 +29,7 @@ public class TileIterator : MonoBehaviour
                     Debug.LogError($"Class: {nameof(TileIterator)} - method: {nameof(MoveTilesOnIteration)} - gameObject: {gameObject}: does not have a {nameof(GridObject)} component which is needed for the method to run.");
                 }
 
-                gridObject.SetGridPosition(gridObject.X + iteratorStruct.X, gridObject.Y + iteratorStruct.Y);
+                moveable.MoveObject_Relative(iteratorStruct.X, iteratorStruct.Y);
 
             }
         }

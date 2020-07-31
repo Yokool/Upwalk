@@ -13,6 +13,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
+--- !u!114 &-3845854585281448385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538496890708562040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd61fa6cac0e56043b2011773e692e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldLerp: 0
+  canGoThroughSolids: 1
+  lerpIncrementor: 0.1
+  step: 0
+--- !u!114 &-3019168707054580351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538496890708562040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95a8839c242e3f409a15bec843206cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9162034698348571820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,10 +54,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c02f92cdc50124c4fa8c236537be197b,
         type: 3}
+    - target: {fileID: 233785445961038571, guid: d40a888eb709fa94cb213ca798b9d213,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4746210045077273812, guid: d40a888eb709fa94cb213ca798b9d213,
         type: 3}
       propertyPath: m_Name
-      value: HurtEnemyTile_2
+      value: DiamondGolem_Tile_Medium_0_1
       objectReference: {fileID: 0}
     - target: {fileID: 4746210045077273823, guid: d40a888eb709fa94cb213ca798b9d213,
         type: 3}

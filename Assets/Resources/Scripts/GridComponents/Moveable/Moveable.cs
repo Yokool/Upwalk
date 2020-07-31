@@ -41,7 +41,29 @@ public class Moveable : MonoBehaviour
         objectPreArrivalCallbacks = GetComponents<IObjectPreArrivalCallback>();
     }
 
-    public void MoveObject(Direction direction)
+    /*   *******  The 3 next methods are somewhat a copypaste with different implementation  *******  */
+    /*   *******  If it will need cleaning in the future use delegates  *******  */
+    public void MoveObject_RelativeDirectional(Direction direction)
+    {
+
+        if (movementBlocked)
+        {
+            return;
+        }
+
+        if (shouldLerp)
+        {
+            StartCoroutine(PerformMoveObjectLerp_RelativeDirectional(direction));
+            return;
+        }
+        else
+        {
+            PerformMoveObject_RelativeDirectional(direction);
+        }
+
+    }
+
+    public void MoveObject_Absolute(int X, int Y)
     {
         if (movementBlocked)
         {
@@ -50,17 +72,31 @@ public class Moveable : MonoBehaviour
 
         if (shouldLerp)
         {
-            // Convert the grid coordinates into WORLD position
-            StartCoroutine(PerformMoveObjectLerp(gridObject, direction));
+            StartCoroutine(PerformMoveObjectLerp_Absolute(X, Y));
             return;
         }
         else
         {
-            PerformMoveObject(direction);
+            PerformMoveObject_Absolute(X, Y);
+        }
+    }
+
+    public void MoveObject_Relative(int X, int Y)
+    {
+        if (movementBlocked)
+        {
+            return;
         }
 
-        
-
+        if (shouldLerp)
+        {
+            StartCoroutine(PerformMoveObjectLerp_Relative(X, Y));
+            return;
+        }
+        else
+        {
+            PerformMoveObject_Relative(X, Y);
+        }
     }
 
     public bool CanMoveTo(int X, int Y)
@@ -75,24 +111,30 @@ public class Moveable : MonoBehaviour
         return canMoveTo;
     }
 
-    private void PerformMoveObject(Direction direction)
+    private void PerformMoveObject_Absolute(int X, int Y)
     {
-        // This represents the end position in GRID coordinates
-        Vector2 directionVector = direction.GetUnitDirection();
 
-        int endX = gridObject.X + (int)directionVector.x;
-        int endY = gridObject.Y + (int)directionVector.y;
+        int endX = X;
+        int endY = Y;
 
-        if(!CanMoveTo(endX, endY))
+        if (!CanMoveTo(endX, endY))
         {
             failedToMoveToCallback.FailedToMoveTo(endX, endY, gridObject);
             return;
         }
 
-        directionVector *= step;
-
         FinishMoving(endX, endY);
+    }
 
+    private void PerformMoveObject_Relative(int X, int Y)
+    {
+        PerformMoveObject_Absolute(gridObject.X + X, gridObject.Y + Y);
+    }
+
+    private void PerformMoveObject_RelativeDirectional(Direction direction)
+    {
+        Vector2 move = direction.GetUnitDirection() * step;
+        PerformMoveObject_Relative((int)move.x, (int)move.y);
     }
 
     private void FinishMoving(int endX, int endY)
@@ -127,13 +169,10 @@ public class Moveable : MonoBehaviour
     /// LerpIncrement is fixed at the time of writing this doc.
     /// 
     /// </summary>
-    private IEnumerator PerformMoveObjectLerp(GridObject objToLerp, Direction direction)
+    private IEnumerator PerformMoveObjectLerp_Absolute(int X, int Y)
     {
-        // This represents the end position in GRID coordinates
-        Vector2 gridDirectionVector = direction.GetUnitDirection();
-
-        int endX = gridObject.X + (int)gridDirectionVector.x;
-        int endY = gridObject.Y + (int)gridDirectionVector.y;
+        int endX = X;
+        int endY = Y;
 
         if (!CanMoveTo(endX, endY))
         {
@@ -143,10 +182,9 @@ public class Moveable : MonoBehaviour
 
         movementBlocked = true;
 
-        Vector3 startPosition = objToLerp.transform.position;
+        Vector3 startPosition = gridObject.transform.position;
         
-        // We have to walk from our gridPosition to the end of the gridDirectionVector and convert it to WorldPos
-        Vector2 worldPositionEnd = GameGrid.INSTANCE.GridToWorldCoordinates((int)gridDirectionVector.x + objToLerp.X, (int)gridDirectionVector.y + objToLerp.Y);
+        Vector2 worldPositionEnd = GameGrid.INSTANCE.GridToWorldCoordinates(endX, endY);
 
         float lerpNow = 0f;
 
@@ -157,7 +195,7 @@ public class Moveable : MonoBehaviour
             yield return new WaitForFixedUpdate();
             lerpNow += lerpIncrementor;
             lerpNow = Mathf.Clamp(lerpNow, 0f, 1f);
-            objToLerp.gameObject.transform.position = Vector3.Lerp(startPosition, worldPositionEnd, lerpNow);
+            gridObject.gameObject.transform.position = Vector3.Lerp(startPosition, worldPositionEnd, lerpNow);
             
             // Is nearly equal to 1 - meaning we've arrived at the destination.
             if(Mathf.Abs(1f - lerpNow) < 0.001f)
@@ -176,4 +214,15 @@ public class Moveable : MonoBehaviour
 
     }
     
+    private IEnumerator PerformMoveObjectLerp_Relative(int X, int Y)
+    {
+        return PerformMoveObjectLerp_Absolute(gridObject.X + X, gridObject.Y + Y);
+    }
+
+    private IEnumerator PerformMoveObjectLerp_RelativeDirectional(Direction direction)
+    {
+        Vector2 move = direction.GetUnitDirection() * step;
+        return PerformMoveObjectLerp_Relative((int)move.x, (int)move.y);
+    }
+
 }

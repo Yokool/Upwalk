@@ -47,7 +47,7 @@ public class PlayerScript : MonoBehaviour
 
         if (!moveDirection.IsEmpty())
         {
-            moveable.MoveObject(moveDirection);
+            moveable.MoveObject_RelativeDirectional(moveDirection);
         }
         
     }

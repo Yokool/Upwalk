@@ -21,14 +21,12 @@ public class GridAttack : MonoBehaviour, IFailedToMoveToCallback
     {
         GridObject[] objectsAt = GameGrid.INSTANCE.ObjectsAt(X, Y);
 
-        bool hit = false;
-
         foreach(GridObject objectAt in objectsAt)
         {
             HealthComponent health = objectAt.GetComponent<HealthComponent>();
             if(health == null)
             {
-                return;
+                continue;
             }
 
             if(successfulHitCallback != null)

@@ -49,7 +49,7 @@ public class GridCamera : MonoBehaviour
 
         while (true)
         {
-            moveable.MoveObject(Direction.NORTH);
+            moveable.MoveObject_RelativeDirectional(Direction.NORTH);
             OnMoveInvoke();
             yield return new WaitForSeconds(secondsBetween);
         }

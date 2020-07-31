@@ -81,6 +81,7 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\GridObject.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\IOnSuccessfulHitCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\IncrementTurnOnSuccessfulHit.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\CallOwnTriggerOnArrival.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Direction.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\ICheckIfCanMoveTo.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IFailedToMoveToCallback.cs" />

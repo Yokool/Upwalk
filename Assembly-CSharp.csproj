@@ -131,6 +131,7 @@
     <Compile Include="Assets\Resources\Scripts\Turn System\TurnSystem.cs" />
     <Compile Include="Assets\Resources\Scripts\TurnImageManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Utilities\GameGridUtilities.cs" />
+    <Compile Include="Assets\Resources\Scripts\Utilities\GridObjectUtility.cs" />
     <Compile Include="Assets\Resources\Scripts\Utilities\RandomWeightUtility.cs" />
     <Compile Include="Assets\Resources\Scripts\WeightedObject\EnemyWeightedObjectProvider.cs" />
     <Compile Include="Assets\Resources\Scripts\WeightedObject\GroundWeightedObjectProvider.cs" />

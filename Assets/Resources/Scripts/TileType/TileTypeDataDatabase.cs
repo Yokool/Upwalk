@@ -13,12 +13,12 @@ public static class TileTypeDataDatabase
     {
         tileTypeDatabase = new Dictionary<TileType, TileTypeData>()
         {
-            {TileType.GROUND, new TileTypeData(false, 0, true) },
-            {TileType.ALIVE, new TileTypeData(false, 1, false) },
-            {TileType.SPAWNER, new TileTypeData(true, 0, true) },
-            {TileType.WALL, new TileTypeData(true, 2, false) },
-            {TileType.CAMERA, new TileTypeData(false, 0, true) },
-            {TileType.TRIGGER, new TileTypeData(true, 1, true) }
+            {TileType.GROUND, new TileTypeData(false, 0, true, true) },
+            {TileType.ALIVE, new TileTypeData(false, 1, false, true) },
+            {TileType.SPAWNER, new TileTypeData(true, 0, true, false) },
+            {TileType.WALL, new TileTypeData(true, 2, false, true) },
+            {TileType.CAMERA, new TileTypeData(false, 0, true, false) },
+            {TileType.TRIGGER, new TileTypeData(true, 1, true, true) }
         };
     }
 

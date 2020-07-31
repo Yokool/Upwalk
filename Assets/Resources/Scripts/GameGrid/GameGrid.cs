@@ -55,6 +55,11 @@ public class GameGrid : MonoBehaviour
         NotifyObservers(gridObject);
     }
 
+    public GridObject[] GetAllGridObjects()
+    {
+        return gridObjects.ToArray();
+    }
+
     /// <summary>
     /// Triggers all GridObjectTriggers on the position of the gridObject in the parameter that are not the parameter itself.
     /// </summary>
@@ -62,8 +67,9 @@ public class GameGrid : MonoBehaviour
     public void NotifyTriggers(GridObject gridObject)
     {
         GridObject[] objects = GridObjectsAtObjectFiltered(gridObject);
-        foreach (GridObject objectAt in objects)
+        for (int i = 0; i < objects.Length; i++)
         {
+            GridObject objectAt = objects[i];
             // Check if the object wasn't destroyed after we've gathered the objects.
             if (objectAt == null)
             {
@@ -89,9 +95,10 @@ public class GameGrid : MonoBehaviour
     {
         GridObject[] surroundingObjects = GridObjectsAtRelativeSquare(gridObject);
 
-        foreach(GridObject surroundingObject in surroundingObjects)
+        for (int i = 0; i < surroundingObjects.Length; i++)
         {
-            if(surroundingObject == null)
+            GridObject surroundingObject = surroundingObjects[i];
+            if (surroundingObject == null)
             {
                 Debug.LogWarning("NotifyObservers caught an edge case: gridObjectsAtPosition contained a null object. Possible that it was destroyed in the meantime.");
                 continue;
@@ -127,9 +134,9 @@ public class GameGrid : MonoBehaviour
 
         GridObject[] gridObjectsAtPosition = GridObjectsAtObjectFiltered(gridObject);
 
-        foreach(GridObject gridObjectAtPosition in gridObjectsAtPosition)
+        for (int i = 0; i < gridObjectsAtPosition.Length; i++)
         {
-
+            GridObject gridObjectAtPosition = gridObjectsAtPosition[i];
             if (gridObjectAtPosition == null)
             {
                 Debug.LogWarning("CheckForAndHandleIllegalOverlaps caught an edge case: gridObjectsAtPosition contained a null object. Possible that it was destroyed in the meantime.");

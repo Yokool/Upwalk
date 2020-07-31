@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 708, y: 492}
-  m_MaxSize: {x: 18003, y: 14042}
+  m_MinSize: {x: 707, y: 492}
+  m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
-  controlID: 12238
+  controlID: 307
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -74,10 +74,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -244
-    m_HBaseRangeMax: 244
-    m_VBaseRangeMin: -137
-    m_VBaseRangeMax: 137
+    m_HBaseRangeMin: -155.5
+    m_HBaseRangeMax: 155.5
+    m_VBaseRangeMin: -276.5
+    m_VBaseRangeMax: 276.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 12239
+  controlID: 308
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 401, y: 221}
   m_MaxSize: {x: 8001, y: 4021}
   vertical: 0
-  controlID: 12219
+  controlID: 309
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 12240
+  controlID: 260
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -533,48 +533,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Tower/Easy
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Tower/Hard
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Tower/Medium
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Slug/Hard
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Slug/Easy
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Slug/Medium
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Monk/Hard
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Monk/Medium
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Monk/Easy
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Eye/Medium
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Eye/Hard
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Eye/Easy
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Diamond Golem/Medium
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Diamond Golem/Hard
-    - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Diamond Golem/Easy
+    - Assets/Resources/Prefabs/Game Grid/Tiles
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Tower/Easy
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Tower/Hard
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Tower/Medium
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Slug/Hard
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Slug/Easy
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Slug/Medium
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Monk/Hard
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Monk/Medium
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Monk/Easy
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Eye/Medium
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Eye/Hard
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Eye/Easy
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Diamond Golem/Medium
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Diamond Golem/Hard
-  - Assets/Resources/Prefabs/Game Grid/Tiles/Enemies/Diamond Golem/Easy
+  - Assets/Resources/Prefabs/Game Grid/Tiles
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\UnityProjects\Upwalk
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 573}
-    m_SelectedIDs: c6420000c8420000ca420000c2420000c0420000c4420000bc420000be420000ba420000b8420000b6420000b4420000b2420000b0420000ae420000
-    m_LastClickedID: 17070
-    m_ExpandedIDs: 000000007a4200007c4200007e42000080420000824200008442000086420000884200008a4200008c4200008e420000904200009242000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: aa430000
+    m_LastClickedID: 17322
+    m_ExpandedIDs: 000000009c4300009e430000a0430000a2430000a4430000a6430000a8430000aa430000ac430000ae430000b0430000b2430000b443000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -602,7 +574,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007a4200007c4200007e42000080420000824200008442000086420000884200008a4200008c4200008e420000904200009242000000ca9a3b
+    m_ExpandedIDs: 000000009c4300009e430000a0430000a2430000a4430000a6430000a8430000aa430000ac430000ae430000b0430000b2430000b443000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -627,24 +599,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 4c3d0000503d00004e3d00004a3d00005a3d00005e3d0000603d00005c3d0000523d0000563d0000583d0000543d0000623d0000663d0000643d0000323d0000343d0000383d0000363d00003a3d00003c3d0000403d00003e3d0000423d0000443d0000463d0000483d00006e3d00006c3d0000683d00006a3d0000703d0000723d0000863d00007e3d0000803d0000823d0000843d0000903d00008a3d0000883d00008c3d00008e3d0000783d0000763d00007c3d00007a3d0000743d0000
-    m_LastClickedInstanceID: 15690
+    m_SelectedInstanceIDs: 423a0000
+    m_LastClickedInstanceID: 14914
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000da340000d8340000ca410000f835000034380000000000001a460000ea3e0000b4410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Game Grid
+      m_OriginalName: Game Grid
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 17316
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
@@ -654,7 +626,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 780}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -748,8 +720,8 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 15666
-  m_LastVerticalScrollValue: 337
+  m_LastInspectedObjectInstanceID: 14914
+  m_LastVerticalScrollValue: 0
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -842,4 +814,4 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 19826
+  m_LastSelectedObjectID: -1190

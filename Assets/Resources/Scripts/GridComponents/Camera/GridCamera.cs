@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
@@ -18,6 +19,12 @@ public class GridCamera : MonoBehaviour
 
     private static GridCamera instance;
     public static GridCamera INSTANCE => instance;
+
+    [SerializeField]
+    private int counterCheck;
+    private int counter = 0;
+    [SerializeField]
+    private int distanceToClean;
 
     private void Awake()
     {
@@ -59,6 +66,33 @@ public class GridCamera : MonoBehaviour
     private void OnMoveInvoke()
     {
         GameGrid.INSTANCE.SpawnRandomRow();
+
+        counter++;
+        if(counter >= counterCheck)
+        {
+            DeleteFarObjects();
+            counter = 0;
+        }
+
+
+
+    }
+
+    private void DeleteFarObjects()
+    {
+
+        GridObject[] filteredObjects = GameGrid.INSTANCE.GetAllGridObjects().Where(
+
+            (grObj) =>
+            {
+                return GridObjectUtility.Distance(gridObject, grObj) >= distanceToClean && TileTypeDataDatabase.TileTypeDatabase[grObj.m_TileType].shouldBeCleaned;
+            }).ToArray();
+
+        for(int i = 0; i <filteredObjects.Length; ++i)
+        {
+            Destroy(filteredObjects[i].gameObject);
+        }
+
     }
 
 

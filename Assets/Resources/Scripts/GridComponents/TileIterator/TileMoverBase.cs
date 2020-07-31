@@ -24,8 +24,17 @@ public class TileMoverBase : MonoBehaviour, IOnNextTurn_Callback
 
     private void MoveTiles()
     {
-        foreach(GridObject tile in enemyBehaviour.GetEnemyTiles())
+        GridObject[] enemyTiles = enemyBehaviour.GetEnemyTiles();
+        for (int i = 0; i < enemyTiles.Length; i++)
         {
+            GridObject tile = enemyTiles[i];
+
+            // Cleanup might remove the tile before we are removed.
+            if(tile == null)
+            {
+                continue;
+            }
+
             TileIterator iterator = tile.GetComponent<TileIterator>();
             if(iterator == null)
             {

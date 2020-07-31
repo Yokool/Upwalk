@@ -12,11 +12,14 @@
     /// </summary>
     public bool walkthrough;
 
-    public TileTypeData(bool canExistMultiple, int spriteOrder, bool walkthrough)
+    public bool shouldBeCleaned;
+
+    public TileTypeData(bool canExistMultiple, int spriteOrder, bool walkthrough, bool shouldBeCleaned)
     {
         this.canExistMultiple = canExistMultiple;
         this.spriteOrder = spriteOrder;
         this.walkthrough = walkthrough;
+        this.shouldBeCleaned = shouldBeCleaned;
     }
 
 }

@@ -4,14 +4,13 @@
 [RequireComponent(typeof(GridObjectTrigger))]
 public class CallOwnTriggerOnArrival : MonoBehaviour, IObjectArrivalCallback
 {
-    public void ObjectArrived()
+    public void ObjectArrived(ArrivalInformation arrivalInformation)
     {
         GridObject thisGridObject = GetComponent<GridObject>();
         GridObjectTrigger thisTrigger = GetComponent<GridObjectTrigger>();
-        foreach(GridObject obj in GameGrid.INSTANCE.GridObjectsAtObjectFiltered(thisGridObject))
+        foreach(GridObject gridObjectAt in GameGrid.INSTANCE.GridObjectsAtObjectFiltered(thisGridObject))
         {
-            thisTrigger.NotifyTrigger(obj);
+            thisTrigger.NotifyTrigger(gridObjectAt);
         }
-        
     }
 }

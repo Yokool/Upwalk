@@ -21,7 +21,7 @@ public class GridObjectTrigger : MonoBehaviour
         TriggerEvent triggerEvent = new TriggerEvent() {
 
             thisObject = gridObject,
-            trigerringObject = triggered
+            triggeringObject = triggered
         
         };
 

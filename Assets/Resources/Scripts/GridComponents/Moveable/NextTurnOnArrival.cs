@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NextTurnOnArrival : MonoBehaviour, IObjectPreArrivalCallback
 {
-    public void ObjectPreArrived()
+    public void ObjectPreArrived(ArrivalInformation arrivalInformation)
     {
         TurnSystem.INSTANCE.NextTurn();
     }

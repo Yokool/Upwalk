@@ -8,27 +8,41 @@ public class DamagePlayerTrigger : MonoBehaviour, ITriggerCallback
     [SerializeField]
     private int damageAmount;
 
+    private GridObject thisGridObject;
+
+    private void OnEnable()
+    {
+        thisGridObject = GetComponent<GridObject>();
+    }
+
     public void HandleTrigger(TriggerEvent message)
     {
-        
-        if(message.trigerringObject.m_TileType == TileType.ALIVE)
+        GridObject triggeringObject = message.triggeringObject;
+        if (triggeringObject.m_TileType == TileType.ALIVE)
         {
 
             // This is the easiest way to check if the triggering object is the player
-            if(message.trigerringObject.GetComponent<PlayerScript>() == null)
+            if(triggeringObject.GetComponent<PlayerScript>() == null)
             {
                 return;
             }
 
+            Moveable moveable = triggeringObject.GetComponent<Moveable>();
 
-            HealthComponent health;
-            health = message.trigerringObject.gameObject.GetComponent<HealthComponent>();
+            int playerEndX = moveable.GetAsyncEndX();
+            int playerEndY = moveable.GetAsyncEndY();
 
-            if (health != null)
+            if(playerEndX == thisGridObject.X && playerEndY == thisGridObject.Y)
             {
+                HealthComponent health;
+                health = triggeringObject.gameObject.GetComponent<HealthComponent>();
+
                 health.Damage(damageAmount);
             }
 
+
+            
+            
         }
 
     }

@@ -1,4 +1,4 @@
 ﻿public interface IObjectArrivalCallback
 {
-    void ObjectArrived();
+    void ObjectArrived(ArrivalInformation arrivalInformation);
 }

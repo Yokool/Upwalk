@@ -8,6 +8,8 @@ using UnityEngine;
 public class Moveable : MonoBehaviour
 {
 
+    public const int NO_MOVEMENT_CODE = -1;
+
     [SerializeField]
     private bool shouldLerp = false;
     /// <summary>
@@ -32,6 +34,12 @@ public class Moveable : MonoBehaviour
     private IObjectArrivalCallback[] objectArrivalCallbacks;
     private IFailedToMoveToCallback failedToMoveToCallback;
     private IObjectPreArrivalCallback[] objectPreArrivalCallbacks;
+
+
+    private int asyncEndX;
+    private int asyncEndY;
+
+    
 
     private void OnEnable()
     {
@@ -102,20 +110,18 @@ public class Moveable : MonoBehaviour
     public bool CanMoveTo(int X, int Y)
     {
         GridObject[] objectsAt = GameGrid.INSTANCE.ObjectsAt(X, Y);
+
+        // Can Go through solids or
+        // Filter to all the ones we can't walk through and if there is one say no
         bool canMoveTo = canGoThroughSolids || objectsAt.Where((gridObj) => {
             return !TileTypeDataDatabase.TileTypeDatabase[gridObj.m_TileType].walkthrough;
         }).ToArray().Length == 0;
 
-        // Can Go through solids or
-        // Filter to all the ones we can't walk through and if there is one say no
         return canMoveTo;
     }
 
-    private void PerformMoveObject_Absolute(int X, int Y)
+    private void PerformMoveObject_Absolute(int endX, int endY)
     {
-
-        int endX = X;
-        int endY = Y;
 
         if (!CanMoveTo(endX, endY))
         {
@@ -139,26 +145,29 @@ public class Moveable : MonoBehaviour
 
     private void FinishMoving(int endX, int endY)
     {
-        OnObjectPrearrivalCallback();
+        SetAsyncEndLoc(endX, endY);
+        OnObjectPrearrivalCallback(endX, endY);
         gridObject.SetGridPosition(endX, endY);
         gridObject.ValidateAndAssertObjectPosition();
-        OnObjectArrivalCallback();
+        OnObjectArrivalCallback(endX, endY);
+        ResetAsyncEndLoc();
     }
 
-    private void OnObjectPrearrivalCallback()
+    private void OnObjectPrearrivalCallback(int endX, int endY)
     {
+        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
         foreach(IObjectPreArrivalCallback objectPreArrivalCallback in objectPreArrivalCallbacks)
         {
-            objectPreArrivalCallback.ObjectPreArrived();
+            objectPreArrivalCallback.ObjectPreArrived(arrivalInformation);
         }
     }
 
-    private void OnObjectArrivalCallback()
+    private void OnObjectArrivalCallback(int endX, int endY)
     {
-        
+        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
         foreach (IObjectArrivalCallback objectArrivalCallback in objectArrivalCallbacks)
         {
-            objectArrivalCallback.ObjectArrived();
+            objectArrivalCallback.ObjectArrived(arrivalInformation);
         }
     }
 
@@ -223,6 +232,28 @@ public class Moveable : MonoBehaviour
     {
         Vector2 move = direction.GetUnitDirection() * step;
         return PerformMoveObjectLerp_Relative((int)move.x, (int)move.y);
+    }
+
+
+    private void ResetAsyncEndLoc()
+    {
+        SetAsyncEndLoc(NO_MOVEMENT_CODE, NO_MOVEMENT_CODE);
+    }
+
+    private void SetAsyncEndLoc(int asyncEndX, int asyncEndY)
+    {
+        this.asyncEndX = asyncEndX;
+        this.asyncEndY = asyncEndY;
+    }
+
+    public int GetAsyncEndX()
+    {
+        return asyncEndX;
+    }
+
+    public int GetAsyncEndY()
+    {
+        return asyncEndY;
     }
 
 }

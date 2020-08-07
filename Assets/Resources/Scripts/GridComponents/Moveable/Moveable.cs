@@ -8,7 +8,7 @@ using UnityEngine;
 public class Moveable : MonoBehaviour
 {
 
-    public const int NO_MOVEMENT_CODE = -1;
+    public const int NO_MOVEMENT_CODE = -101011;
 
     [SerializeField]
     private bool shouldLerp = false;
@@ -32,7 +32,7 @@ public class Moveable : MonoBehaviour
     private int step = 0;
 
     private IObjectArrivalCallback[] objectArrivalCallbacks;
-    private IFailedToMoveToCallback failedToMoveToCallback;
+    private IFailedToMoveToCallback[] failedToMoveToCallbacks;
     private IObjectPreArrivalCallback[] objectPreArrivalCallbacks;
 
 
@@ -45,8 +45,33 @@ public class Moveable : MonoBehaviour
     {
         gridObject = GetComponent<GridObject>();
         objectArrivalCallbacks = GetComponents<IObjectArrivalCallback>();
-        failedToMoveToCallback = GetComponent<IFailedToMoveToCallback>();
+        failedToMoveToCallbacks = GetComponents<IFailedToMoveToCallback>();
         objectPreArrivalCallbacks = GetComponents<IObjectPreArrivalCallback>();
+    }
+
+    public void MoveObject_Towards_Simple(GridObject targetObject)
+    {
+
+        int dX = targetObject.X - gridObject.X;
+        int dY = targetObject.Y - gridObject.Y;
+
+        Direction direction = DirectionExtension.GetDirectionFromVector(dX, dY);
+
+
+        if (movementBlocked)
+        {
+            return;
+        }
+
+        if (shouldLerp)
+        {
+            StartCoroutine(PerformMoveObjectLerp_RelativeDirectional(direction));
+            return;
+        }
+        else
+        {
+            PerformMoveObject_RelativeDirectional(direction);
+        }
     }
 
     /*   *******  The 3 next methods are somewhat a copypaste with different implementation  *******  */
@@ -125,7 +150,7 @@ public class Moveable : MonoBehaviour
 
         if (!CanMoveTo(endX, endY))
         {
-            failedToMoveToCallback.FailedToMoveTo(endX, endY, gridObject);
+            FailedToMoveToCallbackInvoke(endX, endY, gridObject);
             return;
         }
 
@@ -146,14 +171,22 @@ public class Moveable : MonoBehaviour
     private void FinishMoving(int endX, int endY)
     {
         SetAsyncEndLoc(endX, endY);
-        OnObjectPrearrivalCallback(endX, endY);
+        OnObjectPrearrivalCallbackInvoke(endX, endY);
         gridObject.SetGridPosition(endX, endY);
         gridObject.ValidateAndAssertObjectPosition();
-        OnObjectArrivalCallback(endX, endY);
+        OnObjectArrivalCallbackInvoke(endX, endY);
         ResetAsyncEndLoc();
     }
 
-    private void OnObjectPrearrivalCallback(int endX, int endY)
+    private void FailedToMoveToCallbackInvoke(int endX, int endY, GridObject gridObject)
+    {
+        foreach (IFailedToMoveToCallback failedToMoveToCallback in failedToMoveToCallbacks)
+        {
+            failedToMoveToCallback.FailedToMoveTo(endX, endY, gridObject);
+        }
+    }
+
+    private void OnObjectPrearrivalCallbackInvoke(int endX, int endY)
     {
         ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
         foreach(IObjectPreArrivalCallback objectPreArrivalCallback in objectPreArrivalCallbacks)
@@ -162,7 +195,7 @@ public class Moveable : MonoBehaviour
         }
     }
 
-    private void OnObjectArrivalCallback(int endX, int endY)
+    private void OnObjectArrivalCallbackInvoke(int endX, int endY)
     {
         ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
         foreach (IObjectArrivalCallback objectArrivalCallback in objectArrivalCallbacks)
@@ -185,7 +218,7 @@ public class Moveable : MonoBehaviour
 
         if (!CanMoveTo(endX, endY))
         {
-            failedToMoveToCallback.FailedToMoveTo(endX, endY, gridObject);
+            FailedToMoveToCallbackInvoke(endX, endY, gridObject);
             yield break;
         }
 

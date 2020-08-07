@@ -80,4 +80,32 @@ public static class DirectionExtension
         }
     }
 
+    public static Direction GetDirectionFromVector(int X, int Y)
+    {
+
+        Direction dir = Direction.NONE;
+
+        if (X >= 1)
+        {
+            dir = dir | Direction.EAST;
+        }
+        else if (X <= -1)
+        {
+            dir = dir | Direction.WEST;
+        }
+
+
+        if(Y >= 1)
+        {
+            dir = dir | Direction.NORTH;
+        }
+        else if(Y <= -1)
+        {
+            dir = dir | Direction.SOUTH;
+        }
+
+        return dir;
+
+    }
+
 }

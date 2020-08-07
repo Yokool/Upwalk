@@ -65,6 +65,10 @@
   <ItemGroup>
     <Compile Include="Assets\CoinCounter.cs" />
     <Compile Include="Assets\DeathSceneCanvas.cs" />
+    <Compile Include="Assets\GridObjectIntelligence.cs" />
+    <Compile Include="Assets\IIntelligenceCheck.cs" />
+    <Compile Include="Assets\IMovementIntelligence.cs" />
+    <Compile Include="Assets\MoveTowardsPlayerMovementIntelligence.cs" />
     <Compile Include="Assets\Resources\AttackAnimation.cs" />
     <Compile Include="Assets\Resources\DestroyObjectOnDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GameGrid\GameGrid.cs" />
@@ -88,6 +92,7 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IFailedToMoveToCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IObjectArrivalCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IObjectPrearrivalCallback.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\MoveChildrenTooPreArrivalCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Moveable.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\NextTurnOnArrival.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\AddCoinsOnDeath.cs" />
@@ -172,6 +177,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\WaitXTurnsMovementIntelligenceCheck.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

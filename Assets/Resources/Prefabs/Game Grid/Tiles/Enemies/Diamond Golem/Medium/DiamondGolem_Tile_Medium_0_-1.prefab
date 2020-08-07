@@ -25,10 +25,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61fa6cac0e56043b2011773e692e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldLerp: 0
+  shouldLerp: 1
   canGoThroughSolids: 1
   lerpIncrementor: 0.1
-  step: 0
+  step: 1
 --- !u!114 &169881756750122963
 MonoBehaviour:
   m_ObjectHideFlags: 0

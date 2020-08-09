@@ -21,11 +21,7 @@ public class UpdateSpriteOnChange : MonoBehaviour, ISurroundingsChangedCallback
         // objects, we also have to have a way to update the newly added object and OnEnable
         // is a very unreliable way.
         WallSpriteAdjuster otherAdjuster = observedObject.GetComponent<WallSpriteAdjuster>();
-
-        if(otherAdjuster != null)
-        {
-            otherAdjuster.UpdateSprite();
-        }
+        otherAdjuster.UpdateSprite();
 
     }
 }

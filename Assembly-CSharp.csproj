@@ -63,28 +63,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CoinCounter.cs" />
-    <Compile Include="Assets\DeathSceneCanvas.cs" />
-    <Compile Include="Assets\GridObjectIntelligence.cs" />
-    <Compile Include="Assets\IIntelligenceCheck.cs" />
-    <Compile Include="Assets\IMovementIntelligence.cs" />
-    <Compile Include="Assets\MoveTowardsPlayerMovementIntelligence.cs" />
-    <Compile Include="Assets\Resources\AttackAnimation.cs" />
-    <Compile Include="Assets\Resources\DestroyObjectOnDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GameGrid\GameGrid.cs" />
     <Compile Include="Assets\Resources\Scripts\GameLifetimeManager\GameLifetimeManager.cs" />
     <Compile Include="Assets\Resources\Scripts\GameLifetimeManager\GameSessionData.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Attack\AttackAnimation.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Attack\GridAttack.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Attack\IOnSuccessfulHitCallback.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Attack\IncrementTurnOnSuccessfulHit.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Camera\GridCamera.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\EnemyBehaviour.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\EnemyData.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\HealthComponent.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\IOnDamage.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\IOnDeathCallback.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\Enemy\IOnHeal.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\GridAttack.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\EnemyData.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\GridObject.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\IOnSuccessfulHitCallback.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\IncrementTurnOnSuccessfulHit.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Health\HealthComponent.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Health\IOnDamage.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Health\IOnDeathCallback.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Health\IOnHeal.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\ArrivalInformation.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\CallOwnTriggerOnArrival.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Direction.cs" />
@@ -95,12 +88,18 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\MoveChildrenTooPreArrivalCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Moveable.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\NextTurnOnArrival.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\GridObjectIntelligence.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\IIntelligenceCheck.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\IMovementIntelligence.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\MoveTowardsPlayerMovementIntelligence.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\WaitXTurnsMovementIntelligenceCheck.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\AddCoinsOnDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\OnPlayerDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\PlayerScript.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\UpdateHeartSpriteOnHealthChange.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Spawner\GridObjectSpawner.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Spawner\GridObjectSpawnerRandomExtension.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Spawner\RandomSpawnerAcknowledger.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Sprites\GridTileSprite.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Sprites\GroundTilesSpriteListProvider.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Sprites\RandomSpriteRendererSprite.cs" />
@@ -124,8 +123,8 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\Trigger\ITriggerCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Trigger\StartGameTrigger.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Trigger\TriggerEvent.cs" />
-    <Compile Include="Assets\Resources\Scripts\HealthImageUpdater.cs" />
-    <Compile Include="Assets\Resources\Scripts\RandomSpawnerAcknowledger.cs" />
+    <Compile Include="Assets\Resources\Scripts\ImageUpdaters\HealthImageUpdater.cs" />
+    <Compile Include="Assets\Resources\Scripts\ImageUpdaters\TurnImageManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Static Globals\GameAnimations.cs" />
     <Compile Include="Assets\Resources\Scripts\Static Globals\GameSprites.cs" />
     <Compile Include="Assets\Resources\Scripts\TileType\TileType.cs" />
@@ -135,7 +134,8 @@
     <Compile Include="Assets\Resources\Scripts\Turn System\OnNextTurnCallback_Base.cs" />
     <Compile Include="Assets\Resources\Scripts\Turn System\Turn.cs" />
     <Compile Include="Assets\Resources\Scripts\Turn System\TurnSystem.cs" />
-    <Compile Include="Assets\Resources\Scripts\TurnImageManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\CoinCounter.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\DeathSceneCanvas.cs" />
     <Compile Include="Assets\Resources\Scripts\Utilities\GameGridUtilities.cs" />
     <Compile Include="Assets\Resources\Scripts\Utilities\GridObjectUtility.cs" />
     <Compile Include="Assets\Resources\Scripts\Utilities\RandomWeightUtility.cs" />
@@ -144,6 +144,7 @@
     <Compile Include="Assets\Resources\Scripts\WeightedObject\IWeightedObjectProvider.cs" />
     <Compile Include="Assets\Resources\Scripts\WeightedObject\WallWeightedObjectProvider.cs" />
     <Compile Include="Assets\Resources\Scripts\WeightedObject\WeightObjectTie.cs" />
+    <Compile Include="Assets\Resources\Sprites\DestroyObjectOnDeath.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -177,7 +178,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\WaitXTurnsMovementIntelligenceCheck.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

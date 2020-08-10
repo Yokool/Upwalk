@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
+[DisallowMultipleComponent]
 public class GridObjectTrigger : MonoBehaviour
 {
     

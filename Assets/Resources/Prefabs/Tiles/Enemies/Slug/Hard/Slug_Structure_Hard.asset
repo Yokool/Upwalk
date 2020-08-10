@@ -15,9 +15,9 @@ MonoBehaviour:
   StructureList:
   - RelativeX: 1
     RelativeY: 0
-    m_GameObject: {fileID: 4538496890708562040, guid: 873d08ea7a2bdd24bba465331c71949f,
+    m_GameObject: {fileID: 6719299689252920006, guid: 6e95ee1e3ff779942b7e3cadea793ef0,
       type: 3}
   - RelativeX: -1
     RelativeY: 0
-    m_GameObject: {fileID: 4538496890708562040, guid: 8bd5c0f42b17d7a4c90a8554005e82fb,
+    m_GameObject: {fileID: 6719299689252920006, guid: 70e4772942ca39445aaa636ecf9cf1b0,
       type: 3}

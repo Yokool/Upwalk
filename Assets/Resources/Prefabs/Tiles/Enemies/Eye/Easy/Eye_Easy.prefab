@@ -26,19 +26,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxIteration: 4
---- !u!114 &3075192432958549162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4276267863924940528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d93c53b155780774a9f9e6f88c2a57d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
 --- !u!114 &3436866438138357750
 MonoBehaviour:
   m_ObjectHideFlags: 0

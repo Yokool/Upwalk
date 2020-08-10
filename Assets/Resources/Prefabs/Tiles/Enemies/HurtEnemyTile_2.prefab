@@ -13,18 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 2
---- !u!114 &-3527236657035903680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4538496890708562040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f95a8839c242e3f409a15bec843206cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-462021675158354501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,6 +29,18 @@ MonoBehaviour:
   canGoThroughSolids: 1
   lerpIncrementor: 0.1
   step: 1
+--- !u!114 &-3527236657035903680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538496890708562040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95a8839c242e3f409a15bec843206cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9162034698348571820
 PrefabInstance:
   m_ObjectHideFlags: 0

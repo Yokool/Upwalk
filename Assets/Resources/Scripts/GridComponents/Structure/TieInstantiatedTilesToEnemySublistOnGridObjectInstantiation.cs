@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TieInstantiatedTilesToEnemySublistOnGridObjectInstantiation : MonoBehaviour, IOnGridObjectStructureInstantation
+public class TieInstantiatedTilesToEnemySublistOnGridObjectInstantiation : MonoBehaviour, IOnGridObjectStructureObjectInstantation
 {
     public void OnInstantation(GridObject parent, GridObject instantiatedObject)
     {

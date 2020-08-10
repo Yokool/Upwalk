@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(Moveable))]
+[DisallowMultipleComponent]
 public class PlayerScript : MonoBehaviour
 {
 

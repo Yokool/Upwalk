@@ -5,6 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(GridObject))]
+[DisallowMultipleComponent]
 public class Moveable : MonoBehaviour
 {
 

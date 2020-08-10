@@ -5,6 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(Moveable))]
+[DisallowMultipleComponent]
 public class GridCamera : MonoBehaviour
 {
     private GameObject gameCamera;

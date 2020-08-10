@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Moveable))]
+[DisallowMultipleComponent]
 public class GridAttack : MonoBehaviour, IFailedToMoveToCallback
 {
     [SerializeField]

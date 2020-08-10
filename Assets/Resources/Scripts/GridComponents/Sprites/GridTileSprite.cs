@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(SpriteRenderer))]
+[DisallowMultipleComponent]
 public class GridTileSprite : MonoBehaviour
 {
 

@@ -64,8 +64,8 @@ public class GridStructureBehaviour : MonoBehaviour
         {
             instantiatedGridObject.Establish();
 
-            IOnGridObjectStructureInstantation[] onGridObjectStructureInstantations = instantiatedGridObject.GetComponents<IOnGridObjectStructureInstantation>();
-            foreach (IOnGridObjectStructureInstantation onInstantiationCallback in onGridObjectStructureInstantations)
+            IOnGridObjectStructureObjectInstantation[] onGridObjectStructureInstantations = instantiatedGridObject.GetComponents<IOnGridObjectStructureObjectInstantation>();
+            foreach (IOnGridObjectStructureObjectInstantation onInstantiationCallback in onGridObjectStructureInstantations)
             {
                 onInstantiationCallback.OnInstantation(structureGridObject, instantiatedGridObject);
             }

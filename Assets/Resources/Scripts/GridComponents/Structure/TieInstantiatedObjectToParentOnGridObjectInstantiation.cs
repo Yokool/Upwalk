@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TieInstantiatedObjectToParentOnGridObjectInstantiation : MonoBehaviour, IOnGridObjectStructureInstantation
+public class TieInstantiatedObjectToParentOnGridObjectInstantiation : MonoBehaviour, IOnGridObjectStructureObjectInstantation
 {
     public void OnInstantation(GridObject parent, GridObject instantiatedObject)
     {

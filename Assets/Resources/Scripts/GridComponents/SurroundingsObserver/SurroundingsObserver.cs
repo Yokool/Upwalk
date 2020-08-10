@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(ISurroundingsChangedCallback))]
+[DisallowMultipleComponent]
 public class SurroundingsObserver : MonoBehaviour
 {
 

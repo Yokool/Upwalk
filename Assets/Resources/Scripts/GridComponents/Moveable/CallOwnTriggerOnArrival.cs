@@ -2,6 +2,7 @@
 
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(GridObjectTrigger))]
+[DisallowMultipleComponent]
 public class CallOwnTriggerOnArrival : MonoBehaviour, IObjectArrivalCallback
 {
     public void ObjectArrived(ArrivalInformation arrivalInformation)

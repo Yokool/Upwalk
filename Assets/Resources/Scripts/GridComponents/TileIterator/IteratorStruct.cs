@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public struct IteratorStruct
+public struct SubTileMoverStruct
 {
     [Range(1, 10000)]
     public int interationTurn;

@@ -3,6 +3,7 @@
 [DisallowMultipleComponent]
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(Moveable))]
+[RequireComponent(typeof(GridObjectTurnMovement))]
 public class MoveTowardsPlayerTurnMover : MonoBehaviour, ITurnMover
 {
     private GridObject gridObject;

@@ -25,7 +25,8 @@ public class GridObjectTurnMovement : MonoBehaviour, IOnNextTurn_Callback
 
     public void MoveToNextTile()
     {
-        bool checkSuccess = false;
+        // Auto success when there are no checks
+        bool checkSuccess = (intelligenceChecks.Length == 0);
 
         foreach(ITurnMovementCheck intelligenceCheck in intelligenceChecks)
         {

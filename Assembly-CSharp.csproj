@@ -82,6 +82,7 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\ArrivalInformation.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\CallOwnTriggerOnArrival.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Direction.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\DirectionExtension.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\ICheckIfCanMoveTo.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IFailedToMoveToCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IObjectArrivalCallback.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\ITurnMovementCheck.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\ITurnMover.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\MoveTowardsPlayerTurnMover.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\SnailTurnMover.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\MovementIntelligence\WaitXTurnsMovementMovementCheck.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\AddCoinsOnDeath.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Player\OnPlayerDeath.cs" />

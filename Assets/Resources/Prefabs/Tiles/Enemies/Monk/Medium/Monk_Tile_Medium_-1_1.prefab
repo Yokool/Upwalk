@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -462021675158354501, guid: af1a46d1d8232374f811b84b26d17870,
+        type: 3}
+      propertyPath: lerpIncrementor
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: -462021675158354501, guid: af1a46d1d8232374f811b84b26d17870,
+        type: 3}
+      propertyPath: step
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4538496890708562035, guid: af1a46d1d8232374f811b84b26d17870,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 4538496890708562040, guid: af1a46d1d8232374f811b84b26d17870,
         type: 3}
       propertyPath: m_Name
-      value: HurtEnemyTile_2
+      value: Monk_Tile_Medium_-1_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af1a46d1d8232374f811b84b26d17870, type: 3}

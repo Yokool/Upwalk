@@ -65,7 +65,17 @@ PrefabInstance:
     - target: {fileID: 4538496890708562040, guid: 06995332797c3f8429127101a051039d,
         type: 3}
       propertyPath: m_Name
-      value: HurtEnemyTile_3
+      value: Monk_Tile_Hard_-1_-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041923535380925347, guid: 06995332797c3f8429127101a051039d,
+        type: 3}
+      propertyPath: lerpIncrementor
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041923535380925347, guid: 06995332797c3f8429127101a051039d,
+        type: 3}
+      propertyPath: step
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06995332797c3f8429127101a051039d, type: 3}

@@ -10,12 +10,17 @@ PrefabInstance:
     - target: {fileID: -7929498131084311685, guid: 867fa976bf817d149be816a84cf9b2b1,
         type: 3}
       propertyPath: lerpIncrementor
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -7929498131084311685, guid: 867fa976bf817d149be816a84cf9b2b1,
         type: 3}
       propertyPath: canGoThroughSolids
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7929498131084311685, guid: 867fa976bf817d149be816a84cf9b2b1,
+        type: 3}
+      propertyPath: step
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4538496890708562035, guid: 867fa976bf817d149be816a84cf9b2b1,
         type: 3}

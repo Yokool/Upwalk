@@ -409,8 +409,9 @@ public class GameGrid : MonoBehaviour
         // In order to avoid infinite recursion, we have to copy the list in order to not call the new entry
         List<GridObject> copy = rowRandomSpawners.ToList();
 
-        foreach(GridObject obj in copy)
+        for (int i = 0; i < copy.Count; i++)
         {
+            GridObject obj = copy[i];
             obj.GetComponent<GridObjectSpawnerRandomExtension>().SpawnRandomObjects();
         }
 

@@ -1,4 +1,6 @@
-﻿public interface ITurnMover
+﻿using UnityEngine;
+
+public interface ITurnMover
 {
-    void MoveTile();
+    Vector2Int GetTileToMoveTo();
 }

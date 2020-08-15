@@ -1,22 +1,33 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(Moveable))]
 public class MoveTowardsPlayerTurnMover : MonoBehaviour, ITurnMover
 {
-
-    private Moveable moveable;
+    private GridObject gridObject;
     private GridObject cachedPlayer;
 
 
     private void OnEnable()
     {
-        moveable = GetComponent<Moveable>();
+        gridObject = GetComponent<GridObject>();
+
         cachedPlayer = PlayerScript.INSTANCE.gameObject.GetComponent<GridObject>();
     }
 
-    public void MoveTile()
+    public Vector2Int GetTileToMoveTo()
     {
-        moveable.MoveObject_Towards_Simple(cachedPlayer);
+
+        int dX = cachedPlayer.X - gridObject.X;
+        int dY = cachedPlayer.Y - gridObject.Y;
+
+        dX = Mathf.Clamp(dX, -1, 1);
+        dY = Mathf.Clamp(dY, -1, 1);
+
+        Vector2Int endLoc = new Vector2Int(gridObject.X + dX, gridObject.Y + dY);
+
+        return endLoc;
+
     }
 }

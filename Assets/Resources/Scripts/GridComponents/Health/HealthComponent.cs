@@ -43,7 +43,6 @@ public class HealthComponent : MonoBehaviour
 
     public void OnDeath()
     {
-        Debug.Log($"{gameObject} just died.");
         foreach (IOnDeath onDeath in onDeaths)
         {
             onDeath.OnDeath();

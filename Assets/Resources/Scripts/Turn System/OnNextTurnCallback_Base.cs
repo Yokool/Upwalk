@@ -6,7 +6,12 @@ public class OnNextTurnCallback_Base : MonoBehaviour
     [SerializeField]
     private Turn associatedTurnType;
 
+    public Turn AssociatedTurnType => associatedTurnType;
+
+
     private IOnNextTurn_Callback[] nextTurnCallbacks;
+
+
 
     private void OnEnable()
     {

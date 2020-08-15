@@ -34,8 +34,9 @@ public class GridObjectSpawnerRandomExtension : MonoBehaviour
     public void SpawnRandomObjects()
     {
 
-        foreach(IWeightedObjectProvider<GameObject> weightedObjectProvider in randomObjectLists)
+        for (int i = 0; i < randomObjectLists.Length; i++)
         {
+            IWeightedObjectProvider<GameObject> weightedObjectProvider = randomObjectLists[i];
             // Prefab reference
             GameObject objectToSpawn = RandomWeightUtility.Pick<GameObject>(weightedObjectProvider.GetWeightedObjects());
 

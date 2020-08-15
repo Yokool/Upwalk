@@ -58,6 +58,7 @@ public class TurnSystem : MonoBehaviour
 
     public void NextTurn()
     {
+        // This is really a check for the player moving when he didn't start the game using the trigger.
         if (!gameLifetimeManager.GameStarted)
         {
             return;
@@ -78,13 +79,16 @@ public class TurnSystem : MonoBehaviour
     private void OnNextTurn()
     {
         TurnImageManager.INSTANCE.UpdateTurnSprite();
+        
+        TileMoverTurnSystem.INSTANCE.MoveAllTurnTiles(CurrentTurn);
+        
 
         List<IOnNextTurn_Callback> callbacks = turnCallbacks[CurrentTurn];
         foreach(IOnNextTurn_Callback callback in callbacks)
         {
             callback.OnNextTurn();
         }
-
+        
     }
 
 }

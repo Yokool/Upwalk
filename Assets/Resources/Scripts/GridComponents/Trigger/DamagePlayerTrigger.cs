@@ -27,22 +27,12 @@ public class DamagePlayerTrigger : MonoBehaviour, ITriggerCallback
                 return;
             }
 
-            Moveable moveable = triggeringObject.GetComponent<Moveable>();
+            HealthComponent health;
+            health = triggeringObject.gameObject.GetComponent<HealthComponent>();
 
-            int playerEndX = moveable.GetAsyncEndX();
-            int playerEndY = moveable.GetAsyncEndY();
-
-            if(playerEndX == thisGridObject.X && playerEndY == thisGridObject.Y)
-            {
-                HealthComponent health;
-                health = triggeringObject.gameObject.GetComponent<HealthComponent>();
-
-                health.Damage(damageAmount);
-            }
-
-
+            health.Damage(damageAmount);
             
-            
+
         }
 
     }

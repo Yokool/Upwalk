@@ -35,7 +35,7 @@ public class Moveable : MonoBehaviour
     private IObjectArrivalCallback[] objectArrivalCallbacks;
     private IFailedToMoveToCallback[] failedToMoveToCallbacks;
     private IObjectPreArrivalCallback[] objectPreArrivalCallbacks;
-
+    private IOnObjectMovementStart[] onObjectMovementStarts;
 
     private int asyncEndX;
     private int asyncEndY;
@@ -48,6 +48,7 @@ public class Moveable : MonoBehaviour
         objectArrivalCallbacks = GetComponents<IObjectArrivalCallback>();
         failedToMoveToCallbacks = GetComponents<IFailedToMoveToCallback>();
         objectPreArrivalCallbacks = GetComponents<IObjectPreArrivalCallback>();
+        onObjectMovementStarts = GetComponents<IOnObjectMovementStart>();
     }
 
     public void MoveObject_Towards_Simple(GridObject targetObject)
@@ -148,13 +149,12 @@ public class Moveable : MonoBehaviour
 
     private void PerformMoveObject_Absolute(int endX, int endY)
     {
-
         if (!CanMoveTo(endX, endY))
         {
             FailedToMoveToCallbackInvoke(endX, endY, gridObject);
             return;
         }
-
+        OnObjectStartedMovingCallbackInvoke(endX, endY);
         FinishMoving(endX, endY);
     }
 
@@ -172,14 +172,18 @@ public class Moveable : MonoBehaviour
     private void FinishMoving(int endX, int endY)
     {
         SetAsyncEndLoc(endX, endY);
+
         OnObjectPrearrivalCallbackInvoke(endX, endY);
+
         gridObject.SetGridPosition(endX, endY);
         gridObject.ValidateAndAssertObjectPosition();
+
         OnObjectArrivalCallbackInvoke(endX, endY);
+
         ResetAsyncEndLoc();
     }
 
-    private void FailedToMoveToCallbackInvoke(int endX, int endY, GridObject gridObject)
+    public void FailedToMoveToCallbackInvoke(int endX, int endY, GridObject gridObject)
     {
         foreach (IFailedToMoveToCallback failedToMoveToCallback in failedToMoveToCallbacks)
         {
@@ -193,6 +197,15 @@ public class Moveable : MonoBehaviour
         foreach(IObjectPreArrivalCallback objectPreArrivalCallback in objectPreArrivalCallbacks)
         {
             objectPreArrivalCallback.ObjectPreArrived(arrivalInformation);
+        }
+    }
+
+    private void OnObjectStartedMovingCallbackInvoke(int endX, int endY)
+    {
+        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
+        foreach (IOnObjectMovementStart onObjectMovementStart in onObjectMovementStarts)
+        {
+            onObjectMovementStart.ObjectStartedMoving(arrivalInformation);
         }
     }
 
@@ -222,6 +235,8 @@ public class Moveable : MonoBehaviour
             FailedToMoveToCallbackInvoke(endX, endY, gridObject);
             yield break;
         }
+
+        OnObjectStartedMovingCallbackInvoke(endX, endY);
 
         movementBlocked = true;
 
@@ -272,6 +287,26 @@ public class Moveable : MonoBehaviour
     private void ResetAsyncEndLoc()
     {
         SetAsyncEndLoc(NO_MOVEMENT_CODE, NO_MOVEMENT_CODE);
+    }
+
+    public bool CheckAsyncCollision(GridObject objToCheckFor)
+    {
+
+        if (!shouldLerp)
+        {
+            Debug.LogError($"{nameof(CheckAsyncCollision)} was called on an object {gameObject} which has lerping off.");
+        }
+
+        int asyncX = GetAsyncEndX();
+        int asyncY = GetAsyncEndY();
+
+        if ( asyncX == NO_MOVEMENT_CODE || asyncY == NO_MOVEMENT_CODE)
+        {
+            return false;
+        }
+
+        return (objToCheckFor.X == asyncX + gridObject.X) || (objToCheckFor.Y == asyncY + gridObject.Y);
+
     }
 
     private void SetAsyncEndLoc(int asyncEndX, int asyncEndY)

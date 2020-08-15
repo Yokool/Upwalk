@@ -80,9 +80,6 @@ public class TurnSystem : MonoBehaviour
     {
         TurnImageManager.INSTANCE.UpdateTurnSprite();
         
-        TileMoverTurnSystem.INSTANCE.MoveAllTurnTiles(CurrentTurn);
-        
-
         List<IOnNextTurn_Callback> callbacks = turnCallbacks[CurrentTurn];
         foreach(IOnNextTurn_Callback callback in callbacks)
         {

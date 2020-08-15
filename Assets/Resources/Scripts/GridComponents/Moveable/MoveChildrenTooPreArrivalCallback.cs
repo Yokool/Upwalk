@@ -6,7 +6,6 @@ public class MoveChildrenTooPreArrivalCallback : MonoBehaviour, IOnObjectMovemen
     {
         Transform travellingObjectTransform = arrivalInformation.TravellingObject.transform;
         GridObject travellingObjectGridObject = arrivalInformation.TravellingObject.GetComponent<GridObject>();
-        
 
         if(travellingObjectGridObject == null)
         {

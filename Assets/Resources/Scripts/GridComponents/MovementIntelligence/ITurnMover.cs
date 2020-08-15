@@ -2,5 +2,5 @@
 
 public interface ITurnMover
 {
-    Vector2Int GetTileToMoveTo();
+    void GetTileToMoveTo();
 }

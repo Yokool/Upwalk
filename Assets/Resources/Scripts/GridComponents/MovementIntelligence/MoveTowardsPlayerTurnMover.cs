@@ -7,27 +7,18 @@ public class MoveTowardsPlayerTurnMover : MonoBehaviour, ITurnMover
 {
     private GridObject gridObject;
     private GridObject cachedPlayer;
-
+    private Moveable moveable;
 
     private void OnEnable()
     {
         gridObject = GetComponent<GridObject>();
+        moveable = GetComponent<Moveable>();
 
         cachedPlayer = PlayerScript.INSTANCE.gameObject.GetComponent<GridObject>();
     }
 
-    public Vector2Int GetTileToMoveTo()
+    public void GetTileToMoveTo()
     {
-
-        int dX = cachedPlayer.X - gridObject.X;
-        int dY = cachedPlayer.Y - gridObject.Y;
-
-        dX = Mathf.Clamp(dX, -1, 1);
-        dY = Mathf.Clamp(dY, -1, 1);
-
-        Vector2Int endLoc = new Vector2Int(gridObject.X + dX, gridObject.Y + dY);
-
-        return endLoc;
-
+        moveable.MoveObject_Towards_Simple(cachedPlayer);
     }
 }

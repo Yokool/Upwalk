@@ -293,49 +293,4 @@ public class Moveable : MonoBehaviour
         OnObjectArrivalCallbackInvoke(endX, endY);
     }
 
-    /*
-     * LEGACY ASYNC CODE
-     * 
-     * 
-    private void ResetAsyncEndLoc()
-    {
-        SetAsyncEndLoc(NO_MOVEMENT_CODE, NO_MOVEMENT_CODE);
-    }
-
-    public bool CheckAsyncCollision(GridObject objToCheckFor)
-    {
-
-        if (!shouldLerp)
-        {
-            Debug.LogError($"{nameof(CheckAsyncCollision)} was called on an object {gameObject} which has lerping off.");
-        }
-
-        int asyncX = GetAsyncEndX();
-        int asyncY = GetAsyncEndY();
-
-        if ( asyncX == NO_MOVEMENT_CODE || asyncY == NO_MOVEMENT_CODE)
-        {
-            return false;
-        }
-
-        return (objToCheckFor.X == asyncX + gridObject.X) || (objToCheckFor.Y == asyncY + gridObject.Y);
-
-    }
-
-    private void SetAsyncEndLoc(int asyncEndX, int asyncEndY)
-    {
-        this.asyncEndX = asyncEndX;
-        this.asyncEndY = asyncEndY;
-    }
-
-    public int GetAsyncEndX()
-    {
-        return asyncEndX;
-    }
-
-    public int GetAsyncEndY()
-    {
-        return asyncEndY;
-    }
-    */
 }

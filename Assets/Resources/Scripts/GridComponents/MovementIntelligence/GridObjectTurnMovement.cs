@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Moveable))]
 [RequireComponent(typeof(OnNextTurnCallback_Base))] /* <-- CallBackBase servers as a marker component for the turn type */
 [DisallowMultipleComponent]
-public class GridObjectTurnMovement : MonoBehaviour
+public class GridObjectTurnMovement : MonoBehaviour, IOnNextTurn_Callback
 {
 
     private ITurnMover mover;
@@ -21,16 +21,9 @@ public class GridObjectTurnMovement : MonoBehaviour
         onNextTurnBase = GetComponent<OnNextTurnCallback_Base>();
         gridObject = GetComponent<GridObject>();
 
-        TileMoverTurnSystem.INSTANCE.RegisterObject(gridObject);
-
     }
 
-    private void OnDisable()
-    {
-        TileMoverTurnSystem.INSTANCE.RemoveObject(gridObject);
-    }
-
-    public Vector2Int GetNextTile()
+    public void MoveToNextTile()
     {
         bool checkSuccess = false;
 
@@ -44,10 +37,15 @@ public class GridObjectTurnMovement : MonoBehaviour
 
         if (!checkSuccess)
         {
-            return new Vector2Int(gridObject.X, gridObject.Y);
+            return;
         }
 
-        return mover.GetTileToMoveTo();
+        mover.GetTileToMoveTo();
 
+    }
+
+    public void OnNextTurn()
+    {
+        MoveToNextTile();
     }
 }

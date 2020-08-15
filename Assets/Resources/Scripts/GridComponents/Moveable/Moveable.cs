@@ -225,11 +225,18 @@ public class Moveable : MonoBehaviour
                 // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
                 // even though we've already arrived.
                 OnObjectEndedMoving(endX, endY);
+                
                 break;
             }
 
         }
+
+
+        gridObject.UpdatePositionToGrid();
+
         movementBlocked = false;
+
+
         yield break;
 
 
@@ -261,18 +268,18 @@ public class Moveable : MonoBehaviour
         }
     }
 
-    private void OnObjectStartedMovingCallbackInvoke(int endX, int endY)
+    private void OnObjectStartedMovingCallbackInvoke(int dX, int dY)
     {
-        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
+        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, dX, dY);
         foreach (IOnObjectMovementStart onObjectMovementStart in onObjectMovementStarts)
         {
             onObjectMovementStart.ObjectStartedMoving(arrivalInformation);
         }
     }
 
-    private void OnObjectArrivalCallbackInvoke(int endX, int endY)
+    private void OnObjectArrivalCallbackInvoke(int dX, int dY)
     {
-        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
+        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, dX, dY);
         foreach (IObjectArrivalCallback objectArrivalCallback in objectArrivalCallbacks)
         {
             objectArrivalCallback.ObjectArrived(arrivalInformation);
@@ -283,14 +290,18 @@ public class Moveable : MonoBehaviour
 
     private void OnObjectStartedMoving(int endX, int endY, bool dontUpdatePosition)
     {
+        int currX = gridObject.X;
+        int currY = gridObject.Y;
         gridObject.SetGridPosition(endX, endY, dontUpdatePosition);
         gridObject.ValidateAndAssertObjectPosition();
-        OnObjectStartedMovingCallbackInvoke(endX, endY);
+        OnObjectStartedMovingCallbackInvoke(endX - currX, endY - currY);
     }
 
     private void OnObjectEndedMoving(int endX, int endY)
     {
-        OnObjectArrivalCallbackInvoke(endX, endY);
+        int currX = gridObject.X;
+        int currY = gridObject.Y;
+        OnObjectArrivalCallbackInvoke(endX - currX, endY - currY);
     }
 
 }

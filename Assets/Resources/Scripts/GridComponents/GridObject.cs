@@ -72,7 +72,7 @@ public class GridObject : MonoBehaviour
     /// Updates the position of this gameObject by converting the grid coordinates of this object into world coordinates
     /// and applying the to the world position of this object.
     /// </summary>
-    private void UpdatePositionToGrid()
+    public void UpdatePositionToGrid()
     {
         
         Vector3 position = gameObject.transform.position;

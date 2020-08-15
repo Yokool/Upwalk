@@ -26,8 +26,8 @@ public class MoveChildrenTooPreArrivalCallback : MonoBehaviour, IOnObjectMovemen
                 continue;
             }
 
-            int dX = -travellingObjectGridObject.X + arrivalInformation.TargetX;
-            int dY = -travellingObjectGridObject.Y + arrivalInformation.TargetY;
+            int dX = arrivalInformation.dX;
+            int dY = arrivalInformation.dY;
 
             Direction direction = DirectionExtension.GetDirectionFromVector(dX, dY);
 

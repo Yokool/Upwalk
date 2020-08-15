@@ -54,10 +54,16 @@ public class GridObject : MonoBehaviour
     /// </summary>
     /// <param name="X"></param>
     /// <param name="Y"></param>
-    public void SetGridPosition(int X, int Y)
+    public void SetGridPosition(int X, int Y, bool dontUpdatePosition = false)
     {
         this.x = X;
         this.y = Y;
+
+        if (dontUpdatePosition)
+        {
+            return;
+        }
+
         UpdatePositionToGrid();
     }
 

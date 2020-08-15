@@ -8,8 +8,11 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class Moveable : MonoBehaviour
 {
-
+    /* 
+     * LEGACY ASYNC CODE
+     * 
     public const int NO_MOVEMENT_CODE = -101011;
+    */
 
     [SerializeField]
     private bool shouldLerp = false;
@@ -34,12 +37,15 @@ public class Moveable : MonoBehaviour
 
     private IObjectArrivalCallback[] objectArrivalCallbacks;
     private IFailedToMoveToCallback[] failedToMoveToCallbacks;
-    private IObjectPreArrivalCallback[] objectPreArrivalCallbacks;
     private IOnObjectMovementStart[] onObjectMovementStarts;
 
+    /*
+     * LEGACY ASYNC CODE
+     * 
+     * 
     private int asyncEndX;
     private int asyncEndY;
-
+    */
     
 
     private void OnEnable()
@@ -47,7 +53,6 @@ public class Moveable : MonoBehaviour
         gridObject = GetComponent<GridObject>();
         objectArrivalCallbacks = GetComponents<IObjectArrivalCallback>();
         failedToMoveToCallbacks = GetComponents<IFailedToMoveToCallback>();
-        objectPreArrivalCallbacks = GetComponents<IObjectPreArrivalCallback>();
         onObjectMovementStarts = GetComponents<IOnObjectMovementStart>();
     }
 
@@ -147,6 +152,8 @@ public class Moveable : MonoBehaviour
         return canMoveTo;
     }
 
+    #region PERFORM_NON_LERP_MOVEMENT
+
     private void PerformMoveObject_Absolute(int endX, int endY)
     {
         if (!CanMoveTo(endX, endY))
@@ -154,8 +161,9 @@ public class Moveable : MonoBehaviour
             FailedToMoveToCallbackInvoke(endX, endY, gridObject);
             return;
         }
-        OnObjectStartedMovingCallbackInvoke(endX, endY);
-        FinishMoving(endX, endY);
+        
+        OnObjectStartedMoving(endX, endY, false);
+        OnObjectEndedMoving(endX, endY);
     }
 
     private void PerformMoveObject_Relative(int X, int Y)
@@ -169,34 +177,87 @@ public class Moveable : MonoBehaviour
         PerformMoveObject_Relative((int)move.x, (int)move.y);
     }
 
-    private void FinishMoving(int endX, int endY)
+    #endregion
+
+    #region PERFORM_LERP_MOVEMENT
+
+    /// <summary>
+    /// Custom method that lerps a gridObject from its position to the end of a gridDirectionVector.
+    /// 
+    /// Meaning that if we're at 1, 1 and move by a direction vector of 0, 1 we'll end up at 1, 2 smoothly.
+    /// LerpIncrement is fixed at the time of writing this doc.
+    /// 
+    /// </summary>
+    private IEnumerator PerformMoveObjectLerp_Absolute(int X, int Y)
     {
-        SetAsyncEndLoc(endX, endY);
+        int endX = X;
+        int endY = Y;
 
-        OnObjectPrearrivalCallbackInvoke(endX, endY);
+        if (!CanMoveTo(endX, endY))
+        {
+            FailedToMoveToCallbackInvoke(endX, endY, gridObject);
+            yield break;
+        }
 
-        gridObject.SetGridPosition(endX, endY);
-        gridObject.ValidateAndAssertObjectPosition();
+        
 
-        OnObjectArrivalCallbackInvoke(endX, endY);
+        movementBlocked = true;
 
-        ResetAsyncEndLoc();
+        Vector3 startPosition = gridObject.transform.position;
+        
+        Vector2 worldPositionEnd = GameGrid.INSTANCE.GridToWorldCoordinates(endX, endY);
+
+        float lerpNow = 0f;
+
+        OnObjectStartedMoving(endX, endY, true);
+
+        // This is basically a FixedUpdate call done through a Coroutine
+        while (true)
+        {
+            yield return new WaitForFixedUpdate();
+            lerpNow += lerpIncrementor;
+            lerpNow = Mathf.Clamp(lerpNow, 0f, 1f);
+            gridObject.gameObject.transform.position = Vector3.Lerp(startPosition, worldPositionEnd, lerpNow);
+            
+            // Is nearly equal to 1 - meaning we've arrived at the destination.
+            if(Mathf.Abs(1f - lerpNow) < 0.001f)
+            {
+                // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
+                // even though we've already arrived.
+                OnObjectEndedMoving(endX, endY);
+                break;
+            }
+
+        }
+        movementBlocked = false;
+        yield break;
+
+
+
     }
+
+    
+
+    private IEnumerator PerformMoveObjectLerp_Relative(int X, int Y)
+    {
+        return PerformMoveObjectLerp_Absolute(gridObject.X + X, gridObject.Y + Y);
+    }
+
+    private IEnumerator PerformMoveObjectLerp_RelativeDirectional(Direction direction)
+    {
+        Vector2 move = direction.GetUnitDirection() * step;
+        return PerformMoveObjectLerp_Relative((int)move.x, (int)move.y);
+    }
+
+    #endregion
+
+    #region CALLBACK_INVOKES
 
     public void FailedToMoveToCallbackInvoke(int endX, int endY, GridObject gridObject)
     {
         foreach (IFailedToMoveToCallback failedToMoveToCallback in failedToMoveToCallbacks)
         {
             failedToMoveToCallback.FailedToMoveTo(endX, endY, gridObject);
-        }
-    }
-
-    private void OnObjectPrearrivalCallbackInvoke(int endX, int endY)
-    {
-        ArrivalInformation arrivalInformation = new ArrivalInformation(gameObject, endX, endY);
-        foreach(IObjectPreArrivalCallback objectPreArrivalCallback in objectPreArrivalCallbacks)
-        {
-            objectPreArrivalCallback.ObjectPreArrived(arrivalInformation);
         }
     }
 
@@ -218,72 +279,24 @@ public class Moveable : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Custom method that lerps a gridObject from its position to the end of a gridDirectionVector.
-    /// 
-    /// Meaning that if we're at 1, 1 and move by a direction vector of 0, 1 we'll end up at 1, 2 smoothly.
-    /// LerpIncrement is fixed at the time of writing this doc.
-    /// 
-    /// </summary>
-    private IEnumerator PerformMoveObjectLerp_Absolute(int X, int Y)
+    #endregion
+
+    private void OnObjectStartedMoving(int endX, int endY, bool dontUpdatePosition)
     {
-        int endX = X;
-        int endY = Y;
-
-        if (!CanMoveTo(endX, endY))
-        {
-            FailedToMoveToCallbackInvoke(endX, endY, gridObject);
-            yield break;
-        }
-
+        gridObject.SetGridPosition(endX, endY, dontUpdatePosition);
+        gridObject.ValidateAndAssertObjectPosition();
         OnObjectStartedMovingCallbackInvoke(endX, endY);
-
-        movementBlocked = true;
-
-        Vector3 startPosition = gridObject.transform.position;
-        
-        Vector2 worldPositionEnd = GameGrid.INSTANCE.GridToWorldCoordinates(endX, endY);
-
-        float lerpNow = 0f;
-
-
-        // This is basically a FixedUpdate call done through a Coroutine
-        while (true)
-        {
-            yield return new WaitForFixedUpdate();
-            lerpNow += lerpIncrementor;
-            lerpNow = Mathf.Clamp(lerpNow, 0f, 1f);
-            gridObject.gameObject.transform.position = Vector3.Lerp(startPosition, worldPositionEnd, lerpNow);
-            
-            // Is nearly equal to 1 - meaning we've arrived at the destination.
-            if(Mathf.Abs(1f - lerpNow) < 0.001f)
-            {
-                // When we've arrived finally update the gridPosition, note that it also applies Updating the position to the end
-                // even though we've already arrived.
-                FinishMoving(endX, endY);
-                break;
-            }
-
-        }
-        movementBlocked = false;
-        yield break;
-
-
-
     }
-    
-    private IEnumerator PerformMoveObjectLerp_Relative(int X, int Y)
+
+    private void OnObjectEndedMoving(int endX, int endY)
     {
-        return PerformMoveObjectLerp_Absolute(gridObject.X + X, gridObject.Y + Y);
+        OnObjectArrivalCallbackInvoke(endX, endY);
     }
 
-    private IEnumerator PerformMoveObjectLerp_RelativeDirectional(Direction direction)
-    {
-        Vector2 move = direction.GetUnitDirection() * step;
-        return PerformMoveObjectLerp_Relative((int)move.x, (int)move.y);
-    }
-
-
+    /*
+     * LEGACY ASYNC CODE
+     * 
+     * 
     private void ResetAsyncEndLoc()
     {
         SetAsyncEndLoc(NO_MOVEMENT_CODE, NO_MOVEMENT_CODE);
@@ -324,5 +337,5 @@ public class Moveable : MonoBehaviour
     {
         return asyncEndY;
     }
-
+    */
 }

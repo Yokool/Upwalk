@@ -86,7 +86,6 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\ICheckIfCanMoveTo.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IFailedToMoveToCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IObjectArrivalCallback.cs" />
-    <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IObjectPrearrivalCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\IOnObjectMovementStart.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\MoveChildrenTooPreArrivalCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Moveable.cs" />

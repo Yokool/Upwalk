@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class MoveChildrenTooPreArrivalCallback : MonoBehaviour, IObjectPreArrivalCallback
+public class MoveChildrenTooPreArrivalCallback : MonoBehaviour, IOnObjectMovementStart
 {
-    public void ObjectPreArrived(ArrivalInformation arrivalInformation)
+    public void ObjectStartedMoving(ArrivalInformation arrivalInformation)
     {
         Transform travellingObjectTransform = arrivalInformation.TravellingObject.transform;
         GridObject travellingObjectGridObject = arrivalInformation.TravellingObject.GetComponent<GridObject>();
@@ -10,7 +10,7 @@ public class MoveChildrenTooPreArrivalCallback : MonoBehaviour, IObjectPreArriva
 
         if(travellingObjectGridObject == null)
         {
-            Debug.LogError($"Class: {nameof(MoveChildrenTooPreArrivalCallback)}, Method: {nameof(ObjectPreArrived)} whose travelling object {arrivalInformation.TravellingObject} contains no {nameof(GridObject)} component.");
+            Debug.LogError($"Class: {nameof(MoveChildrenTooPreArrivalCallback)}, Method: {nameof(ObjectStartedMoving)} whose travelling object {arrivalInformation.TravellingObject} contains no {nameof(GridObject)} component.");
             return;
         }
 
@@ -23,7 +23,7 @@ public class MoveChildrenTooPreArrivalCallback : MonoBehaviour, IObjectPreArriva
 
             if(childGridObject == null || childMoveable == null)
             {
-                Debug.LogError($"Class: {nameof(MoveChildrenTooPreArrivalCallback)}, Method: {nameof(ObjectPreArrived)} was called on an object {gameObject} whose child {child} contains no {nameof(GridObject)} component or {nameof(Moveable)} component.");
+                Debug.LogError($"Class: {nameof(MoveChildrenTooPreArrivalCallback)}, Method: {nameof(ObjectStartedMoving)} was called on an object {gameObject} whose child {child} contains no {nameof(GridObject)} component or {nameof(Moveable)} component.");
                 continue;
             }
 

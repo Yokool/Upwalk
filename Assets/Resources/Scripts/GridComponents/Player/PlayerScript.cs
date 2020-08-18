@@ -14,6 +14,10 @@ public class PlayerScript : MonoBehaviour
     private static PlayerScript instance;
     public static PlayerScript INSTANCE => instance;
 
+    private Vector2 lastPosition = Vector2.zero;
+    Vector2 delta = Vector2.zero;
+    private bool dragging = false;
+
     private void Awake()
     {
         instance = this;
@@ -29,27 +33,66 @@ public class PlayerScript : MonoBehaviour
 
         Direction moveDirection = Direction.NONE;
 
-        if (Input.GetKeyDown(KeyCode.W))
+        // Stopped dragging
+        if (Input.GetMouseButtonUp(0))
         {
-            moveDirection = Direction.NORTH;
+            
+            if (dragging)
+            {
+                Debug.Log(delta);
+                if(System.Math.Abs(delta.x) > System.Math.Abs(delta.y))
+                {
+                    moveDirection = DirectionExtension.GetDirectionFromVector((int)delta.x, 0);
+                }
+                else
+                {
+                    moveDirection = DirectionExtension.GetDirectionFromVector(0, (int)delta.y);
+                }
+
+                Debug.Log(moveDirection);
+                
+                // Move the object
+                if (!moveDirection.IsEmpty())
+                {
+                    moveable.MoveObject_RelativeDirectional(moveDirection);
+                }
+                else
+                {
+                    TurnSystem.INSTANCE.NextTurn();
+                }
+
+                // Reset fields
+                lastPosition = Vector2.zero;
+                dragging = false;
+                delta = Vector2.zero;
+
+                return;
+            }
+
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        
+        // Not dragging at all
+        if (!Input.GetMouseButton(0))
         {
-            moveDirection = Direction.SOUTH;
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            moveDirection = Direction.WEST;
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            moveDirection = Direction.EAST;
+            return;
         }
 
-        if (!moveDirection.IsEmpty())
+        // Inprogress Dragging
+        Vector2 currScreenPosition = Input.mousePosition;
+
+        if (!dragging)
         {
-            moveable.MoveObject_RelativeDirectional(moveDirection);
+            dragging = true;
         }
+        else
+        {
+
+            Vector2 d = currScreenPosition - lastPosition;
+
+            delta += (d);
+        }
+
+        lastPosition = currScreenPosition;
         
     }
 

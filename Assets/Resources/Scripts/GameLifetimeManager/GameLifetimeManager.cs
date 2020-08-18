@@ -32,6 +32,7 @@ public class GameLifetimeManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         instance = this;
+        Debug.Log("SETTING");
     }
 
 

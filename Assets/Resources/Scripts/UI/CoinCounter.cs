@@ -64,8 +64,6 @@ public class CoinCounter : MonoBehaviour
 
             int zeroes = (int)System.Math.Pow(10.0, (double)i);
 
-            Debug.Log("PREVALUE: " + value);
-
             int counterValue = 0;
 
             if(i != 0)
@@ -77,8 +75,6 @@ public class CoinCounter : MonoBehaviour
             {
                 counterValue = value;
             }
-
-            Debug.Log($"ZEROES: {zeroes}, COUNTER_VALUE: {counterValue}, i: {i}, postValue: {value}");
 
             counter.sprite = typeof(GameSprites).GetField($"NumberFont_{counterValue}").GetValue(null) as Sprite;
 

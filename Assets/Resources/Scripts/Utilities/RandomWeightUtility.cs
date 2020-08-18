@@ -9,7 +9,6 @@ public static class RandomWeightUtility
 
         int totalWeight = 0;
 
-
         foreach (WeightObjectTie<T> weightObject in pickFrom)
         {
             totalWeight += weightObject.weight;
@@ -17,27 +16,26 @@ public static class RandomWeightUtility
 
         int generatedNumber = Random.Range(0, totalWeight);
 
+
+        int currentWeight = 0;
+
         T pickedObject = null;
 
-        List<T> list = new List<T>();
-
-        for (int i = 0; i < pickFrom.Length; ++i)
+        for(int i = 0; i < pickFrom.Length; ++i)
         {
-            WeightObjectTie<T> objectTie = pickFrom[i];
+            WeightObjectTie<T> tie = pickFrom[i];
+            currentWeight += tie.weight;
 
-            T weightedObject = objectTie.weightedObject;
-
-            for (int j = 1; j <= objectTie.weight; ++j)
+            if(generatedNumber <= currentWeight)
             {
-                list.Add(weightedObject);
+                pickedObject = tie.weightedObject;
+                break;
             }
 
         }
 
-
-        pickedObject = list[generatedNumber];
-
         return pickedObject;
+
     }
 
 }

@@ -34,6 +34,14 @@ public static class GameSprites
     public static Sprite Wall_NW;
     public static Sprite Wall_ES;
 
+    public static Sprite Player_Easy;
+    public static Sprite Player_Medium;
+    public static Sprite Player_Hard;
+
+    public static Sprite Heart_7;
+    public static Sprite Heart_6;
+    public static Sprite Heart_5;
+    public static Sprite Heart_4;
     public static Sprite Heart_3;
     public static Sprite Heart_2;
     public static Sprite Heart_1;
@@ -81,6 +89,14 @@ public static class GameSprites
         Wall_NW = Resources.Load<Sprite>("Sprites/Wall/Wall_NW");
         Wall_ES = Resources.Load<Sprite>("Sprites/Wall/Wall_ES");
 
+        Player_Easy = Resources.Load<Sprite>("Sprites/Player/Player_Easy");
+        Player_Medium = Resources.Load<Sprite>("Sprites/Player/Player_Medium");
+        Player_Hard = Resources.Load<Sprite>("Sprites/Player/Player_Hard");
+
+        Heart_7 = Resources.Load<Sprite>("Sprites/Hearts/Heart_7");
+        Heart_6 = Resources.Load<Sprite>("Sprites/Hearts/Heart_6");
+        Heart_5 = Resources.Load<Sprite>("Sprites/Hearts/Heart_5");
+        Heart_4 = Resources.Load<Sprite>("Sprites/Hearts/Heart_4");
         Heart_3 = Resources.Load<Sprite>("Sprites/Hearts/Heart_3");
         Heart_2 = Resources.Load<Sprite>("Sprites/Hearts/Heart_2");
         Heart_1 = Resources.Load<Sprite>("Sprites/Hearts/Heart_1");

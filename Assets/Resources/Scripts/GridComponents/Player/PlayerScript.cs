@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(Moveable))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(HealthComponent))]
 [DisallowMultipleComponent]
 public class PlayerScript : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        GetComponent<HealthComponent>().SetHealth(PersistentFiles.PlayerHealthData.HealthAmount);
+        GetComponent<SpriteRenderer>().sprite = PersistentFiles.PlayerOutfitData.GetOutfitSprite();
     }
 
 
@@ -41,7 +44,6 @@ public class PlayerScript : MonoBehaviour
             
             if (dragging)
             {
-                Debug.Log(delta);
                 if(System.Math.Abs(delta.x) > System.Math.Abs(delta.y))
                 {
                     moveDirection = DirectionExtension.GetDirectionFromVector((int)delta.x, 0);
@@ -51,8 +53,6 @@ public class PlayerScript : MonoBehaviour
                     moveDirection = DirectionExtension.GetDirectionFromVector(0, (int)delta.y);
                 }
 
-                Debug.Log(moveDirection);
-                
                 // Move the object
                 if (!moveDirection.IsEmpty())
                 {

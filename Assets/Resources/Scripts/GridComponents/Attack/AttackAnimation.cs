@@ -14,6 +14,7 @@ public class AttackAnimation : MonoBehaviour
 
     private string GetAttackAnimationType()
     {
+        Debug.Log(PersistentFiles.PlayerAttackData.AttackType);
         switch (PersistentFiles.PlayerAttackData.AttackType)
         {
             case Turn.EASY:

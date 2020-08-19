@@ -7,36 +7,57 @@ public class HealthComponent : MonoBehaviour
     private int health;
     public int Health => health;
 
-    public void SetHealth(int health)
-    {
-        this.health = health;
-    }
-
     private IOnDeath[] onDeaths;
     private IOnHeal[] onHeals;
     private IOnDamage[] onDamages;
+    private IOnHealthComponentReady onHealthComponentReady;
 
-
-    private void CustomInit()
+    public void SetHealth(int value)
     {
-        onDeaths = GetComponents<IOnDeath>();
-        onHeals = GetComponents<IOnHeal>();
-        onDamages = GetComponents<IOnDamage>();
+        this.health = value;
+
+        if(value > 0)
+        {
+            OnHeal();
+        }
+        else if(value < 0)
+        {
+            OnDamage();
+        }
+
     }
 
     private void OnEnable()
     {
-        CustomInit();
+        onDeaths = GetComponents<IOnDeath>();
+        onHeals = GetComponents<IOnHeal>();
+        onDamages = GetComponents<IOnDamage>();
+
+        onHealthComponentReady = GetComponent<IOnHealthComponentReady>();
+        OnHealthComponentReady();
+    }
+
+    private void OnHealthComponentReady()
+    {
+        if(onHealthComponentReady != null)
+        {
+            onHealthComponentReady.OnHealthComponentReady();
+        }
     }
 
     public void Damage(int amount)
     {
         health -= amount;
-        health = Mathf.Clamp(amount, 0, 5);
+
+        // "It's fine, It's fine."
+        if(health < 0)
+        {
+            health = 0;
+        }
 
         OnDamage();
 
-        if (health <= 0)
+        if (health == 0)
         {
             OnDeath();
         }

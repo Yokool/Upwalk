@@ -86,6 +86,8 @@
     <Compile Include="Assets\Resources\Scripts\GridComponents\Health\IOnDamage.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Health\IOnDeathCallback.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Health\IOnHeal.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Health\IOnHealthComponentReady.cs" />
+    <Compile Include="Assets\Resources\Scripts\GridComponents\Health\PlayerHealthFromFileOnHealthComponentReady.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\ArrivalInformation.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\CallOwnTriggerOnArrival.cs" />
     <Compile Include="Assets\Resources\Scripts\GridComponents\Moveable\Direction.cs" />

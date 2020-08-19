@@ -23,7 +23,6 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        GetComponent<HealthComponent>().SetHealth(PersistentFiles.PlayerHealthData.HealthAmount);
         GetComponent<SpriteRenderer>().sprite = PersistentFiles.PlayerOutfitData.GetOutfitSprite();
     }
 

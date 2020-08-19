@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(GridObject))]
 [RequireComponent(typeof(Moveable))]
+[RequireComponent(typeof(SpriteRenderer))]
 [DisallowMultipleComponent]
 public class PlayerScript : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     {
         instance = this;
     }
+
 
     private void Update()
     {
@@ -102,6 +104,9 @@ public class PlayerScript : MonoBehaviour
     {
         gridObject = GetComponent<GridObject>();
         moveable = GetComponent<Moveable>();
+
+
+
     }
 
 

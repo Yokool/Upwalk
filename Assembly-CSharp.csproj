@@ -63,6 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ClothesUpgradeOnShopItemBuy.cs" />
+    <Compile Include="Assets\DamageUpgradeOnShopItemBuy.cs" />
+    <Compile Include="Assets\HealthUpgradeOnShopItemBuy.cs" />
+    <Compile Include="Assets\IOnShopItemBuy.cs" />
+    <Compile Include="Assets\PersistentFile.cs" />
+    <Compile Include="Assets\PersistentFiles.cs" />
+    <Compile Include="Assets\PlayerAttackData.cs" />
     <Compile Include="Assets\Resources\Scripts\GameGrid\GameGrid.cs" />
     <Compile Include="Assets\Resources\Scripts\GameLifetimeManager\GameLifetimeManager.cs" />
     <Compile Include="Assets\Resources\Scripts\GameLifetimeManager\GameSessionData.cs" />

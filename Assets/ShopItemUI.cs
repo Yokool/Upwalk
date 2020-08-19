@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class ShopItemUI : MonoBehaviour
 {
+
+    private ShopItem associatedItem;
+
     [SerializeField]
     private Image itemName;
 
@@ -20,8 +23,12 @@ public class ShopItemUI : MonoBehaviour
 
     private List<Image> counters;
 
-    private void OnEnable()
+    [SerializeField]
+    private Button buyButton;
+
+    private void Awake()
     {
+        buyButton.onClick.AddListener(OnBuy);
         counters = new List<Image>();
         counters.Add(counter_1);
         counters.Add(counter_10);
@@ -30,9 +37,15 @@ public class ShopItemUI : MonoBehaviour
         counters.Add(counter_10000);
     }
 
+    private void OnBuy()
+    {
+        associatedItem.OnBuy();
+    }
+
     public void SetFromShopItem(ShopItem item)
     {
-        itemName.sprite = item.ItemName;
+        associatedItem = item;
+        itemName.sprite = item.NameSprite;
         CoinCounter.AttachValuesToCounter(item.Cost, counters);
     }
 

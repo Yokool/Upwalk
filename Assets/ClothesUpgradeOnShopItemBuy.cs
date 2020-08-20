@@ -4,7 +4,8 @@ public class ClothesUpgradeOnShopItemBuy : IOnShopItemBuy
 {
     public void OnShopItemBuy()
     {
-        throw new NotImplementedException();
+        PlayerOutfitData outfitData = PersistentFiles.PlayerOutfitData;
+        outfitData.OutfitType = ++outfitData.OutfitType;
     }
 }
 

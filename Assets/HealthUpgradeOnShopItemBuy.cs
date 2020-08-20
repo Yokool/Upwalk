@@ -4,7 +4,8 @@ public class HealthUpgradeOnShopItemBuy : IOnShopItemBuy
 {
     public void OnShopItemBuy()
     {
-        throw new NotImplementedException();
+        PlayerHealthData playerHealthData = PersistentFiles.PlayerHealthData;
+        playerHealthData.HealthAmount += 1;
     }
 }
 

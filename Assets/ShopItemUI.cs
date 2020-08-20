@@ -37,9 +37,20 @@ public class ShopItemUI : MonoBehaviour
         counters.Add(counter_10000);
     }
 
+    private bool EnoughMoney()
+    {
+        return PersistentFiles.PlayerCoinData.Coins >= associatedItem.Cost;
+    }
+
     private void OnBuy()
     {
-        associatedItem.OnBuy();
+        if (EnoughMoney())
+        {
+            PersistentFiles.PlayerCoinData.RemoveCoins(associatedItem.Cost);
+            PersistentFiles.PlayerCoinData.Save();
+            associatedItem.OnBuy();
+        }
+        
     }
 
     public void SetFromShopItem(ShopItem item)

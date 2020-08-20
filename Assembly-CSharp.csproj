@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ClothesUpgradeOnShopItemBuy.cs" />
+    <Compile Include="Assets\CoinData.cs" />
     <Compile Include="Assets\DamageUpgradeOnShopItemBuy.cs" />
     <Compile Include="Assets\HealthUpgradeOnShopItemBuy.cs" />
     <Compile Include="Assets\IOnShopItemBuy.cs" />

@@ -20,9 +20,9 @@ public static class ShopItemDatabase
         // Init with default values
         shopItems = new List<ShopItem>()
         {
-            new ShopItem("ClothesUpgrade", 200, ShopNames.TestName, new ClothesUpgradeOnShopItemBuy()),
-            new ShopItem("HealthUpgrade", 6500, ShopNames.TestName, new HealthUpgradeOnShopItemBuy()),
-            new ShopItem("DamageUpgrade", 11111, ShopNames.TestName, new DamageUpgradeOnShopItemBuy())
+            new ShopItem("ClothesUpgrade", 3, 200, ShopNames.TestName, new ClothesUpgradeOnShopItemBuy()),
+            new ShopItem("HealthUpgrade", 4, 6500, ShopNames.TestName, new HealthUpgradeOnShopItemBuy()),
+            new ShopItem("DamageUpgrade", 3, 11111, ShopNames.TestName, new DamageUpgradeOnShopItemBuy())
         };
         // Load the values if they exist
         LoadAllShopItems();

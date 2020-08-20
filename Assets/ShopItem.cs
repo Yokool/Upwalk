@@ -18,9 +18,13 @@ public class ShopItem
     private int upgradeAmount = 1;
     public int UpgradeAmount => upgradeAmount;
 
-    public ShopItem(string fileItemName, int cost, Sprite nameSprite, IOnShopItemBuy onShopItemBuy)
+    private int maxUpgradeAmount = 1;
+    public int MaxUpgradeAmount => maxUpgradeAmount;
+
+    public ShopItem(string fileItemName, int maxUpgradeAmount, int cost, Sprite nameSprite, IOnShopItemBuy onShopItemBuy)
     {
         this.fileItemName = fileItemName;
+        this.maxUpgradeAmount = maxUpgradeAmount;
         this.cost = cost;
         this.nameSprite = nameSprite;
         this.onShopItemBuy = onShopItemBuy;

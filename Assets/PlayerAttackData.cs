@@ -6,7 +6,7 @@ public class PlayerAttackData : PersistentFile
 {
     public Turn AttackType { get; set; }
 
-    public void IncreasetAttackType()
+    public void IncreaseAttackType()
     {
         AttackType = (Turn)((int)++AttackType);
     }

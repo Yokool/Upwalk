@@ -14,7 +14,6 @@ public class AttackAnimation : MonoBehaviour
 
     private string GetAttackAnimationType()
     {
-        Debug.Log(PersistentFiles.PlayerAttackData.AttackType);
         switch (PersistentFiles.PlayerAttackData.AttackType)
         {
             case Turn.EASY:
@@ -32,7 +31,6 @@ public class AttackAnimation : MonoBehaviour
     private void OnEnable()
     {
         animator = GetComponent<Animator>();
-        Debug.Log(GetAttackAnimationType());
         animator.Play(GetAttackAnimationType());
         Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
     }

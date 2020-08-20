@@ -32,7 +32,6 @@ public class GameLifetimeManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         instance = this;
-        Debug.Log("SETTING");
     }
 
 
@@ -47,7 +46,13 @@ public class GameLifetimeManager : MonoBehaviour
 
     public void EndGame()
     {
+        SaveSessionData();
         SceneManager.LoadScene("DeathScene");
+    }
+
+    private void SaveSessionData()
+    {
+        PersistentFiles.PlayerCoinData.AssignFromSessionData(sessionData);
     }
 
     public void ExitGame()

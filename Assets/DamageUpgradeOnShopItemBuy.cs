@@ -2,7 +2,7 @@
 {
     public void OnShopItemBuy()
     {
-        PersistentFiles.PlayerAttackData.IncreasetAttackType();
+        PersistentFiles.PlayerAttackData.IncreaseAttackType();
         PersistentFiles.PlayerAttackData.Save();
     }
 }
